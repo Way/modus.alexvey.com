@@ -664,6 +664,97 @@ section { padding: 7rem 0; position: relative; }
   animation: pulse-tick 3s ease-in-out infinite;
 }
 
+/* Hover-Animationen für Modul-Illustrationen */
+
+/* BUILD — Datenfluss durch Pipeline */
+@keyframes build-flow-pulse {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+.bento-card:hover .build-flow > * {
+  animation: build-flow-pulse 1.2s ease-in-out infinite;
+}
+.bento-card:hover .build-flow > *:nth-child(1) { animation-delay: 0s; }
+.bento-card:hover .build-flow > *:nth-child(2) { animation-delay: 0.18s; }
+.bento-card:hover .build-flow > *:nth-child(3) { animation-delay: 0.36s; }
+@keyframes build-dot-blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.bento-card:hover .build-dot {
+  animation: build-dot-blink 1.5s ease-in-out infinite;
+}
+
+/* SCHULUNG — Buchseite Akzent + Lese-Cursor */
+@keyframes book-accent-pulse {
+  0%, 100% { opacity: 0.55; stroke-width: 1.4; }
+  50% { opacity: 1; stroke-width: 1.8; }
+}
+.bento-card:hover .book-accent {
+  animation: book-accent-pulse 1.8s ease-in-out infinite;
+}
+@keyframes book-dot-blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.bento-card:hover .book-dot {
+  animation: book-dot-blink 1.4s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+/* AUDIT — Lupe scannt, Bars pulsieren, Tick zeichnet */
+@keyframes audit-scan {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(4px, -2px); }
+}
+.bento-card:hover .audit-glass {
+  animation: audit-scan 2.6s ease-in-out infinite;
+}
+@keyframes audit-bar-pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+.bento-card:hover .audit-bars > * {
+  animation: audit-bar-pulse 1.4s ease-in-out infinite;
+}
+.bento-card:hover .audit-bars > *:nth-child(1) { animation-delay: 0s; }
+.bento-card:hover .audit-bars > *:nth-child(2) { animation-delay: 0.25s; }
+.bento-card:hover .audit-bars > *:nth-child(3) { animation-delay: 0.5s; }
+@keyframes audit-tick-draw {
+  from { stroke-dashoffset: 14; }
+  to { stroke-dashoffset: 0; }
+}
+.bento-card:hover .audit-tick {
+  stroke-dasharray: 14;
+  animation: audit-tick-draw 0.9s ease-out forwards;
+}
+
+/* PRIVAT — Konzentrische Ringe pulsieren von innen nach außen */
+@keyframes lock-ring-pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+.bento-card:hover .lock-ring {
+  animation: lock-ring-pulse 2s ease-in-out infinite;
+}
+.bento-card:hover .lock-ring-1 { animation-delay: 0s; }
+.bento-card:hover .lock-ring-2 { animation-delay: 0.18s; }
+.bento-card:hover .lock-ring-3 { animation-delay: 0.36s; }
+.bento-card:hover .lock-ring-4 { animation-delay: 0.54s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-card:hover .build-flow > *,
+  .bento-card:hover .build-dot,
+  .bento-card:hover .book-accent,
+  .bento-card:hover .book-dot,
+  .bento-card:hover .audit-glass,
+  .bento-card:hover .audit-bars > *,
+  .bento-card:hover .audit-tick,
+  .bento-card:hover .lock-ring {
+    animation: none;
+  }
+}
+
 /* ════════════════════════════════════════════════════════════
    METHODE — DARK SECTION
    ════════════════════════════════════════════════════════════ */
@@ -1180,9 +1271,9 @@ footer {
 
           <!-- Methoden-Beschriftungen — als Eck-Annotationen platziert,
                kollisionsfrei mit Pfaden und Diagonalen -->
-          <text x="115" y="117" text-anchor="end" class="karte-label">HÖREN</text>
-          <text x="425" y="117" text-anchor="start" class="karte-label">ZEIGEN</text>
-          <text x="425" y="437" text-anchor="start" class="karte-label">BAUEN</text>
+          <text x="115" y="117" text-anchor="end" class="karte-label">ZUHÖREN</text>
+          <text x="425" y="117" text-anchor="start" class="karte-label">VERSTEHEN</text>
+          <text x="425" y="437" text-anchor="start" class="karte-label">LÖSEN</text>
           <text x="115" y="437" text-anchor="end" class="karte-label">LIEFERN</text>
 
           <!-- Zentrum (Modus) -->
@@ -1334,13 +1425,15 @@ footer {
               <!-- Schicht 4 (oben) - User Interface -->
               <rect x="50" y="22" width="100" height="14" class="illu-stroke"/>
               <line x1="60" y1="29" x2="92" y2="29" class="illu-stroke" stroke-width="0.6"/>
-              <circle cx="142" cy="29" r="2" class="illu-fill"/>
+              <circle cx="142" cy="29" r="2" class="illu-fill build-dot"/>
 
               <!-- Schicht 3 - Pipeline -->
               <rect x="50" y="42" width="100" height="14" class="illu-stroke"/>
-              <line x1="58" y1="49" x2="64" y2="49" class="illu-accent"/>
-              <line x1="68" y1="49" x2="76" y2="49" class="illu-accent"/>
-              <line x1="80" y1="49" x2="92" y2="49" class="illu-accent"/>
+              <g class="build-flow">
+                <line x1="58" y1="49" x2="64" y2="49" class="illu-accent"/>
+                <line x1="68" y1="49" x2="76" y2="49" class="illu-accent"/>
+                <line x1="80" y1="49" x2="92" y2="49" class="illu-accent"/>
+              </g>
               <line x1="96" y1="49" x2="104" y2="49" class="illu-stroke" stroke-width="0.8"/>
               <line x1="108" y1="49" x2="120" y2="49" class="illu-stroke" stroke-width="0.8"/>
               <line x1="124" y1="49" x2="142" y2="49" class="illu-stroke" stroke-width="0.8"/>
@@ -1392,7 +1485,7 @@ footer {
               <path d="M 25 20 L 80 20 L 80 80 L 25 80 Q 22 50 25 20 Z" class="illu-stroke"/>
               <line x1="35" y1="32" x2="73" y2="32" class="illu-bg-line"/>
               <line x1="35" y1="38" x2="68" y2="38" class="illu-bg-line"/>
-              <line x1="35" y1="44" x2="73" y2="44" class="illu-accent"/>
+              <line x1="35" y1="44" x2="73" y2="44" class="illu-accent book-accent"/>
               <line x1="35" y1="50" x2="65" y2="50" class="illu-bg-line"/>
               <line x1="35" y1="56" x2="73" y2="56" class="illu-bg-line"/>
               <line x1="35" y1="62" x2="60" y2="62" class="illu-bg-line"/>
@@ -1403,7 +1496,7 @@ footer {
               <line x1="87" y1="38" x2="120" y2="38" class="illu-bg-line"/>
               <line x1="87" y1="44" x2="115" y2="44" class="illu-bg-line"/>
               <line x1="87" y1="50" x2="125" y2="50" class="illu-bg-line"/>
-              <circle cx="92" cy="58" r="2" class="illu-fill"/>
+              <circle cx="92" cy="58" r="2" class="illu-fill book-dot"/>
               <line x1="98" y1="58" x2="125" y2="58" class="illu-stroke" stroke-width="0.8"/>
 
               <!-- Annotationen -->
@@ -1434,7 +1527,7 @@ footer {
                 <line x1="115" y1="40" x2="115" y2="80"/>
                 <line x1="130" y1="60" x2="130" y2="80"/>
               </g>
-              <g class="illu-stroke" stroke-width="0.8">
+              <g class="illu-stroke audit-bars" stroke-width="0.8">
                 <line x1="100" y1="65" x2="100" y2="80"/>
                 <line x1="115" y1="50" x2="115" y2="80"/>
                 <line x1="130" y1="68" x2="130" y2="80"/>
@@ -1442,10 +1535,12 @@ footer {
               <line x1="95" y1="80" x2="138" y2="80" class="illu-bg-line"/>
 
               <!-- Lupe -->
-              <circle cx="60" cy="45" r="22" class="illu-stroke"/>
-              <circle cx="60" cy="45" r="18" class="illu-bg-line"/>
-              <line x1="76" y1="61" x2="92" y2="77" class="illu-stroke" stroke-width="2"/>
-              <line x1="74" y1="63" x2="90" y2="79" class="illu-stroke" stroke-width="2"/>
+              <g class="audit-glass" style="transform-origin: 60px 45px;">
+                <circle cx="60" cy="45" r="22" class="illu-stroke"/>
+                <circle cx="60" cy="45" r="18" class="illu-bg-line"/>
+                <line x1="76" y1="61" x2="92" y2="77" class="illu-stroke" stroke-width="2"/>
+                <line x1="74" y1="63" x2="90" y2="79" class="illu-stroke" stroke-width="2"/>
+              </g>
 
               <!-- Innerhalb Lupe: Strichliste mit einem grünen Tick -->
               <line x1="48" y1="38" x2="58" y2="38" class="illu-stroke" stroke-width="0.6"/>
@@ -1455,7 +1550,7 @@ footer {
               <line x1="48" y1="56" x2="60" y2="56" class="illu-bg-line"/>
 
               <!-- Tick / Akzent -->
-              <path d="M 50 47 L 53 50 L 58 44" class="illu-accent" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
+              <path d="M 50 47 L 53 50 L 58 44" class="illu-accent audit-tick" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
 
               <text x="80" y="98" text-anchor="middle" font-family="JetBrains Mono" font-size="6" fill="var(--ink-faint)" letter-spacing="0.08em">AI ACT READINESS</text>
             </svg>
@@ -1483,10 +1578,10 @@ footer {
               </g>
 
               <!-- Konzentrische Ringe -->
-              <circle cx="80" cy="50" r="38" class="illu-bg-line"/>
-              <circle cx="80" cy="50" r="30" class="illu-stroke"/>
-              <circle cx="80" cy="50" r="22" class="illu-bg-line"/>
-              <circle cx="80" cy="50" r="14" class="illu-accent"/>
+              <circle cx="80" cy="50" r="38" class="illu-bg-line lock-ring lock-ring-4"/>
+              <circle cx="80" cy="50" r="30" class="illu-stroke lock-ring lock-ring-3"/>
+              <circle cx="80" cy="50" r="22" class="illu-bg-line lock-ring lock-ring-2"/>
+              <circle cx="80" cy="50" r="14" class="illu-accent lock-ring lock-ring-1"/>
 
               <!-- Bügel oben -->
               <path d="M 70 22 Q 70 12 80 12 Q 90 12 90 22" class="illu-stroke" fill="none"/>
@@ -1535,7 +1630,7 @@ footer {
     <div class="methode-grid">
       <div class="methode-step">
         <div class="step-num">i. <small>Zuhören</small></div>
-        <h3>Ich höre zu, wie Sie Geld verdienen.</h3>
+        <h3>Ich höre zu, wie Sie arbeiten.</h3>
         <p>Bevor ich über KI rede, höre ich Ihrem Betrieb zu. Welche Prozesse sind fragil? Wo sitzt Wissen in Köpfen, das überall gebraucht wird? Wo ist Mehraufwand, der niemandem nützt?</p>
       </div>
       <div class="methode-step">

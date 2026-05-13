@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modus Vey — KI-Beratung mit Methode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════════════════════════
+   MODUS VEY — DESIGN SYSTEM v4
+   Aesthetic: Editorial-Technische Kartografie
+   ════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Hauptpalette: warmes Bone/Parchment */
+  --bone:           #F4EFE5;
+  --bone-soft:      #ECE5D6;
+  --bone-line:      #1a1a1a0a;
+  --bone-line-mid:  #1a1a1a14;
+  --bone-line-strong: #1a1a1a28;
+
+  /* Schrift-Töne */
+  --ink:            #15161A;
+  --ink-soft:       #2D2E33;
+  --ink-mute:       #6E6B63;
+  --ink-faint:      #A39E92;
+
+  /* Dark Sektionen */
+  --night:          #0E1014;
+  --night-soft:     #161920;
+  --night-line:     #ffffff14;
+  --night-line-mid: #ffffff1f;
+  --on-night:       #F4EFE5;
+  --on-night-soft:  #C5BFB1;
+  --on-night-mute:  #7E7A70;
+
+  /* Akzente */
+  --teal:           #1E4F4A;        /* Hauptakzent, Modus Vey Petrol */
+  --teal-bright:    #2A7A6F;        /* Hover, aktive Zustände */
+  --teal-soft:      #D4DDD9;        /* Hintergrund-Tönung */
+  --amber:          #B8632B;        /* Warmer Highlight, sparsam */
+  --amber-soft:     #E8D5BB;        /* Markierungs-Hintergrund */
+  --sage:           #7C8B7E;        /* Eyebrow / Kategorie-Label */
+
+  /* Schriften */
+  --display: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+  --body:    "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif:   "Instrument Serif", Georgia, serif;
+  --mono:    "JetBrains Mono", ui-monospace, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+*::selection { background: var(--teal); color: var(--bone); }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-feature-settings: "ss01" on, "ss02" on, "cv11" on;
+}
+
+/* ═══ SUBTILE GRAPHPAPIER-TEXTUR (subtil, nicht dominant) ═══ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--bone-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bone-line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* ────────────────────── TYPOGRAFIE ────────────────────── */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: var(--sage);
+}
+
+.display-xxl {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.display-xl {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.display-lg {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.display-md {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+em.serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal);
+}
+em.serif-amber { color: var(--amber); }
+
+.lead {
+  font-size: clamp(1.1rem, 1.4vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  font-weight: 400;
+  max-width: 50ch;
+}
+
+.muted { color: var(--ink-mute); }
+
+/* Container */
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+@media (max-width: 720px) { .wrap { padding: 0 1.25rem; } }
+
+section { padding: 7rem 0; position: relative; }
+@media (max-width: 720px) { section { padding: 4rem 0; } }
+
+/* ════════════════════════════════════════════════════════════
+   NAVIGATION
+   ════════════════════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  background: rgba(244, 239, 229, 0.78);
+  border-bottom: 1px solid var(--bone-line-mid);
+}
+.nav-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0.95rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-mark {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-mark .glyph {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+.nav-mark .glyph svg { display: block; }
+
+.nav-mark .dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: var(--teal);
+  border-radius: 50%;
+  margin: 0 0.1rem 0.2em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--teal); }
+
+.nav-cta {
+  padding: 0.5rem 1rem;
+  background: var(--ink);
+  color: var(--bone) !important;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--teal); }
+
+@media (max-width: 720px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════════════════════════ */
+.hero {
+  padding-top: 9rem;
+  padding-bottom: 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+.hero-text { max-width: 32ch; }
+
+.hero-headline {
+  margin-top: 1.6rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.1em;
+}
+
+.hero-headline .line-2 {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal);
+  letter-spacing: -0.02em;
+}
+
+.hero-sub {
+  margin-bottom: 2.4rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.85rem 1.4rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--bone);
+}
+.btn-primary:hover {
+  background: var(--teal);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--bone-line-strong);
+}
+.btn-ghost:hover {
+  border-color: var(--ink);
+  background: var(--bone-soft);
+}
+.btn .arrow { transition: transform 0.2s; }
+.btn:hover .arrow { transform: translateX(3px); }
+
+/* ─── HERO SIGNATURE: DIE MODUS-KARTE ─── */
+.modus-karte {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 540px;
+  margin-left: auto;
+  position: relative;
+}
+@media (max-width: 980px) {
+  .modus-karte { margin: 0 auto; max-width: 460px; }
+}
+
+.modus-karte svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Karten-Hintergrund-Grid (sichtbarer als bei body) */
+.karte-grid {
+  stroke: rgba(26, 26, 26, 0.06);
+  stroke-width: 0.5;
+  fill: none;
+}
+
+/* Rahmen + Eckmarkierungen */
+.karte-frame {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+.karte-corner-mark {
+  stroke: var(--ink);
+  stroke-width: 1;
+  fill: none;
+}
+
+/* Pfade zwischen Knoten */
+.karte-path-bg {
+  fill: none;
+  stroke: var(--bone-line-mid);
+  stroke-width: 1;
+}
+.karte-path {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 1.5;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: draw-path 16s ease-in-out infinite;
+}
+.karte-path.p1 { animation-delay: 0s; }
+.karte-path.p2 { animation-delay: 1.5s; }
+.karte-path.p3 { animation-delay: 3s; }
+.karte-path.p4 { animation-delay: 4.5s; }
+@keyframes draw-path {
+  0%, 5%   { stroke-dashoffset: 600; opacity: 0; }
+  12%      { stroke-dashoffset: 0; opacity: 1; }
+  85%      { stroke-dashoffset: 0; opacity: 1; }
+  100%     { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* Knoten */
+.karte-node {
+  fill: var(--bone);
+  stroke: var(--ink);
+  stroke-width: 1.2;
+}
+.karte-node-active {
+  fill: var(--teal);
+  stroke: var(--teal);
+  animation: node-pulse 4s ease-in-out infinite;
+}
+@keyframes node-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.karte-node-glow {
+  fill: var(--teal);
+  opacity: 0;
+  animation: node-glow 16s ease-in-out infinite;
+}
+.karte-node-glow.g1 { animation-delay: 0s; }
+.karte-node-glow.g2 { animation-delay: 1.5s; }
+.karte-node-glow.g3 { animation-delay: 3s; }
+.karte-node-glow.g4 { animation-delay: 4.5s; }
+@keyframes node-glow {
+  0%, 5% { opacity: 0; transform: scale(0.5); transform-origin: center; }
+  15%    { opacity: 0.3; transform: scale(2.5); transform-origin: center; }
+  30%    { opacity: 0; transform: scale(0.5); transform-origin: center; }
+}
+
+/* Maßstab-Markierungen (Tick-Marks an Linien) */
+.karte-tick {
+  stroke: var(--ink);
+  stroke-width: 0.8;
+  fill: none;
+}
+
+/* Annotationen */
+.karte-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  font-weight: 500;
+  fill: var(--ink-mute);
+  letter-spacing: 0.05em;
+}
+.karte-label-roman {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 16px;
+  fill: var(--teal);
+}
+.karte-label-coord {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8px;
+  fill: var(--ink-faint);
+  letter-spacing: 0.08em;
+}
+
+/* Kompassrose */
+.compass {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 0.8;
+}
+.compass-needle {
+  fill: var(--teal);
+}
+
+/* ────────────────── META-LEISTE ────────────────── */
+.meta-bar {
+  margin-top: 5rem;
+  border-top: 1px solid var(--bone-line-mid);
+  border-bottom: 1px solid var(--bone-line-mid);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--bone);
+}
+.meta-bar > div {
+  padding: 1.6rem 1.8rem;
+  border-right: 1px solid var(--bone-line-mid);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.meta-bar > div:last-child { border-right: none; }
+
+.meta-num {
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.meta-num em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal);
+}
+.meta-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .meta-bar { grid-template-columns: repeat(2, 1fr); }
+  .meta-bar > div:nth-child(2) { border-right: none; }
+  .meta-bar > div:nth-child(1),
+  .meta-bar > div:nth-child(2) {
+    border-bottom: 1px solid var(--bone-line-mid);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   BENTO MODULE
+   ════════════════════════════════════════════════════════════ */
+.bento-section {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: end;
+}
+@media (max-width: 720px) {
+  .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+.section-header h2 { max-width: 16ch; }
+.section-header p { max-width: 42ch; padding-bottom: 0.4rem; }
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(240px, auto);
+  gap: 1rem;
+}
+@media (max-width: 980px) {
+  .bento { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .bento { grid-template-columns: 1fr; }
+}
+
+.bento-card {
+  background: var(--bone-soft);
+  border: 1px solid var(--bone-line-mid);
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  cursor: default;
+}
+.bento-card:hover {
+  background: #F0E8D6;
+  border-color: var(--bone-line-strong);
+  transform: translateY(-2px);
+}
+.bento-card:hover .card-illu { transform: scale(1.04); }
+
+/* Eck-Zeichen wie auf alten Karten */
+.bento-card::before,
+.bento-card::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--ink-faint);
+  opacity: 0.4;
+}
+.bento-card::before { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+.bento-card::after { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+/* Spans */
+.span-3 { grid-column: span 3; }
+.span-2 { grid-column: span 2; }
+.span-tall { grid-row: span 2; }
+@media (max-width: 980px) {
+  .span-3, .span-2 { grid-column: span 2; }
+  .span-tall { grid-row: span 1; }
+}
+@media (max-width: 560px) {
+  .span-3, .span-2 { grid-column: span 1; }
+}
+
+.bento-card .card-tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.bento-card .card-name {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.65rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.05;
+  margin-bottom: 0.7rem;
+}
+.bento-card .card-name em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal);
+}
+
+.bento-card .card-desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-mute);
+}
+
+.bento-card .card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--bone-line-mid);
+  padding-top: 0.9rem;
+}
+.bento-card .price { color: var(--teal); font-weight: 500; }
+.bento-card .duration { color: var(--ink-mute); font-size: 0.7rem; letter-spacing: 0.06em; }
+
+/* Modul-Illustrationen Container */
+.card-illu {
+  width: 100%;
+  height: 110px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+}
+.card-illu svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.card-illu .illu-stroke { stroke: var(--ink); fill: none; stroke-width: 1.2; }
+.card-illu .illu-accent { stroke: var(--teal); fill: none; stroke-width: 1.4; }
+.card-illu .illu-fill { fill: var(--teal); }
+.card-illu .illu-bg-line { stroke: var(--bone-line-mid); fill: none; stroke-width: 0.5; }
+.card-illu .illu-amber { stroke: var(--amber); fill: none; stroke-width: 1.4; }
+
+/* SPRINT card (große Karte) */
+.card-sprint .card-illu { height: 160px; }
+.card-sprint .card-name { font-size: 2.2rem; }
+
+/* Stoppwatch-Animation */
+@keyframes rotate-second {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.stopwatch-second {
+  transform-origin: center;
+  animation: rotate-second 8s linear infinite;
+}
+@keyframes pulse-tick {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+.pulse {
+  animation: pulse-tick 3s ease-in-out infinite;
+}
+
+/* ════════════════════════════════════════════════════════════
+   METHODE — DARK SECTION
+   ════════════════════════════════════════════════════════════ */
+.dark-section {
+  background: var(--night);
+  color: var(--on-night);
+  position: relative;
+  overflow: hidden;
+}
+.dark-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+.dark-section .display-xxl,
+.dark-section .display-xl,
+.dark-section .display-lg,
+.dark-section .display-md { color: var(--on-night); }
+.dark-section .lead { color: var(--on-night-soft); }
+.dark-section .muted { color: var(--on-night-mute); }
+.dark-section em.serif { color: #D4A574; }
+
+.methode-frame {
+  position: relative;
+  z-index: 1;
+}
+
+.methode-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--night-line-mid);
+  border: 1px solid var(--night-line-mid);
+  margin-top: 4rem;
+}
+@media (max-width: 980px) { .methode-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .methode-grid { grid-template-columns: 1fr; } }
+
+.methode-step {
+  background: var(--night);
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+
+.methode-step .step-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 2.5rem;
+  color: var(--teal-bright);
+  line-height: 1;
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.methode-step .step-num small {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--on-night-mute);
+}
+
+.methode-step h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--on-night);
+  margin-bottom: 0.8rem;
+}
+
+.methode-step p {
+  color: var(--on-night-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Verbindungspunkte zwischen Schritten */
+.methode-step::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--teal-bright);
+  border-radius: 50%;
+  top: 50%;
+  right: -4px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px rgba(42, 122, 111, 0.6);
+}
+.methode-step:last-child::after { display: none; }
+@media (max-width: 980px) {
+  .methode-step::after { display: none; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   ANNAHMEN
+   ════════════════════════════════════════════════════════════ */
+.annahmen-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--bone-line-mid);
+  margin-top: 4rem;
+}
+
+.annahme {
+  display: grid;
+  grid-template-columns: 80px 1fr 1.3fr;
+  gap: 3rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--bone-line-mid);
+  align-items: start;
+  position: relative;
+  transition: padding 0.3s ease;
+}
+.annahme:hover { padding-left: 1rem; }
+
+@media (max-width: 720px) {
+  .annahme {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2.2rem 0;
+  }
+}
+
+.annahme-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 4rem;
+  color: var(--teal);
+  line-height: 0.85;
+  font-weight: 400;
+}
+
+.annahme-claim {
+  font-family: var(--display);
+  font-size: 1.45rem;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.annahme-claim em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--amber);
+}
+
+.annahme-counter {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+.annahme-counter strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.annahme-counter::before {
+  content: "Gegenposition";
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+}
+
+/* ════════════════════════════════════════════════════════════
+   ÜBER
+   ════════════════════════════════════════════════════════════ */
+.ueber-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  gap: 5rem;
+  margin-top: 4rem;
+  align-items: start;
+}
+@media (max-width: 980px) {
+  .ueber-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.portrait-frame {
+  aspect-ratio: 4/5;
+  background: var(--bone-soft);
+  border: 1px solid var(--bone-line-mid);
+  position: relative;
+  overflow: hidden;
+}
+.portrait-frame::before,
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  width: 14px; height: 14px;
+  border: 1px solid var(--ink-faint);
+}
+.portrait-frame::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.portrait-frame::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+.portrait-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-faint);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.portrait-meta {
+  margin-top: 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.ueber-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 1.4rem;
+}
+.ueber-content p:first-child {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.55rem;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  letter-spacing: -0.005em;
+}
+.ueber-content strong { color: var(--ink); font-weight: 500; }
+
+/* ════════════════════════════════════════════════════════════
+   FINAL CTA
+   ════════════════════════════════════════════════════════════ */
+.final {
+  padding: 8rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-content {
+  max-width: 30ch;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.final h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.final-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  align-items: center;
+}
+.final-meta-item {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--on-night-soft);
+  font-size: 1.05rem;
+}
+.final-meta-item strong {
+  font-family: var(--mono);
+  font-style: normal;
+  font-weight: 500;
+  color: #D4A574;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  margin-left: 0.6rem;
+  text-transform: uppercase;
+}
+.final-contact {
+  margin-top: 3rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--on-night);
+}
+.final-contact a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  transition: border-color 0.2s, color 0.2s;
+}
+.final-contact a:hover {
+  color: #D4A574;
+  border-bottom-color: #D4A574;
+}
+
+/* Final BG-Visual */
+.final-orbit {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+.final-orbit circle {
+  fill: none;
+  stroke: rgba(255,255,255,0.05);
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════════ */
+footer {
+  background: var(--night-soft);
+  color: var(--on-night-mute);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--night-line);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer-inner a {
+  color: var(--on-night-mute);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  transition: color 0.2s;
+}
+.footer-inner a:hover { color: var(--bone); }
+
+/* ════════════════════════════════════════════════════════════
+   ANIMATIONEN AUFBAU
+   ════════════════════════════════════════════════════════════ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-text > * {
+  opacity: 0;
+  animation: fade-up 0.7s ease-out forwards;
+}
+.hero-text > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-text > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-text > *:nth-child(3) { animation-delay: 0.4s; }
+.hero-text > *:nth-child(4) { animation-delay: 0.55s; }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-mark">
+      <span class="glyph">
+        <svg viewBox="0 0 22 22" fill="none">
+          <rect x="0.5" y="0.5" width="21" height="21" stroke="var(--ink)" stroke-width="1"/>
+          <circle cx="6" cy="6" r="1.5" fill="var(--teal)"/>
+          <circle cx="16" cy="6" r="1.5" fill="var(--ink)"/>
+          <circle cx="16" cy="16" r="1.5" fill="var(--ink)"/>
+          <circle cx="6" cy="16" r="1.5" fill="var(--ink)"/>
+          <line x1="6" y1="6" x2="16" y2="16" stroke="var(--teal)" stroke-width="1"/>
+        </svg>
+      </span>
+      Modus<span class="dot"></span>Vey
+    </a>
+    <div class="nav-links">
+      <a href="#module">Module</a>
+      <a href="#methode">Methode</a>
+      <a href="#annahmen">Haltung</a>
+      <a href="#kontakt" class="nav-cta">Erstgespräch</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow">Modus operandi · I</div>
+        <h1 class="display-xxl hero-headline">
+          Methode<br><span class="line-2">statt Magie.</span>
+        </h1>
+        <p class="lead hero-sub">
+          KI-Beratung für den deutschen Mittelstand. Wir bauen in 90 Tagen einen produktiven Use Case &mdash; <em class="serif">oder sagen ehrlich, dass KI hier nicht das Problem löst.</em>
+        </p>
+        <div class="hero-cta">
+          <a href="#kontakt" class="btn btn-primary">
+            Erstgespräch vereinbaren
+            <span class="arrow">→</span>
+          </a>
+          <a href="#annahmen" class="btn btn-ghost">
+            Wie wir denken
+          </a>
+        </div>
+      </div>
+
+      <!-- ═══ MODUS-KARTE: Signature Visual ═══ -->
+      <div class="modus-karte">
+        <svg viewBox="0 0 540 540" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- Innerer Grid -->
+          <defs>
+            <pattern id="karte-grid-pattern" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M 30 0 L 0 0 0 30" class="karte-grid"/>
+            </pattern>
+          </defs>
+          <rect x="40" y="40" width="460" height="460" fill="url(#karte-grid-pattern)"/>
+
+          <!-- Eckmarkierungen (technische Zeichnung) -->
+          <g class="karte-corner-mark">
+            <path d="M 30 50 L 30 30 L 50 30"/>
+            <path d="M 510 50 L 510 30 L 490 30"/>
+            <path d="M 30 490 L 30 510 L 50 510"/>
+            <path d="M 510 490 L 510 510 L 490 510"/>
+          </g>
+
+          <!-- Mittiger Kreuzungspunkt -->
+          <line x1="270" y1="40" x2="270" y2="500" stroke="var(--bone-line-mid)" stroke-width="0.5" stroke-dasharray="2 4"/>
+          <line x1="40" y1="270" x2="500" y2="270" stroke="var(--bone-line-mid)" stroke-width="0.5" stroke-dasharray="2 4"/>
+
+          <!-- Maßstabsleiste oben -->
+          <g transform="translate(40, 18)">
+            <line x1="0" y1="0" x2="460" y2="0" class="karte-tick"/>
+            <line x1="0" y1="-3" x2="0" y2="3" class="karte-tick"/>
+            <line x1="115" y1="-2" x2="115" y2="2" class="karte-tick"/>
+            <line x1="230" y1="-3" x2="230" y2="3" class="karte-tick"/>
+            <line x1="345" y1="-2" x2="345" y2="2" class="karte-tick"/>
+            <line x1="460" y1="-3" x2="460" y2="3" class="karte-tick"/>
+            <text x="230" y="-7" text-anchor="middle" class="karte-label">— 90 Tage —</text>
+          </g>
+
+          <!-- Koordinatenbeschriftungen -->
+          <text x="40" y="525" class="karte-label-coord">N 51° 19'</text>
+          <text x="500" y="525" text-anchor="end" class="karte-label-coord">E 9° 29'</text>
+
+          <!-- Pfade zwischen Knoten (gestrichelte Hintergrund) -->
+          <g class="karte-path-bg" stroke-dasharray="3 3">
+            <path d="M 150 150 Q 270 110 390 150"/>
+            <path d="M 390 150 Q 430 270 390 390"/>
+            <path d="M 390 390 Q 270 430 150 390"/>
+            <path d="M 150 390 Q 110 270 150 150"/>
+            <path d="M 150 150 L 390 390"/>
+            <path d="M 390 150 L 150 390"/>
+          </g>
+
+          <!-- Animierte Hauptpfade (Zyklus durch die 4 Methodik-Schritte) -->
+          <path class="karte-path p1" d="M 150 150 Q 270 110 390 150"/>
+          <path class="karte-path p2" d="M 390 150 Q 430 270 390 390"/>
+          <path class="karte-path p3" d="M 390 390 Q 270 430 150 390"/>
+          <path class="karte-path p4" d="M 150 390 Q 110 270 150 150"/>
+
+          <!-- Tick-Marks an den Pfaden (wie Maßstab) -->
+          <g class="karte-tick" opacity="0.5">
+            <line x1="200" y1="123" x2="200" y2="129"/>
+            <line x1="270" y1="113" x2="270" y2="119"/>
+            <line x1="340" y1="123" x2="340" y2="129"/>
+
+            <line x1="411" y1="200" x2="417" y2="200"/>
+            <line x1="421" y1="270" x2="427" y2="270"/>
+            <line x1="411" y1="340" x2="417" y2="340"/>
+
+            <line x1="200" y1="411" x2="200" y2="417"/>
+            <line x1="270" y1="421" x2="270" y2="427"/>
+            <line x1="340" y1="411" x2="340" y2="417"/>
+
+            <line x1="123" y1="200" x2="129" y2="200"/>
+            <line x1="113" y1="270" x2="119" y2="270"/>
+            <line x1="123" y1="340" x2="129" y2="340"/>
+          </g>
+
+          <!-- Glow um Knoten -->
+          <circle cx="150" cy="150" r="14" class="karte-node-glow g1"/>
+          <circle cx="390" cy="150" r="14" class="karte-node-glow g2"/>
+          <circle cx="390" cy="390" r="14" class="karte-node-glow g3"/>
+          <circle cx="150" cy="390" r="14" class="karte-node-glow g4"/>
+
+          <!-- Knoten (4 Eckpunkte = Methodik-Schritte) -->
+          <circle cx="150" cy="150" r="6" class="karte-node-active"/>
+          <circle cx="390" cy="150" r="6" class="karte-node-active"/>
+          <circle cx="390" cy="390" r="6" class="karte-node-active"/>
+          <circle cx="150" cy="390" r="6" class="karte-node-active"/>
+
+          <!-- Roman Numerals an den Knoten -->
+          <text x="135" y="139" text-anchor="end" class="karte-label-roman">I</text>
+          <text x="405" y="139" class="karte-label-roman">II</text>
+          <text x="405" y="409" class="karte-label-roman">III</text>
+          <text x="135" y="409" text-anchor="end" class="karte-label-roman">IV</text>
+
+          <!-- Methoden-Beschriftungen — als Eck-Annotationen platziert,
+               kollisionsfrei mit Pfaden und Diagonalen -->
+          <text x="115" y="117" text-anchor="end" class="karte-label">HÖREN</text>
+          <text x="425" y="117" text-anchor="start" class="karte-label">ZEIGEN</text>
+          <text x="425" y="437" text-anchor="start" class="karte-label">BAUEN</text>
+          <text x="115" y="437" text-anchor="end" class="karte-label">LIEFERN</text>
+
+          <!-- Zentrum (Modus) -->
+          <circle cx="270" cy="270" r="32" fill="var(--bone)" stroke="var(--ink)" stroke-width="1"/>
+          <circle cx="270" cy="270" r="20" fill="var(--bone)" stroke="var(--bone-line-strong)" stroke-width="0.5" stroke-dasharray="2 2"/>
+          <circle cx="270" cy="270" r="4" fill="var(--teal)"/>
+          <text x="270" y="296" text-anchor="middle" class="karte-label" style="font-size: 8px;">MODUS</text>
+
+          <!-- Kompass oben rechts -->
+          <g transform="translate(465, 65)">
+            <circle cx="0" cy="0" r="18" class="compass"/>
+            <line x1="0" y1="-18" x2="0" y2="-12" class="compass"/>
+            <line x1="0" y1="18" x2="0" y2="12" class="compass"/>
+            <line x1="-18" y1="0" x2="-12" y2="0" class="compass"/>
+            <line x1="18" y1="0" x2="12" y2="0" class="compass"/>
+            <polygon points="0,-12 -3,3 0,0 3,3" class="compass-needle"/>
+            <polygon points="0,12 -2,2 0,0 2,2" fill="var(--ink-faint)"/>
+            <text x="0" y="-22" text-anchor="middle" class="karte-label" style="font-size: 7px;">N</text>
+          </g>
+
+          <!-- Maßangaben-Box unten links -->
+          <g transform="translate(60, 70)">
+            <rect x="-2" y="-10" width="80" height="34" fill="none" stroke="var(--bone-line-strong)" stroke-width="0.5"/>
+            <text x="0" y="0" class="karte-label" style="font-size: 7px;">METHODE</text>
+            <text x="0" y="11" class="karte-label-coord" style="font-size: 8px; fill: var(--ink-soft);">M-2026.04</text>
+            <text x="0" y="20" class="karte-label-coord">REV. III</text>
+          </g>
+
+        </svg>
+      </div>
+    </div>
+
+    <!-- META BAR -->
+    <div class="meta-bar">
+      <div>
+        <span class="meta-num">3.500&thinsp;<em>€</em></span>
+        <span class="meta-label">Festpreis ab Sprint</span>
+      </div>
+      <div>
+        <span class="meta-num">90&thinsp;<em>Tage</em></span>
+        <span class="meta-label">Bis zur Übergabe</span>
+      </div>
+      <div>
+        <span class="meta-num">80&thinsp;<em>%</em></span>
+        <span class="meta-label">BAFA-Förderung möglich</span>
+      </div>
+      <div>
+        <span class="meta-num">EU&thinsp;<em>only</em></span>
+        <span class="meta-label">DSGVO &amp; AI Act</span>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ═══════════════ MODULE — BENTO ═══════════════ -->
+<section id="module" class="bento-section">
+  <div class="wrap">
+    <div class="section-header">
+      <div>
+        <div class="eyebrow" style="margin-bottom: 1.5rem;">Leistungen · II</div>
+        <h2 class="display-xl">Fünf Module.<br>Alle mit <em class="serif">Festpreis.</em></h2>
+      </div>
+      <p class="lead">Kein Tagessatz, kein Stunden-Wirrwarr. Sie wissen vorher, was Sie bekommen — und was es kostet.</p>
+    </div>
+
+    <div class="bento">
+
+      <!-- ─── SPRINT (große Karte, 3 Spalten) ─── -->
+      <div class="bento-card card-sprint span-3">
+        <div>
+          <div class="card-tag">EINSTIEGSPUNKT · I</div>
+          <div class="card-illu">
+            <!-- Stoppwatch / Chronograph -->
+            <svg viewBox="0 0 200 110" preserveAspectRatio="xMidYMid meet">
+              <!-- Hintergrund-Grid -->
+              <line x1="0" y1="55" x2="200" y2="55" class="illu-bg-line"/>
+              <line x1="100" y1="0" x2="100" y2="110" class="illu-bg-line"/>
+
+              <!-- Stoppwatch Krone -->
+              <line x1="100" y1="14" x2="100" y2="22" class="illu-stroke"/>
+              <line x1="94" y1="10" x2="106" y2="10" class="illu-stroke" stroke-width="2"/>
+
+              <!-- Außenring -->
+              <circle cx="100" cy="60" r="38" class="illu-stroke"/>
+              <circle cx="100" cy="60" r="34" class="illu-bg-line"/>
+
+              <!-- Tick marks (12 Positionen) -->
+              <g class="illu-stroke" stroke-width="1">
+                <line x1="100" y1="24" x2="100" y2="29"/>
+                <line x1="100" y1="91" x2="100" y2="96"/>
+                <line x1="64" y1="60" x2="69" y2="60"/>
+                <line x1="131" y1="60" x2="136" y2="60"/>
+                <line class="pulse" x1="118.5" y1="29.5" x2="116" y2="33.5"/>
+                <line x1="129.5" y1="42.5" x2="125.5" y2="45"/>
+                <line x1="129.5" y1="77.5" x2="125.5" y2="75"/>
+                <line x1="118.5" y1="90.5" x2="116" y2="86.5"/>
+                <line x1="81.5" y1="90.5" x2="84" y2="86.5"/>
+                <line x1="70.5" y1="77.5" x2="74.5" y2="75"/>
+                <line x1="70.5" y1="42.5" x2="74.5" y2="45"/>
+                <line x1="81.5" y1="29.5" x2="84" y2="33.5"/>
+              </g>
+
+              <!-- Zeiger -->
+              <line x1="100" y1="60" x2="100" y2="35" class="illu-stroke" stroke-width="1.5"/>
+              <line x1="100" y1="60" x2="118" y2="60" class="illu-stroke" stroke-width="1.2"/>
+
+              <!-- Sekundenzeiger (animiert) -->
+              <g class="stopwatch-second" style="transform-origin: 100px 60px;">
+                <line x1="100" y1="60" x2="100" y2="28" class="illu-accent" stroke-width="1.4"/>
+                <circle cx="100" cy="60" r="2" class="illu-fill"/>
+              </g>
+
+              <!-- Side annotations -->
+              <text x="10" y="55" font-family="JetBrains Mono" font-size="6" fill="var(--ink-faint)" letter-spacing="0.1em">10·TAGE</text>
+              <text x="155" y="55" font-family="JetBrains Mono" font-size="6" fill="var(--ink-faint)" letter-spacing="0.1em">3.500€</text>
+
+              <!-- Linie unten -->
+              <line x1="20" y1="100" x2="180" y2="100" class="illu-bg-line"/>
+              <line x1="20" y1="98" x2="20" y2="102" class="illu-stroke" stroke-width="0.6"/>
+              <line x1="180" y1="98" x2="180" y2="102" class="illu-stroke" stroke-width="0.6"/>
+              <line x1="100" y1="98" x2="100" y2="102" class="illu-accent" stroke-width="1"/>
+            </svg>
+          </div>
+          <h3 class="card-name">Modus <em>Sprint</em></h3>
+          <p class="card-desc">Use-Case-Identifikation. In zwei Wochen finden wir, wo KI in Ihrem Betrieb wirklich Wert schafft &mdash; und wo nicht. Mit Priorisierung nach Wirtschaftlichkeit, Risiko und Realisierbarkeit.</p>
+        </div>
+        <div class="card-foot">
+          <span class="price">3.500 €</span>
+          <span class="duration">10 Tage · BAFA-fähig</span>
+        </div>
+      </div>
+
+      <!-- ─── BUILD (3 Spalten, neben Sprint) ─── -->
+      <div class="bento-card span-3">
+        <div>
+          <div class="card-tag">UMSETZUNG · II</div>
+          <div class="card-illu">
+            <!-- Architektonische Schichten -->
+            <svg viewBox="0 0 200 110" preserveAspectRatio="xMidYMid meet">
+              <!-- Hintergrund-Grid -->
+              <g class="illu-bg-line">
+                <line x1="0" y1="20" x2="200" y2="20"/>
+                <line x1="0" y1="90" x2="200" y2="90"/>
+                <line x1="40" y1="0" x2="40" y2="110"/>
+                <line x1="160" y1="0" x2="160" y2="110"/>
+              </g>
+
+              <!-- Schicht 4 (oben) - User Interface -->
+              <rect x="50" y="22" width="100" height="14" class="illu-stroke"/>
+              <line x1="60" y1="29" x2="92" y2="29" class="illu-stroke" stroke-width="0.6"/>
+              <circle cx="142" cy="29" r="2" class="illu-fill"/>
+
+              <!-- Schicht 3 - Pipeline -->
+              <rect x="50" y="42" width="100" height="14" class="illu-stroke"/>
+              <line x1="58" y1="49" x2="64" y2="49" class="illu-accent"/>
+              <line x1="68" y1="49" x2="76" y2="49" class="illu-accent"/>
+              <line x1="80" y1="49" x2="92" y2="49" class="illu-accent"/>
+              <line x1="96" y1="49" x2="104" y2="49" class="illu-stroke" stroke-width="0.8"/>
+              <line x1="108" y1="49" x2="120" y2="49" class="illu-stroke" stroke-width="0.8"/>
+              <line x1="124" y1="49" x2="142" y2="49" class="illu-stroke" stroke-width="0.8"/>
+
+              <!-- Schicht 2 - Daten -->
+              <rect x="50" y="62" width="100" height="14" class="illu-stroke"/>
+              <line x1="58" y1="66" x2="142" y2="66" class="illu-bg-line"/>
+              <line x1="58" y1="69" x2="142" y2="69" class="illu-bg-line"/>
+              <line x1="58" y1="72" x2="142" y2="72" class="illu-bg-line"/>
+
+              <!-- Verbindungslinien zwischen Schichten -->
+              <g class="illu-bg-line">
+                <line x1="100" y1="36" x2="100" y2="42"/>
+                <line x1="100" y1="56" x2="100" y2="62"/>
+              </g>
+
+              <!-- Annotationen -->
+              <text x="155" y="32" font-family="JetBrains Mono" font-size="5.5" fill="var(--ink-faint)">UI</text>
+              <text x="155" y="52" font-family="JetBrains Mono" font-size="5.5" fill="var(--ink-faint)">RAG</text>
+              <text x="155" y="72" font-family="JetBrains Mono" font-size="5.5" fill="var(--ink-faint)">DATA</text>
+
+              <text x="45" y="32" text-anchor="end" font-family="JetBrains Mono" font-size="5.5" fill="var(--ink-faint)">III</text>
+              <text x="45" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="5.5" fill="var(--ink-faint)">II</text>
+              <text x="45" y="72" text-anchor="end" font-family="JetBrains Mono" font-size="5.5" fill="var(--ink-faint)">I</text>
+            </svg>
+          </div>
+          <h3 class="card-name">Modus <em>Build</em></h3>
+          <p class="card-desc">Pilot-Implementierung in 90 Tagen. Ein produktiver Use Case bis zur Übergabe &mdash; Code gehört Ihnen, Architektur ist dokumentiert.</p>
+        </div>
+        <div class="card-foot">
+          <span class="price">ab 18.000 €</span>
+          <span class="duration">90 Tage</span>
+        </div>
+      </div>
+
+      <!-- ─── SCHULUNG (2 Spalten) ─── -->
+      <div class="bento-card span-2">
+        <div>
+          <div class="card-tag">QUALIFIZIERUNG · III</div>
+          <div class="card-illu">
+            <!-- Buch mit Linien -->
+            <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
+              <line x1="0" y1="80" x2="160" y2="80" class="illu-bg-line"/>
+
+              <!-- Buchrücken -->
+              <line x1="80" y1="20" x2="80" y2="80" class="illu-stroke"/>
+
+              <!-- Linke Buchseite -->
+              <path d="M 25 20 L 80 20 L 80 80 L 25 80 Q 22 50 25 20 Z" class="illu-stroke"/>
+              <line x1="35" y1="32" x2="73" y2="32" class="illu-bg-line"/>
+              <line x1="35" y1="38" x2="68" y2="38" class="illu-bg-line"/>
+              <line x1="35" y1="44" x2="73" y2="44" class="illu-accent"/>
+              <line x1="35" y1="50" x2="65" y2="50" class="illu-bg-line"/>
+              <line x1="35" y1="56" x2="73" y2="56" class="illu-bg-line"/>
+              <line x1="35" y1="62" x2="60" y2="62" class="illu-bg-line"/>
+
+              <!-- Rechte Buchseite -->
+              <path d="M 135 20 L 80 20 L 80 80 L 135 80 Q 138 50 135 20 Z" class="illu-stroke"/>
+              <line x1="87" y1="32" x2="125" y2="32" class="illu-bg-line"/>
+              <line x1="87" y1="38" x2="120" y2="38" class="illu-bg-line"/>
+              <line x1="87" y1="44" x2="115" y2="44" class="illu-bg-line"/>
+              <line x1="87" y1="50" x2="125" y2="50" class="illu-bg-line"/>
+              <circle cx="92" cy="58" r="2" class="illu-fill"/>
+              <line x1="98" y1="58" x2="125" y2="58" class="illu-stroke" stroke-width="0.8"/>
+
+              <!-- Annotationen -->
+              <text x="80" y="93" text-anchor="middle" font-family="JetBrains Mono" font-size="6" fill="var(--ink-faint)" letter-spacing="0.08em">ART. 4 KI-VO</text>
+            </svg>
+          </div>
+          <h3 class="card-name">Modus <em>Schulung</em></h3>
+          <p class="card-desc">AZAV-konforme Mitarbeiterqualifizierung. Erfüllt Ihre Schulungspflicht aus Art. 4 EU AI Act.</p>
+        </div>
+        <div class="card-foot">
+          <span class="price">2.400 € + 180&thinsp;€/TN</span>
+          <span class="duration">2 Tage</span>
+        </div>
+      </div>
+
+      <!-- ─── AUDIT (2 Spalten) ─── -->
+      <div class="bento-card span-2">
+        <div>
+          <div class="card-tag">PRÜFUNG · IV</div>
+          <div class="card-illu">
+            <!-- Lupe mit Diagramm -->
+            <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
+              <line x1="0" y1="85" x2="160" y2="85" class="illu-bg-line"/>
+
+              <!-- Hintergrund-Diagramm (Bars) -->
+              <g class="illu-bg-line">
+                <line x1="100" y1="55" x2="100" y2="80"/>
+                <line x1="115" y1="40" x2="115" y2="80"/>
+                <line x1="130" y1="60" x2="130" y2="80"/>
+              </g>
+              <g class="illu-stroke" stroke-width="0.8">
+                <line x1="100" y1="65" x2="100" y2="80"/>
+                <line x1="115" y1="50" x2="115" y2="80"/>
+                <line x1="130" y1="68" x2="130" y2="80"/>
+              </g>
+              <line x1="95" y1="80" x2="138" y2="80" class="illu-bg-line"/>
+
+              <!-- Lupe -->
+              <circle cx="60" cy="45" r="22" class="illu-stroke"/>
+              <circle cx="60" cy="45" r="18" class="illu-bg-line"/>
+              <line x1="76" y1="61" x2="92" y2="77" class="illu-stroke" stroke-width="2"/>
+              <line x1="74" y1="63" x2="90" y2="79" class="illu-stroke" stroke-width="2"/>
+
+              <!-- Innerhalb Lupe: Strichliste mit einem grünen Tick -->
+              <line x1="48" y1="38" x2="58" y2="38" class="illu-stroke" stroke-width="0.6"/>
+              <line x1="60" y1="38" x2="70" y2="38" class="illu-bg-line"/>
+              <line x1="48" y1="44" x2="64" y2="44" class="illu-stroke" stroke-width="0.6"/>
+              <line x1="48" y1="50" x2="68" y2="50" class="illu-stroke" stroke-width="0.6"/>
+              <line x1="48" y1="56" x2="60" y2="56" class="illu-bg-line"/>
+
+              <!-- Tick / Akzent -->
+              <path d="M 50 47 L 53 50 L 58 44" class="illu-accent" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
+
+              <text x="80" y="98" text-anchor="middle" font-family="JetBrains Mono" font-size="6" fill="var(--ink-faint)" letter-spacing="0.08em">AI ACT READINESS</text>
+            </svg>
+          </div>
+          <h3 class="card-name">Modus <em>Audit</em></h3>
+          <p class="card-desc">EU-AI-Act-Readiness-Check. Klartext-Bericht statt Compliance-Theater.</p>
+        </div>
+        <div class="card-foot">
+          <span class="price">4.500 €</span>
+          <span class="duration">5 Tage</span>
+        </div>
+      </div>
+
+      <!-- ─── PRIVAT (2 Spalten) ─── -->
+      <div class="bento-card span-2">
+        <div>
+          <div class="card-tag">SOUVERÄNITÄT · V</div>
+          <div class="card-illu">
+            <!-- Konzentrische Schloss-Schichten -->
+            <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
+              <!-- Hintergrund-Grid -->
+              <g class="illu-bg-line">
+                <line x1="0" y1="50" x2="160" y2="50"/>
+                <line x1="80" y1="0" x2="80" y2="100"/>
+              </g>
+
+              <!-- Konzentrische Ringe -->
+              <circle cx="80" cy="50" r="38" class="illu-bg-line"/>
+              <circle cx="80" cy="50" r="30" class="illu-stroke"/>
+              <circle cx="80" cy="50" r="22" class="illu-bg-line"/>
+              <circle cx="80" cy="50" r="14" class="illu-accent"/>
+
+              <!-- Bügel oben -->
+              <path d="M 70 22 Q 70 12 80 12 Q 90 12 90 22" class="illu-stroke" fill="none"/>
+
+              <!-- Schloss-Körper -->
+              <rect x="70" y="42" width="20" height="16" class="illu-stroke" fill="var(--bone-soft)"/>
+              <circle cx="80" cy="50" r="2.5" class="illu-fill"/>
+              <line x1="80" y1="51" x2="80" y2="56" class="illu-stroke" stroke-width="1"/>
+
+              <!-- Tick-Marks an Außenring -->
+              <g class="illu-stroke" stroke-width="0.6">
+                <line x1="80" y1="10" x2="80" y2="14"/>
+                <line x1="118" y1="50" x2="114" y2="50"/>
+                <line x1="80" y1="86" x2="80" y2="82"/>
+                <line x1="42" y1="50" x2="46" y2="50"/>
+              </g>
+
+              <!-- Annotationen -->
+              <text x="20" y="95" font-family="JetBrains Mono" font-size="6" fill="var(--ink-faint)" letter-spacing="0.08em">DSGVO · EU-HOST</text>
+            </svg>
+          </div>
+          <h3 class="card-name">Modus <em>Privat</em></h3>
+          <p class="card-desc">Privates KI-Setup für Ihr Unternehmen. EU-Hosting, keine US-Server, ohne Datentransfer.</p>
+        </div>
+        <div class="card-foot">
+          <span class="price">6.500 €</span>
+          <span class="duration">Setup</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ METHODE — DARK ═══════════════ -->
+<section id="methode" class="dark-section">
+  <div class="wrap methode-frame">
+    <div class="section-header">
+      <div>
+        <div class="eyebrow" style="margin-bottom: 1.5rem; color: #D4A574;">Methode · III</div>
+        <h2 class="display-xl">Vier Schritte.<br>Kein <em class="serif">fünfter.</em></h2>
+      </div>
+      <p class="lead">Wir arbeiten in einem festen Rhythmus &mdash; nicht weil Methode hübsch klingt, sondern weil sie verhindert, was KI-Projekte sonst zerlegt: Phasen-Verlängerung, Scope-Wachstum, Berater-Lock-in.</p>
+    </div>
+
+    <div class="methode-grid">
+      <div class="methode-step">
+        <div class="step-num">i. <small>Hören</small></div>
+        <h3>Wir verstehen, wie Sie Geld verdienen.</h3>
+        <p>Bevor wir über KI reden, lesen wir Ihren Betrieb. Welche Prozesse sind fragil? Wo sitzt Wissen in Köpfen, das überall gebraucht wird? Wo ist Mehraufwand, der niemandem nützt?</p>
+      </div>
+      <div class="methode-step">
+        <div class="step-num">ii. <small>Zeigen</small></div>
+        <h3>Konkrete Hebel auf den Tisch.</h3>
+        <p>Drei bis fünf Anwendungsfälle &mdash; priorisiert nach Wirtschaftlichkeit, Risiko und Realisierbarkeit. Kein Hebel ist abstrakt; jeder hat eine Zeitschätzung und eine Zahl.</p>
+      </div>
+      <div class="methode-step">
+        <div class="step-num">iii. <small>Bauen</small></div>
+        <h3>Mit Ihrem Team, nicht für es.</h3>
+        <p>In 90 Tagen ein produktiver Use Case bis zur Übergabe. Code gehört Ihnen, Architektur ist dokumentiert, Mitarbeiter sind eingearbeitet. Black Box ist Lock-in.</p>
+      </div>
+      <div class="methode-step">
+        <div class="step-num">iv. <small>Liefern</small></div>
+        <h3>Sie verstehen, was läuft.</h3>
+        <p>Sie können das System weiter betreiben, weiterentwickeln und in zwei Jahren entscheiden, ob es noch zu Ihnen passt &mdash; ohne uns fragen zu müssen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DREI ANNAHMEN ═══════════════ -->
+<section id="annahmen">
+  <div class="wrap">
+    <div class="section-header">
+      <div>
+        <div class="eyebrow" style="margin-bottom: 1.5rem;">Haltung · IV</div>
+        <h2 class="display-xl">Drei Annahmen,<br>gegen die wir <em class="serif-amber">arbeiten.</em></h2>
+      </div>
+      <p class="lead">Wenn Sie woanders KI-Beratung einkaufen, hören Sie diese drei Sätze fast immer mit. Wir bauen unsere Methode bewusst gegen sie.</p>
+    </div>
+
+    <div class="annahmen-list">
+      <div class="annahme">
+        <div class="annahme-num">i.</div>
+        <div class="annahme-claim">
+          KI ist nicht primär eine <em>Tool-Frage.</em>
+        </div>
+        <div class="annahme-counter">
+          KI ist eine <strong>Prozess- und Datenfrage</strong>. Tools sind die letzten 20 Prozent. Davor liegen Workflow, Datenqualität, Akzeptanz &mdash; und genau hier scheitert jedes zweite Projekt.
+        </div>
+      </div>
+
+      <div class="annahme">
+        <div class="annahme-num">ii.</div>
+        <div class="annahme-claim">
+          Die wenigsten brauchen ein <em>eigenes Modell.</em>
+        </div>
+        <div class="annahme-counter">
+          Was Sie brauchen, ist ein sauberer Use Case auf <strong>Standard-Modellen mit Ihren Daten</strong>. RAG schlägt Fine-Tuning fast immer &mdash; günstiger, schneller, prüfbarer. Souveränität liegt in der Architektur.
+        </div>
+      </div>
+
+      <div class="annahme">
+        <div class="annahme-num">iii.</div>
+        <div class="annahme-claim">
+          Eine Lizenz ist eine <em>Erlaubnis,</em> kein <em>System.</em>
+        </div>
+        <div class="annahme-counter">
+          KI-Reife entsteht aus <strong>dokumentierten Use Cases, geschulten Mitarbeitern, klassifizierten Anwendungen</strong> und einem Datenschutzkonzept, das einer Prüfung standhält. Eine ChatGPT-Lizenz für alle ist davon der erste Schritt, nicht das Ziel.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ÜBER ═══════════════ -->
+<section id="ueber">
+  <div class="wrap">
+    <div class="section-header">
+      <div>
+        <div class="eyebrow" style="margin-bottom: 1.5rem;">Über · V</div>
+        <h2 class="display-xl">Alexander Vey.</h2>
+      </div>
+      <p class="lead">Eine Beratung, die nicht ihre Methode verkauft, sondern Ihre Methode findet.</p>
+    </div>
+
+    <div class="ueber-grid">
+      <div>
+        <div class="portrait-frame">
+          <div class="portrait-placeholder">[ Porträt ]</div>
+        </div>
+        <div class="portrait-meta">
+          <div>Alexander Vey</div>
+          <div style="color: var(--ink-faint);">Kassel · Hessen</div>
+          <div style="color: var(--ink-faint);">alexvey.com</div>
+        </div>
+      </div>
+      <div class="ueber-content">
+        <p>
+          Modus Vey ist mein Versuch, eine KI-Beratung aufzubauen, die Geschäftsführern dasselbe Erlebnis gibt wie ein guter Hausarzt &mdash; zuhören, präzise diagnostizieren, nur das verschreiben, was wirklich hilft.
+        </p>
+        <p>
+          Hauptberuflich verantworte ich bei <strong>fino.digital</strong> in Kassel die Schnittstelle zwischen Software-Architektur und Regulatorik im Open Banking. <strong>PSD2, XS2A, EU AI Act, DSGVO</strong> sind keine Punkte auf einer LinkedIn-Liste &mdash; das ist meine tägliche Sprache.
+        </p>
+        <p>
+          Was Sie davon haben: einen Partner, der RAG-Pipelines selbst baut, EBA-Guidelines selbst liest und Produkte für reale Endnutzer entwirft. Bei mir kommt nichts in Ihren Betrieb, das ich nicht selbst auseinandernehmen und wieder zusammensetzen kann.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FINAL CTA — DARK ═══════════════ -->
+<section id="kontakt" class="dark-section final">
+  <svg class="final-orbit" viewBox="0 0 800 800">
+    <circle cx="400" cy="400" r="120"/>
+    <circle cx="400" cy="400" r="200"/>
+    <circle cx="400" cy="400" r="290"/>
+    <circle cx="400" cy="400" r="380"/>
+  </svg>
+
+  <div class="wrap">
+    <div class="final-content">
+      <div class="eyebrow" style="margin-bottom: 0; justify-content: center; color: #D4A574;">Reden wir · VI</div>
+      <h2 class="display-xxl">Eine halbe Stunde.<br><em class="serif">Kein Pitch.</em></h2>
+      <p class="lead" style="margin: 0 auto;">
+        Wir hören uns an, was Sie umtreibt &mdash; und sagen ehrlich, ob wir der richtige Partner sind.
+      </p>
+
+      <div class="final-meta">
+        <span class="final-meta-item">Erstgespräch <strong>kostenlos</strong></span>
+        <span class="final-meta-item">Vorbereitung <strong>15 Minuten</strong></span>
+        <span class="final-meta-item">Online oder vor Ort <strong>30 Minuten</strong></span>
+      </div>
+
+      <div class="final-contact">
+        <a href="mailto:alexander@modusvey.de">alexander@modusvey.de</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>© 2026 Modus Vey · Alexander Vey · Kassel · Methode statt Magie</div>
+      <div>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1533,9 +1533,10 @@
     <!-- ═══════════════ NAV ═══════════════ -->
     <nav class="nav">
       <div class="nav-inner">
-        <a href="#" class="nav-mark">
+        <a href="#" class="nav-mark" aria-label="Modus Vey">
           <span class="glyph">
-            <svg viewBox="0 0 22 22" fill="none">
+            <svg viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <!-- Outer frame: die Karte -->
               <rect
                 x="0.5"
                 y="0.5"
@@ -1544,17 +1545,25 @@
                 stroke="var(--ink)"
                 stroke-width="1"
               />
-              <circle cx="6" cy="6" r="1.5" fill="var(--teal)" />
-              <circle cx="16" cy="6" r="1.5" fill="var(--ink)" />
-              <circle cx="16" cy="16" r="1.5" fill="var(--ink)" />
-              <circle cx="6" cy="16" r="1.5" fill="var(--ink)" />
-              <line
-                x1="6"
-                y1="6"
-                x2="16"
-                y2="16"
+              <!-- 4 Säulen: I Zuhören · II Verstehen · III Lösen · IV Liefern -->
+              <circle cx="5.5" cy="5.5" r="1.4" fill="var(--teal)" />
+              <circle cx="16.5" cy="5.5" r="1.4" fill="var(--ink)" />
+              <circle cx="16.5" cy="16.5" r="1.4" fill="var(--ink)" />
+              <circle cx="5.5" cy="16.5" r="1.4" fill="var(--ink)" />
+              <!-- M (Modus) — outer legs in ink -->
+              <path
+                d="M7.5 14 V8 M14.5 14 V8"
+                stroke="var(--ink)"
+                stroke-width="1.1"
+                stroke-linecap="round"
+              />
+              <!-- V (Vey) — inner valley in teal -->
+              <path
+                d="M7.5 8 L11 12.5 L14.5 8"
                 stroke="var(--teal)"
-                stroke-width="1"
+                stroke-width="1.1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               />
             </svg>
           </span>
@@ -1736,7 +1745,7 @@
                 LIEFERN
               </text>
 
-              <!-- Zentrum (Modus) -->
+              <!-- Zentrum (Modus) mit MV-Monogramm -->
               <circle
                 cx="270"
                 cy="270"
@@ -1754,10 +1763,26 @@
                 stroke-width="0.5"
                 stroke-dasharray="2 2"
               />
-              <circle cx="270" cy="270" r="4" fill="var(--teal)" />
+              <!-- MV-Monogramm: M (ink) + V (teal) -->
+              <g
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M261 277 V263 M279 277 V263"
+                  stroke="var(--ink)"
+                  stroke-width="2.2"
+                />
+                <path
+                  d="M261 263 L270 274 L279 263"
+                  stroke="var(--teal)"
+                  stroke-width="2.2"
+                />
+              </g>
               <text
                 x="270"
-                y="296"
+                y="300"
                 text-anchor="middle"
                 class="karte-label"
                 style="font-size: 8px"

@@ -861,6 +861,61 @@
         letter-spacing: 0.06em;
       }
 
+      /* Teaser-Variante: nachgelagerte Module als Ausbaustufe */
+      .bento-card--teaser {
+        background: transparent;
+        border-style: dashed;
+        border-color: var(--bone-line-mid);
+      }
+      .bento-card--teaser:hover {
+        background: var(--bone-soft);
+        border-style: solid;
+      }
+      .bento-card--teaser .card-illu {
+        opacity: 0.55;
+        height: 80px;
+      }
+      .bento-card--teaser:hover .card-illu {
+        opacity: 0.85;
+      }
+      .bento-card--teaser .card-tag {
+        color: var(--ink-faint);
+      }
+      .bento-card--teaser .card-name {
+        font-size: 1.35rem;
+        color: var(--ink-mute);
+      }
+      .bento-card--teaser .card-name em {
+        color: var(--ink-soft);
+      }
+      .bento-card--teaser:hover .card-name,
+      .bento-card--teaser:hover .card-name em {
+        color: var(--ink);
+      }
+      .bento-card--teaser:hover .card-name em {
+        color: var(--teal);
+      }
+      .bento-card--teaser .card-desc {
+        font-size: 0.84rem;
+        color: var(--ink-faint);
+      }
+      .bento-card--teaser .card-foot {
+        color: var(--ink-faint);
+      }
+      .bento-card--teaser .status {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        color: var(--ink-soft);
+        text-transform: uppercase;
+      }
+      .bento-card--teaser .horizon {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        color: var(--ink-faint);
+      }
+
       /* Modul-Illustrationen Container */
       .card-illu {
         width: 100%;
@@ -898,13 +953,7 @@
         stroke-width: 1.4;
       }
 
-      /* SPRINT card (große Karte) */
-      .card-sprint .card-illu {
-        height: 160px;
-      }
-      .card-sprint .card-name {
-        font-size: 2.2rem;
-      }
+      /* SPRINT card — gleiche Hierarchie wie Build */
 
       /* Stoppwatch-Animation */
       @keyframes rotate-second {
@@ -1869,12 +1918,13 @@
               Leistungen · II
             </div>
             <h2 class="display-xl">
-              Fünf Module.<br />Alle mit <em class="serif">Festpreis.</em>
+              Modular<br />zum <em class="serif">Ziel.</em>
             </h2>
           </div>
           <p class="lead">
-            Kein Tagessatz, kein Stunden-Wirrwarr. Sie wissen vorher, was Sie
-            bekommen. Und was es kostet.
+            Erst Analyse, dann Lösung. <em class="serif">Sprint</em> findet den
+            Use Case, <em class="serif">Build</em> liefert ihn produktiv aus.
+            Schulung, Audit und Private Cloud kommen als Ausbaustufe.
           </p>
         </div>
 
@@ -2198,10 +2248,10 @@
             </div>
           </div>
 
-          <!-- ─── SCHULUNG (2 Spalten) ─── -->
-          <div class="bento-card span-2">
+          <!-- ─── SCHULUNG (2 Spalten · Teaser) ─── -->
+          <div class="bento-card bento-card--teaser span-2">
             <div>
-              <div class="card-tag">QUALIFIZIERUNG · III</div>
+              <div class="card-tag">QUALIFIZIERUNG · III · AUSBAUSTUFE</div>
               <div class="card-illu">
                 <!-- Buch mit Linien -->
                 <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
@@ -2264,19 +2314,20 @@
               <h3 class="card-name">Modus <em>Schulung</em></h3>
               <p class="card-desc">
                 AZAV-konforme Mitarbeiterqualifizierung. Erfüllt Ihre
-                Schulungspflicht aus Art. 4 EU AI Act.
+                Schulungspflicht aus Art. 4 EU AI Act. Folgt, sobald Sprint und
+                Build stehen.
               </p>
             </div>
             <div class="card-foot">
-              <span class="price">2.400 € + 180&thinsp;€/TN</span>
-              <span class="duration">2 Tage</span>
+              <span class="status">In Vorbereitung</span>
+              <span class="horizon">2026</span>
             </div>
           </div>
 
-          <!-- ─── AUDIT (2 Spalten) ─── -->
-          <div class="bento-card span-2">
+          <!-- ─── AUDIT (2 Spalten · Teaser) ─── -->
+          <div class="bento-card bento-card--teaser span-2">
             <div>
-              <div class="card-tag">PRÜFUNG · IV</div>
+              <div class="card-tag">PRÜFUNG · IV · AUSBAUSTUFE</div>
               <div class="card-illu">
                 <!-- Lupe mit Diagramm -->
                 <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
@@ -2370,19 +2421,19 @@
               <h3 class="card-name">Modus <em>Audit</em></h3>
               <p class="card-desc">
                 EU-AI-Act-Readiness-Check. Klartext-Bericht statt
-                Compliance-Theater.
+                Compliance-Theater. Auf Anfrage verfügbar.
               </p>
             </div>
             <div class="card-foot">
-              <span class="price">4.500 €</span>
-              <span class="duration">5 Tage</span>
+              <span class="status">Auf Anfrage</span>
+              <span class="horizon">2026</span>
             </div>
           </div>
 
-          <!-- ─── PRIVAT (2 Spalten) ─── -->
-          <div class="bento-card span-2">
+          <!-- ─── PRIVAT (2 Spalten · Teaser) ─── -->
+          <div class="bento-card bento-card--teaser span-2">
             <div>
-              <div class="card-tag">SOUVERÄNITÄT · V</div>
+              <div class="card-tag">SOUVERÄNITÄT · V · AUSBAUSTUFE</div>
               <div class="card-illu">
                 <!-- Konzentrische Schloss-Schichten -->
                 <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
@@ -2468,12 +2519,13 @@
               <h3 class="card-name">Modus <em>Privat</em></h3>
               <p class="card-desc">
                 Privates KI-Setup für Ihr Unternehmen. EU-Hosting, keine
-                US-Server, kein Datentransfer in Drittländer.
+                US-Server, kein Datentransfer in Drittländer. Spätere
+                Ausbaustufe.
               </p>
             </div>
             <div class="card-foot">
-              <span class="price">6.500 €</span>
-              <span class="duration">Setup</span>
+              <span class="status">In Planung</span>
+              <span class="horizon">2026/27</span>
             </div>
           </div>
         </div>

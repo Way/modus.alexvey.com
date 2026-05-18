@@ -1,0 +1,47 @@
+/* ════════════════════════════════════════════════════════════════
+   MODUS VEY — Editorial Kartografie Preset für Visual-Explainer
+   Format-Match zu den 4 Bestand-Presets in slide-patterns.md
+   Source of truth — bei Marketplace-Cache-Wipe von hier neu syncen.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  --font-body:          'Geist', system-ui, sans-serif;
+  --font-mono:          'JetBrains Mono', 'SF Mono', monospace;
+  --font-serif:         'Instrument Serif', Georgia, serif;
+  --bg:                 #f4efe5;
+  --surface:            #fbf8f0;
+  --surface2:           #ece6d8;
+  --surface-elevated:   #ffffff;
+  --border:             rgba(21, 22, 26, 0.10);
+  --border-bright:      rgba(21, 22, 26, 0.18);
+  --text:               #15161a;
+  --text-dim:           #6a6a6f;
+  --accent:             #1e4f4a;
+  --accent-bright:      #2a7a6f;
+  --accent-dim:         rgba(30, 79, 74, 0.10);
+  --amber:              #b8632b;
+  --amber-dim:          rgba(184, 99, 43, 0.10);
+  --sage:               #7c8b7e;
+  --code-bg:            #15161a;
+  --code-text:          #f4efe5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:               #0e1014;
+    --surface:          #15161a;
+    --surface2:         #1a1c22;
+    --surface-elevated: #1f2128;
+    --border:           rgba(244, 239, 229, 0.08);
+    --border-bright:    rgba(244, 239, 229, 0.16);
+    --text:             #f4efe5;
+    --text-dim:         #9a958a;
+    --accent:           #4fb5a8;
+    --accent-bright:    #69d4c6;
+    --accent-dim:       rgba(79, 181, 168, 0.12);
+    --amber:            #e08651;
+    --amber-dim:        rgba(224, 134, 81, 0.10);
+    --code-bg:          #0a0b0e;
+    --code-text:        #f4efe5;
+  }
+}

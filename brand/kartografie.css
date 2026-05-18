@@ -1,0 +1,441 @@
+/* ════════════════════════════════════════════════════════════════
+   MODUS VEY — KARTOGRAFIE COMPONENTS
+   Editorial-Technische Kartografie · v5 · 2026-05
+   Requires: tokens.css
+   Components extracted from index.html + pricing-2026-05.html
+   ════════════════════════════════════════════════════════════════ */
+
+/* ─── 1. CORNER-L-MARKS ─── L-förmige Eckenmarken (4 Varianten) */
+.corner-mark {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  opacity: 0.45;
+}
+.corner-mark line { stroke: var(--ink); stroke-width: 1; }
+.corner-mark--tl { top: 32px; left: 32px; }
+.corner-mark--tr { top: 32px; right: 32px; }
+.corner-mark--bl { bottom: 32px; left: 32px; }
+.corner-mark--br { bottom: 32px; right: 32px; }
+
+/* ─── 2. FRAME WITH DOT-CORNERS ─── Quadratischer Rahmen + 4 Eck-Punkte (3 ink + 1 teal aktiv) */
+.frame {
+  position: absolute;
+  inset: clamp(40px, 6vh, 80px) clamp(40px, 6vw, 100px);
+  border: 1px solid var(--bone-line-strong);
+  pointer-events: none;
+  z-index: 0;
+}
+.frame::before,
+.frame::after,
+.frame > .frame-dots::before,
+.frame > .frame-dots::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--ink);
+  border-radius: 50%;
+}
+.frame::before                    { top: -6px; left: -6px; background: var(--teal); }  /* active corner */
+.frame::after                     { top: -6px; right: -6px; }
+.frame > .frame-dots::before      { bottom: -6px; left: -6px; }
+.frame > .frame-dots::after       { bottom: -6px; right: -6px; }
+
+/* ─── 3. GRID-BG ─── Dashed Hintergrund, radial maskiert */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(to right, var(--bone-line-mid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bone-line-mid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* ─── 4. COORD ─── Mono-Label im Sage-Stil (für Koordinaten, Plate-Revisions) */
+.coord {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--sage);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.coord--corner {
+  position: absolute;
+  opacity: 0.7;
+}
+.coord--tl { top: 32px; left: 32px; }
+.coord--tr { top: 32px; right: 32px; }
+.coord--bl { bottom: 32px; left: 32px; }
+.coord--br { bottom: 32px; right: 32px; }
+
+/* ─── 5. TYPO-SKALA ─── Geist-Display + Instrument-Serif-italic für Emphasis */
+.display-xxl {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.display-xl {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.display-lg {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.heading {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+em.serif,
+.serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal);
+}
+em.serif-amber,
+.serif-amber {
+  color: var(--amber);
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--sage);
+}
+
+/* ─── 6. BULLETS ─── Label + Strong + Price Layout (für Leistungen / KPIs) */
+.bullets {
+  list-style: none;
+  padding: 0;
+}
+.bullets li {
+  padding: 12px 0 12px 28px;
+  position: relative;
+  font-size: clamp(15px, 1.8vw, 20px);
+  line-height: 1.45;
+  color: var(--ink);
+  border-bottom: 1px solid var(--bone-line-mid);
+}
+.bullets li:last-child { border-bottom: none; }
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 14px;
+  height: 1px;
+  background: var(--teal);
+}
+.bullets .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--sage);
+  display: block;
+  margin-bottom: 4px;
+}
+.bullets strong { font-weight: 500; color: var(--ink); }
+.bullets .price {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--teal);
+  margin-left: 8px;
+}
+
+/* ─── 7. KPI ─── Karte mit Top-Accent-Rail */
+.kpi {
+  background: var(--bone-soft);
+  border: 1px solid var(--bone-line-mid);
+  padding: clamp(20px, 3vh, 36px) clamp(18px, 2.2vw, 28px);
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+.kpi::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 1px;
+  background: var(--teal);
+}
+.kpi-val {
+  font-family: var(--display);
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.kpi-val .unit {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.55em;
+  color: var(--teal);
+  margin-left: 4px;
+  letter-spacing: 0;
+}
+.kpi-label {
+  font-family: var(--mono);
+  font-size: clamp(9px, 1.1vw, 12px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ink-mute);
+  margin-top: 10px;
+}
+.kpi-trend {
+  font-family: var(--mono);
+  font-size: 11px;
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+
+/* ─── 8. DATA-TABLE ─── Mit verdict-pill und num-Mono-Zellen */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bone-soft);
+}
+.data-table th {
+  background: var(--bone-soft);
+  font-family: var(--mono);
+  font-size: clamp(10px, 1.2vw, 13px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ink-mute);
+  text-align: left;
+  padding: clamp(12px, 1.5vh, 18px) clamp(14px, 2vw, 26px);
+  border-bottom: 1px solid var(--bone-line-strong);
+  white-space: nowrap;
+}
+.data-table td {
+  padding: clamp(12px, 1.5vh, 18px) clamp(14px, 2vw, 26px);
+  border-bottom: 1px solid var(--bone-line-mid);
+  font-size: clamp(13px, 1.6vw, 17px);
+  vertical-align: top;
+  line-height: 1.4;
+}
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table tbody tr:hover { background: var(--teal-soft); }
+.data-table .num {
+  font-family: var(--mono);
+  color: var(--teal);
+  font-weight: 500;
+}
+.data-table .pillar {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.data-table .pillar small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--sage);
+  font-weight: 400;
+  margin-top: 2px;
+}
+.verdict-pill {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 3px 9px;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  white-space: nowrap;
+}
+.verdict-pill--warm { border-color: var(--amber); color: var(--amber); }
+
+/* ─── 9. MERMAID-WRAP ─── Hooks für Mermaid-Theme im Bone-Look */
+.mermaid-wrap {
+  position: relative;
+  background: var(--bone-soft);
+  border: 1px solid var(--bone-line-mid);
+  padding: 32px;
+  overflow: auto;
+}
+.mermaid .nodeLabel { color: var(--ink) !important; }
+.mermaid .edgeLabel {
+  color: var(--ink-mute) !important;
+  background-color: var(--bone) !important;
+}
+.mermaid .edgeLabel rect { fill: var(--bone) !important; }
+/* Use in conjunction with Mermaid themeVariables:
+   primaryColor: --bone-soft, primaryBorderColor: --teal,
+   primaryTextColor: --ink, lineColor: --ink-mute */
+
+/* ─── 10. PANEL-NUM ─── Oversize Serif-italic-Nummer als Hintergrund einer Karte */
+.panel-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(80px, 14vw, 180px);
+  color: var(--teal);
+  opacity: 0.10;
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.04em;
+}
+
+/* ─── 11. VERDICT-BAR ─── Teal-on-Bone Strip mit Mono-Caps + Display-Serif-italic */
+.verdict-bar {
+  background: var(--teal);
+  color: var(--bone);
+  padding: clamp(1.25rem, 2.5vh, 1.75rem) clamp(2rem, 6vw, 5.5rem);
+  font-family: var(--mono);
+  font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+}
+.verdict-bar strong {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  color: var(--bone);
+}
+.verdict-bar em.serif,
+.verdict-bar .serif {
+  color: var(--amber-soft);
+}
+.verdict-bar a {
+  color: var(--bone);
+  text-decoration: underline;
+  text-decoration-color: var(--amber-soft);
+  text-underline-offset: 4px;
+}
+
+/* ─── 12. PRICE-BAR ─── Row-Pattern für Daten-Visualisierung (Range mit Marker) */
+.price-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+.price-bar .row {
+  display: grid;
+  grid-template-columns: 130px 1fr 80px;
+  gap: 12px;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.08em;
+}
+.price-bar .lbl { text-transform: uppercase; }
+.price-bar .track {
+  height: 22px;
+  background: var(--bone-soft);
+  position: relative;
+  border: 1px solid var(--bone-line-mid);
+}
+.price-bar .fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--teal-soft);
+  border-left: 1px solid var(--teal);
+  border-right: 1px solid var(--teal);
+}
+.price-bar .marker {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--amber);
+}
+.price-bar .marker::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  background: var(--amber);
+  transform: rotate(45deg);
+}
+.price-bar .val {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--teal);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ─── BONUS: Status-Caption (Mono-Sage statt Pill) ─── */
+.status-caption {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.7em;
+}
+.status-caption::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 1px;
+  background: var(--sage);
+  align-self: center;
+}
+.status-caption .horizon {
+  color: var(--ink-faint);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+}

@@ -1,0 +1,88 @@
+/* ════════════════════════════════════════════════════════════════
+   MODUS VEY — DESIGN TOKENS
+   Editorial-Technische Kartografie · v5 · 2026-05
+   Canonical source: extracted 1:1 from index.html:108–141
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─── Hauptpalette: warmes Bone/Parchment ─── */
+  --bone:               #f4efe5;
+  --bone-soft:          #ece5d6;
+  --bone-line:          #1a1a1a0a;
+  --bone-line-mid:      #1a1a1a14;
+  --bone-line-strong:   #1a1a1a28;
+
+  /* ─── Schrift-Töne ─── */
+  --ink:                #15161a;
+  --ink-soft:           #2d2e33;
+  --ink-mute:           #6e6b63;
+  --ink-faint:          #a39e92;
+
+  /* ─── Dark Sektionen ─── */
+  --night:              #0e1014;
+  --night-soft:         #161920;
+  --night-line:         #ffffff14;
+  --night-line-mid:     #ffffff1f;
+  --on-night:           #f4efe5;
+  --on-night-soft:      #c5bfb1;
+  --on-night-mute:      #7e7a70;
+
+  /* ─── Akzente ─── */
+  --teal:               #1e4f4a;   /* Hauptakzent, Modus Vey Petrol */
+  --teal-bright:        #2a7a6f;   /* Hover, aktive Zustände */
+  --teal-soft:          #d4ddd9;   /* Hintergrund-Tönung */
+  --amber:              #b8632b;   /* Warmer Highlight, sparsam */
+  --amber-soft:         #e8d5bb;   /* Markierungs-Hintergrund */
+  --sage:               #7c8b7e;   /* Eyebrow / Kategorie-Label */
+
+  /* ─── Schriften ─── */
+  --display:            'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --body:               'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif:              'Instrument Serif', Georgia, serif;
+  --mono:               'JetBrains Mono', ui-monospace, monospace;
+
+  /* ─── Motion ─── */
+  --ease-out:           cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard:      cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:      0.18s;
+  --duration-base:      0.3s;
+  --duration-slow:      0.6s;
+
+  /* ─── Layout ─── */
+  --wrap-max:           1240px;
+  --wrap-pad:           2rem;
+  --wrap-pad-mobile:    1.25rem;
+  --section-pad:        7rem;
+  --section-pad-mobile: 4rem;
+}
+
+/* ─── Night-Mode Override ─── */
+[data-theme="night"] {
+  --bone:               var(--night);
+  --bone-soft:          var(--night-soft);
+  --bone-line:          var(--night-line);
+  --bone-line-mid:      var(--night-line-mid);
+  --bone-line-strong:   #ffffff32;
+  --ink:                var(--on-night);
+  --ink-soft:           var(--on-night-soft);
+  --ink-mute:           var(--on-night-mute);
+  --ink-faint:          #5d594f;
+  --teal-soft:          #1a3733;
+  --amber-soft:         #4a2a18;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bone:               var(--night);
+    --bone-soft:          var(--night-soft);
+    --bone-line:          var(--night-line);
+    --bone-line-mid:      var(--night-line-mid);
+    --bone-line-strong:   #ffffff32;
+    --ink:                var(--on-night);
+    --ink-soft:           var(--on-night-soft);
+    --ink-mute:           var(--on-night-mute);
+    --ink-faint:          #5d594f;
+    --teal-soft:          #1a3733;
+    --amber-soft:         #4a2a18;
+  }
+}

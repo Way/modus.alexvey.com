@@ -1609,12 +1609,21 @@
         opacity: 0.05;
         color: var(--teal);
       }
-      .bento-section::before { content: 'II'; }
-      #annahmen::before      { content: 'IV'; }
-      #ueber::before         { content: 'V'; }
+      .bento-section::before {
+        content: 'II';
+      }
+      #annahmen::before {
+        content: 'IV';
+      }
+      #ueber::before {
+        content: 'V';
+      }
       .bento-section > .wrap,
       #annahmen > .wrap,
-      #ueber > .wrap { position: relative; z-index: 1; }
+      #ueber > .wrap {
+        position: relative;
+        z-index: 1;
+      }
 
       /* ─── B) Pre-Kontakt Verdict-Bar ─── */
       .verdict-bar {
@@ -1673,10 +1682,23 @@
         background: var(--ink);
         border-radius: 50%;
       }
-      .karte-dots::before          { top: -5px; left: -5px; background: var(--teal); }
-      .karte-dots::after           { top: -5px; right: -5px; }
-      .karte-dots > span::before   { bottom: -5px; left: -5px; }
-      .karte-dots > span::after    { bottom: -5px; right: -5px; }
+      .karte-dots::before {
+        top: -5px;
+        left: -5px;
+        background: var(--teal);
+      }
+      .karte-dots::after {
+        top: -5px;
+        right: -5px;
+      }
+      .karte-dots > span::before {
+        bottom: -5px;
+        left: -5px;
+      }
+      .karte-dots > span::after {
+        bottom: -5px;
+        right: -5px;
+      }
 
       /* ─── E) Status-Badges → Mono-Caption Look ─── */
       .bento-card--teaser .status {
@@ -1705,19 +1727,19 @@
    Aktiviert via [data-theme='night'] auf <html>.
    ════════════════════════════════════════════════════════════ */
       [data-theme='night'] {
-        --bone:             var(--night);
-        --bone-soft:        var(--night-soft);
-        --bone-hover:       #1d2026;
-        --bone-line:        var(--night-line);
-        --bone-line-mid:    var(--night-line-mid);
+        --bone: var(--night);
+        --bone-soft: var(--night-soft);
+        --bone-hover: #1d2026;
+        --bone-line: var(--night-line);
+        --bone-line-mid: var(--night-line-mid);
         --bone-line-strong: #ffffff32;
-        --ink:              var(--on-night);
-        --ink-soft:         var(--on-night-soft);
-        --ink-mute:         var(--on-night-mute);
-        --ink-faint:        #5d594f;
-        --teal-soft:        #1a3733;
-        --amber-soft:       #4a2a18;
-        --teal:             var(--teal-bright); /* brighter accent for legibility on dark */
+        --ink: var(--on-night);
+        --ink-soft: var(--on-night-soft);
+        --ink-mute: var(--on-night-mute);
+        --ink-faint: #5d594f;
+        --teal-soft: #1a3733;
+        --amber-soft: #4a2a18;
+        --teal: var(--teal-bright); /* brighter accent for legibility on dark */
       }
 
       /* .dark-section ist hardcoded auf --night → würde mit Page-BG verschmelzen.
@@ -1732,14 +1754,13 @@
          Selector-Spezifität (0,1,1,0) gleich wie [data-theme='night'] .dark-section,
          steht hier später → gewinnt im Kaskaden-Vergleich. */
       #methode.dark-section {
-        background:
-          radial-gradient(
-            ellipse 110% 75% at 50% 0%,
-            #1c4842 0%,
-            #133631 26%,
-            #0a1e1d 58%,
-            #0a1014 100%
-          );
+        background: radial-gradient(
+          ellipse 110% 75% at 50% 0%,
+          #1c4842 0%,
+          #133631 26%,
+          #0a1e1d 58%,
+          #0a1014 100%
+        );
       }
 
       /* Nav-Backdrop: rgba ist hardcoded, daher dark-override */
@@ -1798,10 +1819,18 @@
         height: 14px;
         display: block;
       }
-      .theme-toggle .sun  { display: none; }
-      .theme-toggle .moon { display: block; }
-      [data-theme='night'] .theme-toggle .sun  { display: block; }
-      [data-theme='night'] .theme-toggle .moon { display: none; }
+      .theme-toggle .sun {
+        display: none;
+      }
+      .theme-toggle .moon {
+        display: block;
+      }
+      [data-theme='night'] .theme-toggle .sun {
+        display: block;
+      }
+      [data-theme='night'] .theme-toggle .moon {
+        display: none;
+      }
     </style>
 
     <!-- Analytics -->
@@ -1862,7 +1891,12 @@
             aria-label="Dunkles Theme aktivieren"
             onclick="toggleTheme()"
           >
-            <svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <svg
+              class="moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
               <path
                 d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"
                 stroke="currentColor"
@@ -1872,7 +1906,13 @@
               />
             </svg>
             <svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
               <path
                 d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
                 stroke="currentColor"
@@ -2073,11 +2113,7 @@
                 stroke-dasharray="2 2"
               />
               <!-- MV-Monogramm: M (ink) + V (teal) -->
-              <g
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path
                   d="M261 277 V263 M279 277 V263"
                   stroke="var(--ink)"
@@ -2969,7 +3005,11 @@
     <!-- ═══════════════ VERDICT-BAR — Pre-CTA Transition ═══════════════ -->
     <aside class="verdict-bar" aria-label="Empfehlung">
       <div class="wrap">
-        <strong>Erst <em class="serif">Analyse,</em> dann Lösung — und am Ende ein System, das ohne mich weiterläuft.</strong>
+        <strong
+          >Erst <em class="serif">Analyse,</em> dann Lösung.
+          <em class="serif">Sprint</em> findet den Use Case,
+          <em class="serif">Build</em> liefert ihn produktiv aus.</strong
+        >
       </div>
     </aside>
 
@@ -3046,27 +3086,37 @@
         if (btn)
           btn.setAttribute(
             'aria-label',
-            next === 'night' ? 'Helles Theme aktivieren' : 'Dunkles Theme aktivieren'
+            next === 'night'
+              ? 'Helles Theme aktivieren'
+              : 'Dunkles Theme aktivieren',
           );
       }
       // Sync aria-label auf Initial-Load
       (function () {
-        var current = document.documentElement.getAttribute('data-theme') || 'light';
+        var current =
+          document.documentElement.getAttribute('data-theme') || 'light';
         var btn = document.getElementById('theme-toggle');
         if (btn)
           btn.setAttribute(
             'aria-label',
-            current === 'night' ? 'Helles Theme aktivieren' : 'Dunkles Theme aktivieren'
+            current === 'night'
+              ? 'Helles Theme aktivieren'
+              : 'Dunkles Theme aktivieren',
           );
       })();
       // System-Preference-Changes folgen, falls User nichts explizit gesetzt hat
       if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-          try {
-            if (localStorage.getItem('mv-theme')) return;
-          } catch (err) {}
-          document.documentElement.setAttribute('data-theme', e.matches ? 'night' : 'light');
-        });
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addEventListener('change', function (e) {
+            try {
+              if (localStorage.getItem('mv-theme')) return;
+            } catch (err) {}
+            document.documentElement.setAttribute(
+              'data-theme',
+              e.matches ? 'night' : 'light',
+            );
+          });
       }
     </script>
   </body>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <title>Modus Vey</title>
+  
+  <defs>
+    <mask id="mv-gap">
+      <rect width="24" height="24" fill="white"></rect>
+      <polygon points="6.1 7.4, 9.1 7.4, 12 13.2, 14.9 7.4, 17.9 7.4, 12 18.0" fill="black"></polygon>
+    </mask>
+  </defs>
+  <circle class="disc" cx="12" cy="12" r="11" mask="url(#mv-gap)"></circle>
+</svg>

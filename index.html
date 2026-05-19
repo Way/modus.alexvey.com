@@ -13,8 +13,26 @@
     <meta name="author" content="Alexander Vey" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://modus.alexvey.com/" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+    <link
+      rel="alternate icon"
+      type="image/png"
+      sizes="32x32"
+      href="/brand/favicon-32.png"
+    />
+    <link
+      rel="alternate icon"
+      type="image/png"
+      sizes="16x16"
+      href="/brand/favicon-16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/brand/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#15161A" />
 
     <!-- Theme init — prevents FOUC by setting data-theme before paint -->
     <script>
@@ -39,7 +57,10 @@
       property="og:description"
       content="KI-Beratung für den deutschen Mittelstand. Alexander Vey liefert in 30 Tagen einen produktiven KI-Use-Case — mit Methode, Festpreis und Klartext."
     />
-    <meta property="og:image" content="https://modus.alexvey.com/og.png" />
+    <meta
+      property="og:image"
+      content="https://modus.alexvey.com/brand/og.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Modus Vey — Methode statt Magie" />
@@ -53,7 +74,10 @@
       name="twitter:description"
       content="KI-Beratung für den deutschen Mittelstand. Alexander Vey liefert in 30 Tagen einen produktiven KI-Use-Case — mit Methode, Festpreis und Klartext."
     />
-    <meta name="twitter:image" content="https://modus.alexvey.com/og.png" />
+    <meta
+      name="twitter:image"
+      content="https://modus.alexvey.com/brand/og.png"
+    />
     <meta name="twitter:image:alt" content="Modus Vey — Methode statt Magie" />
 
     <!-- Structured Data -->
@@ -1846,35 +1870,30 @@
       <div class="nav-inner">
         <a href="#" class="nav-mark" aria-label="Modus Vey">
           <span class="glyph">
-            <svg viewBox="0 0 22 22" fill="none" aria-hidden="true">
-              <!-- Outer frame: die Karte -->
-              <rect
-                x="0.5"
-                y="0.5"
-                width="21"
-                height="21"
-                stroke="var(--ink)"
-                stroke-width="1"
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <!-- MV Notch Circle — V als Aussparung -->
+              <mask id="mv-nav-gap">
+                <rect width="24" height="24" fill="white" />
+                <polygon
+                  points="6.1 7.4, 9.1 7.4, 12 13.2, 14.9 7.4, 17.9 7.4, 12 18.0"
+                  fill="black"
+                />
+              </mask>
+              <circle
+                cx="12"
+                cy="12"
+                r="11"
+                fill="var(--ink)"
+                mask="url(#mv-nav-gap)"
               />
-              <!-- 4 Säulen: I Zuhören · II Verstehen · III Lösen · IV Liefern -->
-              <circle cx="5.5" cy="5.5" r="1.4" fill="var(--teal)" />
-              <circle cx="16.5" cy="5.5" r="1.4" fill="var(--ink)" />
-              <circle cx="16.5" cy="16.5" r="1.4" fill="var(--ink)" />
-              <circle cx="5.5" cy="16.5" r="1.4" fill="var(--ink)" />
-              <!-- M (Modus) — outer legs in ink -->
-              <path
-                d="M7.5 14 V8 M14.5 14 V8"
+              <circle
+                cx="12"
+                cy="12"
+                r="11.4"
+                fill="none"
                 stroke="var(--ink)"
-                stroke-width="1.1"
-                stroke-linecap="round"
-              />
-              <!-- V (Vey) — inner valley in teal -->
-              <path
-                d="M7.5 8 L11 12.5 L14.5 8"
-                stroke="var(--teal)"
-                stroke-width="1.1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                stroke-width="0.6"
+                opacity="0.4"
               />
             </svg>
           </span>

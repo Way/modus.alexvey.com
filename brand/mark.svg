@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <title>Modus Vey</title>
+  <desc>Notch Circle — V als Aussparung. Bottom-biased medium-V mit Outer-Ring.</desc>
+  <defs>
+    <mask id="mv-gap">
+      <rect width="24" height="24" fill="white"></rect>
+      <polygon points="6.1 7.4, 9.1 7.4, 12 13.2, 14.9 7.4, 17.9 7.4, 12 18.0" fill="black"></polygon>
+    </mask>
+  </defs>
+  <circle cx="12" cy="12" r="11" fill="#15161A" mask="url(#mv-gap)"></circle>
+  <circle cx="12" cy="12" r="11.4" fill="none" stroke="#15161A" stroke-width="0.6" opacity="0.4"></circle>
+</svg>

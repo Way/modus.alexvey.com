@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64">
+  <title>Modus Vey · on dark</title>
+  <g transform="translate(4 4)">
+    <g transform="scale(2.333)">
+      <defs>
+    <mask id="mv-gap-lock">
+      <rect width="24" height="24" fill="white"></rect>
+      <polygon points="6.1 7.4, 9.1 7.4, 12 13.2, 14.9 7.4, 17.9 7.4, 12 18.0" fill="black"></polygon>
+    </mask>
+  </defs>
+  <circle cx="12" cy="12" r="11" fill="#F4EFE5" mask="url(#mv-gap-lock)"></circle>
+  <circle cx="12" cy="12" r="11.4" fill="none" stroke="#F4EFE5" stroke-width="0.6" opacity="0.4"></circle>
+    </g>
+  </g>
+  <text x="76" y="42" font-family="Geist, Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="600" font-size="28" letter-spacing="-0.6" fill="#F4EFE5">Modus<tspan dx="6" fill="#2A7A6F">·</tspan><tspan dx="6">Vey</tspan></text>
+</svg>

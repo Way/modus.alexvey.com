@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modus Build · KI-Use-Case in 30 Tagen produktiv</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Modus Build: In 30 Tagen liefere ich einen KI-Use-Case lauffähig auf Ihren Daten. Der Code gehört Ihnen, die Architektur ist dokumentiert, Ihr Team betreibt das System weiter. Festpreis ab 18.000 €, EU-Hosting, DSGVO & AI Act."
+    />
+    <meta name="author" content="Alexander Vey" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://modus.alexvey.com/build/" />
+    <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+    <link
+      rel="alternate icon"
+      type="image/png"
+      sizes="32x32"
+      href="/brand/favicon-32.png"
+    />
+    <link
+      rel="alternate icon"
+      type="image/png"
+      sizes="16x16"
+      href="/brand/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#15161A" />
+
+    <!-- Theme init — prevents FOUC by setting data-theme before paint -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('mv-theme');
+          var system = window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'night'
+            : 'light';
+          document.documentElement.setAttribute('data-theme', saved || system);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://modus.alexvey.com/build/" />
+    <meta property="og:title" content="Modus Build · KI-Use-Case in 30 Tagen produktiv" />
+    <meta
+      property="og:description"
+      content="In 30 Tagen ein lauffähiger KI-Use-Case auf Ihren Daten. Der Code gehört Ihnen, die Architektur ist dokumentiert. Festpreis ab 18.000 €, EU-Hosting."
+    />
+    <meta property="og:image" content="https://modus.alexvey.com/brand/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Modus Vey — Methode statt Magie" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Modus Vey" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Modus Build · KI-Use-Case in 30 Tagen produktiv" />
+    <meta
+      name="twitter:description"
+      content="In 30 Tagen ein lauffähiger KI-Use-Case auf Ihren Daten. Code gehört Ihnen, Architektur dokumentiert. Ab 18.000 €, EU-Hosting."
+    />
+    <meta name="twitter:image" content="https://modus.alexvey.com/brand/og.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Service",
+            "@id": "https://modus.alexvey.com/build/#service",
+            "name": "Modus Build",
+            "serviceType": "KI Use-Case Implementierung",
+            "description": "30 Tage Implementierung eines klar abgegrenzten KI-Use-Case, lauffähig auf den Daten des Kunden. Code-Eigentum beim Kunden, dokumentierte Architektur, EU-Hosting, DSGVO- und AI-Act-konform.",
+            "provider": { "@id": "https://modus.alexvey.com/#person" },
+            "areaServed": { "@type": "Country", "name": "Deutschland" },
+            "offers": {
+              "@type": "Offer",
+              "price": "18000",
+              "priceCurrency": "EUR",
+              "description": "Festpreis ab 18.000 €, exakte Höhe nach Sprint oder Scoping. Ein durchgeführter Modus Sprint wird voll angerechnet."
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Modus Vey",
+                "item": "https://modus.alexvey.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Modus Build",
+                "item": "https://modus.alexvey.com/build/"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/module.css" />
+
+    <!-- Analytics -->
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="2fbba2cb-c37f-4a38-b6ef-2e90c5c9a5fe"
+    ></script>
+  </head>
+  <body>
+    <!-- ═══════════════ NAV ═══════════════ -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="/" class="nav-mark" aria-label="Modus Vey — Startseite">
+          <span class="glyph">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <!-- MV-Mark — Ring + Chevrons + Mittelbalken -->
+              <circle cx="12" cy="12" r="11" fill="none" stroke="var(--ink)" stroke-width="0.7" />
+              <circle cx="12" cy="12" r="11.5" fill="none" stroke="var(--ink)" stroke-width="0.42" opacity="0.4" />
+              <path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" fill="var(--ink)" />
+              <path d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z" fill="var(--ink)" />
+              <path d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z" fill="var(--ink)" />
+            </svg>
+          </span>
+          Modus<span class="dot"></span>Vey
+        </a>
+        <div class="nav-links">
+          <span class="nav-context">Modul&nbsp;·&nbsp;<strong>Build</strong></span>
+          <a href="/sprint/">Sprint</a>
+          <a href="/#methode">Methode</a>
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Dunkles Theme aktivieren"
+            onclick="toggleTheme()"
+          >
+            <svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <a href="/#kontakt" class="nav-cta">Erstgespräch</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <header class="module-hero">
+      <div class="wrap">
+        <div class="module-hero-grid">
+          <div class="module-hero-text">
+            <div class="eyebrow">Modul · II · Umsetzung</div>
+            <h1 class="display-xxl">
+              Dreißig Tage.<br /><span class="line-2">Ein System.</span>
+            </h1>
+            <p class="lead">
+              Ein Use Case, klar abgegrenzt, lauffähig auf Ihren Daten. Der Code
+              gehört Ihnen, die Architektur ist dokumentiert, und Ihr Team
+              betreibt das System ohne mich weiter.
+            </p>
+            <div class="hero-cta">
+              <a href="/#kontakt" class="btn btn-primary">
+                Erstgespräch vereinbaren
+                <span class="arrow">→</span>
+              </a>
+              <a href="/sprint/" class="btn btn-ghost">Woher der Use Case kommt</a>
+            </div>
+          </div>
+
+          <!-- Signatur: Architektur-Schichten -->
+          <div class="module-figure">
+            <span class="figure-dots" aria-hidden="true"><span></span></span>
+            <svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <!-- EU/DSGVO-Rahmen -->
+              <rect x="30" y="14" width="140" height="124" class="illu-bg-line" />
+              <text x="34" y="11" font-size="5.5" letter-spacing="0.14em" class="illu-faint">EU · DSGVO · AI ACT</text>
+
+              <!-- Schicht: Anwendung (oben) -->
+              <rect x="46" y="26" width="108" height="22" class="illu-stroke" />
+              <line x1="54" y1="37" x2="92" y2="37" class="illu-stroke" stroke-width="0.7" />
+              <circle cx="146" cy="37" r="2.4" class="illu-fill flow-dot" />
+              <text x="160" y="40" font-size="5.5" class="illu-faint">UI</text>
+
+              <!-- Schicht: Pipeline / RAG (mitte) -->
+              <rect x="46" y="64" width="108" height="22" class="illu-stroke" />
+              <g class="flow-anim">
+                <line x1="56" y1="75" x2="64" y2="75" class="illu-accent" stroke-width="1.6" />
+                <line x1="70" y1="75" x2="82" y2="75" class="illu-accent" stroke-width="1.6" />
+                <line x1="88" y1="75" x2="104" y2="75" class="illu-accent" stroke-width="1.6" />
+              </g>
+              <line x1="110" y1="75" x2="146" y2="75" class="illu-bg-line" />
+              <text x="160" y="78" font-size="5.5" class="illu-faint">RAG</text>
+
+              <!-- Schicht: Daten (unten) -->
+              <rect x="46" y="102" width="108" height="22" class="illu-stroke" />
+              <line x1="54" y1="108" x2="146" y2="108" class="illu-bg-line" />
+              <line x1="54" y1="113" x2="146" y2="113" class="illu-bg-line" />
+              <line x1="54" y1="118" x2="120" y2="118" class="illu-bg-line" />
+              <text x="160" y="116" font-size="5.5" class="illu-faint">DATA</text>
+
+              <!-- vertikale Verbindungen -->
+              <g class="illu-stroke" stroke-width="0.8">
+                <line x1="100" y1="48" x2="100" y2="64" />
+                <line x1="100" y1="86" x2="100" y2="102" />
+              </g>
+              <!-- Flusspfeile -->
+              <path d="M97 60 l3 4 l3 -4" class="illu-accent" stroke-width="1" fill="none" />
+              <path d="M97 98 l3 4 l3 -4" class="illu-accent" stroke-width="1" fill="none" />
+
+              <!-- Phasen-Marker links -->
+              <text x="40" y="40" text-anchor="end" font-size="5.5" class="illu-faint">IV</text>
+              <text x="40" y="78" text-anchor="end" font-size="5.5" class="illu-faint">III</text>
+              <text x="100" y="146" text-anchor="middle" font-size="5.5" letter-spacing="0.14em" class="illu-faint">PHASE III–IV · LÖSEN · LIEFERN</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- META BAR -->
+        <div class="meta-bar">
+          <div>
+            <span class="meta-num">30&thinsp;<em>Tage</em></span>
+            <span class="meta-label">bis zum produktiven System</span>
+          </div>
+          <div>
+            <span class="meta-num">ab 18.000&thinsp;<em>€</em></span>
+            <span class="meta-label">Festpreis nach Scoping</span>
+          </div>
+          <div>
+            <span class="meta-num">1&thinsp;<em>UC</em></span>
+            <span class="meta-label">ein Use Case, richtig</span>
+          </div>
+          <div>
+            <span class="meta-num">100&thinsp;<em>%</em></span>
+            <span class="meta-label">Code-Eigentum bei Ihnen</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════════════ PHASEN-LEISTE ═══════════════ -->
+    <section class="phase-rail-section">
+      <div class="wrap">
+        <div class="phase-rail-head">
+          <div class="eyebrow">Im Kreislauf</div>
+          <p>
+            Build übernimmt die zweite Hälfte des Kreislaufs: lösen und liefern.
+            Die Grundlage, zuhören und verstehen, liefert der Sprint oder ein
+            kurzes Scoping.
+          </p>
+        </div>
+        <div class="phase-rail">
+          <div class="phase phase--done">
+            <span class="phase-node"></span>
+            <span class="phase-rom">I</span>
+            <span class="phase-name">Zuhören</span>
+            <span class="phase-tag">Sprint</span>
+          </div>
+          <div class="phase phase--done">
+            <span class="phase-node"></span>
+            <span class="phase-rom">II</span>
+            <span class="phase-name">Verstehen</span>
+            <span class="phase-tag">Sprint</span>
+          </div>
+          <div class="phase phase--active">
+            <span class="phase-node"></span>
+            <span class="phase-rom">III</span>
+            <span class="phase-name">Lösen</span>
+            <span class="phase-tag">Build</span>
+          </div>
+          <div class="phase phase--active">
+            <span class="phase-node"></span>
+            <span class="phase-rom">IV</span>
+            <span class="phase-name">Liefern</span>
+            <span class="phase-tag">Build</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FÜR WEN ═══════════════ -->
+    <section class="module-section" id="passt">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Passt das? · 01</div>
+            <h2 class="display-xl">Ein Use Case.<br /><em class="serif">Richtig gebaut.</em></h2>
+          </div>
+          <p class="lead">
+            Ein sauber gebauter Use Case schlägt fünf halbfertige. Build
+            konzentriert sich auf einen, bringt ihn produktiv, und übergibt ihn
+            so, dass er ohne mich weiterläuft.
+          </p>
+        </div>
+
+        <div class="prose">
+          <p>
+            Die meisten KI-Projekte enden als Demo. Sie sehen im Termin gut aus,
+            laufen auf aufgeräumten Beispieldaten, und scheitern in dem Moment,
+            in dem die echten Daten reinkommen. Build dreht das um: Ihre Daten
+            zuerst, der Showcase später.
+          </p>
+          <p>
+            Am Ende steht ein System, das in Ihren Abläufen funktioniert. Der
+            Code liegt bei Ihnen, die Architektur ist dokumentiert, und die
+            Governance hält einer Prüfung stand. <strong>Kein Lock-in, keine
+            Blackbox, kein Dauer-Retainer.</strong> Ich baue mich bewusst raus.
+          </p>
+        </div>
+
+        <div class="fit-grid">
+          <div class="fit-col fit-col--yes">
+            <h3>Passt, wenn</h3>
+            <ul class="fit-list">
+              <li>der Use Case steht, aus einem Sprint oder weil er bei Ihnen ohnehin klar ist.</li>
+              <li>Sie ein produktives System wollen, keinen Prototyp für die Schublade.</li>
+              <li>Code und Wissen am Ende bei Ihnen liegen sollen, nicht beim Dienstleister.</li>
+              <li>Sie im regulierten Umfeld arbeiten und Datenschutz von Anfang an mitlaufen muss.</li>
+            </ul>
+          </div>
+          <div class="fit-col fit-col--no">
+            <h3>Eher nicht, wenn</h3>
+            <ul class="fit-list">
+              <li>noch unklar ist, welcher Use Case sich überhaupt lohnt. Dann erst der Sprint.</li>
+              <li>Sie zehn Dinge gleichzeitig automatisieren wollen. Build macht einen Use Case richtig, nicht fünf halb.</li>
+              <li>Sie ein Team zum Mitprogrammieren suchen statt ein fertiges System.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ABLAUF ═══════════════ -->
+    <section class="module-section num-bg" data-num="II">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Ablauf · 02</div>
+            <h2 class="display-xl">Dreißig Tage,<br /><em class="serif">vom Zugang zur Übergabe.</em></h2>
+          </div>
+          <p class="lead">
+            Früh lauffähig, dann gehärtet. Sie sehen nach wenigen Tagen einen
+            ersten Durchstich, statt vier Wochen auf ein großes Reveal zu warten.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-step tl-step--accent">
+            <div class="tl-day">Tag 01–05 · Lösen<span class="tl-phase-mark">Phase III</span></div>
+            <h3>Setup und Datenanbindung</h3>
+            <p>
+              Zugänge, sichere Umgebung in der EU, Anbindung an Ihre Datenquellen.
+              Das Fundament, auf dem alles andere steht. Unspektakulär, aber
+              entscheidend für alles, was DSGVO und AI Act später prüfen.
+            </p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-day">Tag 06–12</div>
+            <h3>Durchstich, die erste lauffähige Version</h3>
+            <p>
+              Der schmale Pfad von Anfang bis Ende steht: rein, verarbeiten,
+              raus. Noch roh, aber echt. Ab hier reden wir über ein laufendes
+              System statt über Folien, und Sie sehen früh, dass es trägt.
+            </p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-day">Tag 13–22</div>
+            <h3>Iteration auf Ihren echten Daten</h3>
+            <p>
+              Qualität, Edge Cases, die Fälle, die in der Theorie niemand bedacht
+              hat. Hier entscheidet sich, ob ein System im Alltag benutzbar ist
+              oder nur in der Demo. Wir arbeiten an Ihren Daten, nicht an
+              aufgeräumten Beispielen.
+            </p>
+          </div>
+          <div class="tl-step tl-step--accent">
+            <div class="tl-day">Tag 23–28 · Liefern<span class="tl-phase-mark">Phase IV</span></div>
+            <h3>Härtung, Integration, Governance</h3>
+            <p>
+              Einbindung in Ihre Systeme, Monitoring, und die Dokumentation, die
+              eine Prüfung übersteht. Betriebskonzept, Architekturentscheidungen,
+              Datenflüsse. Alles aufgeschrieben, nicht in meinem Kopf.
+            </p>
+          </div>
+          <div class="tl-step tl-step--accent">
+            <div class="tl-day">Tag 29–30 · Übergabe</div>
+            <h3>Code, Doku, Einweisung</h3>
+            <p>
+              Ihr Team bekommt den Quellcode, die Dokumentation und eine
+              Einweisung. Danach betreiben Sie das System selbst. Auf Wunsch
+              begleite ich den Betrieb, aber als Option, nicht als Abhängigkeit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ WAS SIE BEKOMMEN ═══════════════ -->
+    <section class="module-section">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Ergebnis · 03</div>
+            <h2 class="display-xl">Was Sie<br /><em class="serif">behalten.</em></h2>
+          </div>
+          <p class="lead">
+            Nicht eine Rechnung und ein Login zu meinem System. Vier Dinge, die
+            nach der Übergabe Ihnen gehören.
+          </p>
+        </div>
+
+        <div class="deliverables">
+          <div class="deliverable">
+            <div class="d-num">01</div>
+            <div class="d-icon">
+              <svg viewBox="0 0 38 38" aria-hidden="true">
+                <rect x="6" y="9" width="26" height="20" rx="1" class="illu-stroke" />
+                <line x1="6" y1="15" x2="32" y2="15" class="illu-stroke" stroke-width="1" />
+                <circle cx="9.5" cy="12.2" r="0.9" class="illu-fill" />
+                <circle cx="12.5" cy="12.2" r="0.9" class="illu-fill" />
+                <path d="M14 22 l3 3 l3 -3" class="illu-accent" />
+              </svg>
+            </div>
+            <h3>Das lauffähige System</h3>
+            <p>
+              Produktiv auf Ihren Daten, in der EU gehostet. Kein „läuft bei mir
+              lokal“, sondern ein System, das Ihre Leute morgen benutzen können.
+            </p>
+          </div>
+          <div class="deliverable">
+            <div class="d-num">02</div>
+            <div class="d-icon">
+              <svg viewBox="0 0 38 38" aria-hidden="true">
+                <path d="M14 12 l-7 7 l7 7" class="illu-stroke" fill="none" />
+                <path d="M24 12 l7 7 l-7 7" class="illu-stroke" fill="none" />
+                <line x1="21" y1="9" x2="17" y2="29" class="illu-accent" />
+              </svg>
+            </div>
+            <h3>Der Quellcode</h3>
+            <p>
+              Gehört Ihnen, vollständig. Kein Lizenzmodell, kein Lock-in, keine
+              Abhängigkeit von mir. Sie könnten morgen jemand anderen damit
+              weiterarbeiten lassen.
+            </p>
+          </div>
+          <div class="deliverable">
+            <div class="d-num">03</div>
+            <div class="d-icon">
+              <svg viewBox="0 0 38 38" aria-hidden="true">
+                <rect x="8" y="6" width="14" height="10" class="illu-stroke" />
+                <rect x="16" y="22" width="14" height="10" class="illu-accent" fill="none" />
+                <path d="M15 16 v3 h8 v3" class="illu-stroke" stroke-width="0.9" fill="none" />
+              </svg>
+            </div>
+            <h3>Dokumentierte Architektur</h3>
+            <p>
+              Diagramme, Betriebskonzept, die Entscheidungen und das Warum
+              dahinter. Damit Ihr Team versteht, was es betreibt, statt eine
+              Blackbox zu hüten.
+            </p>
+          </div>
+          <div class="deliverable">
+            <div class="d-num">04</div>
+            <div class="d-icon">
+              <svg viewBox="0 0 38 38" aria-hidden="true">
+                <path d="M19 5 L31 10 V19 C31 27 26 31 19 34 C12 31 7 27 7 19 V10 Z" class="illu-stroke" />
+                <path d="M14 19 l4 4 l7 -8" class="illu-accent" />
+              </svg>
+            </div>
+            <h3>Übergabe und Governance</h3>
+            <p>
+              Einweisung für Ihr Team, plus die Governance-Dokumentation für
+              DSGVO und AI Act. So übersteht das System nicht nur den Alltag,
+              sondern auch die Prüfung.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ERGEBNIS-BEISPIEL ═══════════════ -->
+    <section class="module-section module-section--tight">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">So sieht die Lösung aus · 04</div>
+            <h2 class="display-xl">Eine Skizze,<br /><em class="serif">illustrativ.</em></h2>
+          </div>
+          <p class="lead">
+            So ist ein typischer Build aufgebaut. Die Skizze unten ist ein
+            allgemeines Beispiel, kein Kundenprojekt. Ihre Architektur richtet
+            sich nach Ihrem Use Case.
+          </p>
+        </div>
+
+        <div class="artifact">
+          <div class="artifact-bar">
+            <span>Modus Build · Architektur-Skizze</span>
+            <span class="stamp">Beispiel-Darstellung</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; padding: 1rem 0.6rem">
+            <svg viewBox="0 0 320 230" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="width: 100%; height: auto">
+              <!-- EU-Rahmen -->
+              <rect x="8" y="20" width="304" height="200" fill="none" stroke="var(--bone-line-strong)" stroke-width="1" />
+              <text x="14" y="15" font-family="var(--mono)" font-size="9" letter-spacing="0.12em" fill="var(--ink-faint)">EU-HOSTING · DSGVO · AI ACT</text>
+
+              <!-- Anwendung -->
+              <rect x="40" y="36" width="240" height="40" fill="none" stroke="var(--ink)" stroke-width="1.2" />
+              <text x="52" y="60" font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">Anwendung / UI</text>
+              <text x="270" y="60" text-anchor="end" font-family="var(--mono)" font-size="8" fill="var(--teal)">IV</text>
+
+              <!-- Pipeline -->
+              <rect x="40" y="96" width="240" height="40" fill="none" stroke="var(--ink)" stroke-width="1.2" />
+              <text x="52" y="120" font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">Pipeline · RAG · Modell</text>
+              <text x="270" y="120" text-anchor="end" font-family="var(--mono)" font-size="8" fill="var(--teal)">III</text>
+              <circle cx="232" cy="116" r="3" fill="var(--teal)" />
+
+              <!-- Daten -->
+              <rect x="40" y="156" width="240" height="40" fill="none" stroke="var(--ink)" stroke-width="1.2" />
+              <text x="52" y="180" font-family="var(--mono)" font-size="10" fill="var(--ink-soft)">Ihre Daten / Systeme</text>
+              <text x="270" y="180" text-anchor="end" font-family="var(--mono)" font-size="8" fill="var(--ink-faint)">QUELLE</text>
+
+              <!-- Verbindungen -->
+              <line x1="160" y1="136" x2="160" y2="156" stroke="var(--ink)" stroke-width="1" />
+              <line x1="160" y1="76" x2="160" y2="96" stroke="var(--ink)" stroke-width="1" />
+              <path d="M156 90 l4 5 l4 -5" fill="none" stroke="var(--teal)" stroke-width="1.2" />
+              <path d="M156 150 l4 5 l4 -5" fill="none" stroke="var(--teal)" stroke-width="1.2" />
+            </svg>
+            <ul class="handover">
+              <li>Quellcode im Git Ihrer Wahl</li>
+              <li>Architektur-Diagramm</li>
+              <li>Betriebs- und Deploy-Anleitung</li>
+              <li>Monitoring eingerichtet</li>
+              <li>Governance-Doku (AI Act)</li>
+              <li>Einweisung Ihres Teams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ABGRENZUNG ═══════════════ -->
+    <section class="module-section">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Abgrenzung · 05</div>
+            <h2 class="display-xl">Klar, was<br /><em class="serif">Sie bekommen.</em></h2>
+          </div>
+          <p class="lead">
+            Build ist Umsetzung, kein Dauerzustand. Und Build setzt eine
+            durchgerechnete Grundlage voraus, sonst bauen wir ins Blaue.
+          </p>
+        </div>
+
+        <div class="scope-grid">
+          <div class="scope-block scope-block--is">
+            <h3>Build ist</h3>
+            <ul class="scope-list">
+              <li>ein produktiv lauffähiger Use Case auf Ihren Daten.</li>
+              <li>Code und Architektur, die Ihnen gehören.</li>
+              <li>ein System, das Ihr Team ohne mich weiterbetreibt.</li>
+              <li>Governance-Doku, die einer Prüfung standhält.</li>
+            </ul>
+          </div>
+          <div class="scope-block">
+            <h3>Build ist nicht</h3>
+            <ul class="scope-list">
+              <li>keine Bastel-Demo und kein Prototyp ohne Betrieb.</li>
+              <li>keine Plattform für zehn Use Cases auf einmal.</li>
+              <li>kein Dauer-Retainer; ich baue mich bewusst raus.</li>
+              <li>keine Blackbox, die nur mit mir läuft.</li>
+            </ul>
+          </div>
+          <div class="scope-block scope-block--req">
+            <h3>Voraussetzungen</h3>
+            <ul class="scope-list">
+              <li>ein klar abgegrenzter Use Case, aus einem Sprint oder bei Ihnen bereits definiert.</li>
+              <li>Zugang zu den relevanten Daten und Systemen.</li>
+              <li>ein fachlicher Ansprechpartner, der Fragen beantwortet.</li>
+              <li>ohne klaren Use Case: erst <a href="/sprint/" style="color: var(--teal); text-decoration: underline">Modus Sprint</a>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ VERGLEICH SPRINT / BUILD ═══════════════ -->
+    <section class="module-section module-section--tight">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Im Vergleich · 06</div>
+            <h2 class="display-xl">Build<br /><em class="serif">oder Sprint?</em></h2>
+          </div>
+          <p class="lead">
+            Beide stehen für sich. Build liefert das Wie, Sprint klärt vorher das
+            Ob und Was. Steht Ihr Use Case schon, reden wir direkt über Build.
+          </p>
+        </div>
+
+        <div class="matrix-wrap">
+          <table class="matrix">
+            <thead>
+              <tr>
+                <th class="row-label">&nbsp;</th>
+                <th>
+                  Modus <em>Sprint</em><span class="th-tag">Einstiegspunkt · I</span>
+                </th>
+                <th class="col-active">
+                  Modus <em>Build</em><span class="th-tag">Umsetzung · II</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-label">Ziel</td>
+                <td>Klarheit, welcher Use Case sich lohnt</td>
+                <td class="col-active">Ein Use Case läuft produktiv auf Ihren Daten</td>
+              </tr>
+              <tr>
+                <td class="row-label">Dauer</td>
+                <td>10 Arbeitstage</td>
+                <td class="col-active">30 Tage</td>
+              </tr>
+              <tr>
+                <td class="row-label">Ergebnis</td>
+                <td>Fahrplan + Festpreis-Angebot</td>
+                <td class="col-active">Lauffähiges System + dokumentierte Architektur</td>
+              </tr>
+              <tr>
+                <td class="row-label">Preis</td>
+                <td>3.500 € fix</td>
+                <td class="col-active">ab 18.000 €, fix nach Scoping</td>
+              </tr>
+              <tr>
+                <td class="row-label">Voraussetzung</td>
+                <td>ein realer Schmerzpunkt</td>
+                <td class="col-active">klarer Use Case + Datenzugang (oder Sprint davor)</td>
+              </tr>
+              <tr>
+                <td class="row-label">Code &amp; Eigentum</td>
+                <td>kein Code, reine Analyse</td>
+                <td class="col-active">der Code gehört Ihnen</td>
+              </tr>
+              <tr>
+                <td class="row-label">Sinnvoll, wenn</td>
+                <td>Sie noch nicht wissen, wo KI ansetzt</td>
+                <td class="col-active">der Use Case steht und umgesetzt werden soll</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ KONDITIONEN ═══════════════ -->
+    <section class="module-section module-section--tight">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Konditionen · 07</div>
+            <h2 class="display-xl">Festpreis,<br /><em class="serif">nicht Tagessatz.</em></h2>
+          </div>
+          <p class="lead">
+            Sie bekommen eine Zahl, bevor wir starten, nicht eine Rechnung, die
+            mit jeder Stunde wächst. Der genaue Preis hängt an Datenlage und
+            Integrationstiefe, festgelegt im Sprint oder einem kurzen Scoping.
+          </p>
+        </div>
+        <div class="meta-bar">
+          <div>
+            <span class="meta-num">ab 18.000&thinsp;<em>€</em></span>
+            <span class="meta-label">Festpreis, netto</span>
+          </div>
+          <div>
+            <span class="meta-num">−3.500&thinsp;<em>€</em></span>
+            <span class="meta-label">bei vorherigem Sprint</span>
+          </div>
+          <div>
+            <span class="meta-num">30&thinsp;<em>Tage</em></span>
+            <span class="meta-label">von Setup bis Übergabe</span>
+          </div>
+          <div>
+            <span class="meta-num">EU&thinsp;<em>only</em></span>
+            <span class="meta-label">Hosting, DSGVO &amp; AI Act</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <section class="module-section">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Fragen · 08</div>
+            <h2 class="display-xl">Bevor Sie<br /><em class="serif">fragen.</em></h2>
+          </div>
+          <p class="lead">
+            Das höre ich am häufigsten. Wenn Ihre Frage fehlt, stellen Sie sie im
+            Erstgespräch.
+          </p>
+        </div>
+
+        <div class="faq">
+          <details class="faq-item">
+            <summary>Warum „ab“ 18.000 €? Wovon hängt der Preis ab?</summary>
+            <div class="faq-a">
+              Der genaue Festpreis steht nach dem Sprint oder einem kurzen
+              Scoping. Er hängt an Datenlage und Integrationstiefe, nicht an
+              Tagessätzen. Sie bekommen die Zahl, <strong>bevor</strong> wir
+              anfangen, nicht als Überraschung danach.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Kann ich Build ohne Sprint buchen?</summary>
+            <div class="faq-a">
+              Ja, wenn der Use Case klar abgegrenzt ist und ich Zugang zu den
+              Daten bekomme. Fehlt diese Grundlage, machen wir vorab ein kurzes
+              Scoping oder den <a href="/sprint/" style="color: var(--teal)">Sprint</a>.
+              Ohne klaren Use Case zu bauen heißt, ins Blaue zu bauen. Das mache
+              ich nicht.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Gehört uns der Code wirklich?</summary>
+            <div class="faq-a">
+              Ja, vollständig. Kein Lizenzmodell, kein Lock-in, keine
+              Abhängigkeit von mir. Ich baue bewusst so, dass Ihr Team das System
+              ohne mich weiterbetreibt. Das ist der Punkt, nicht ein Nebeneffekt.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Was passiert nach den 30 Tagen?</summary>
+            <div class="faq-a">
+              Sie betreiben das System. Auf Wunsch begleite ich den Betrieb, aber
+              als Option, nicht als Pflicht. Der Normalfall ist: Übergabe,
+              Einweisung, fertig. Ein Dauer-Retainer ist ausdrücklich nicht das
+              Geschäftsmodell.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Wie steht es um Datenschutz und AI Act?</summary>
+            <div class="faq-a">
+              EU-Hosting, DSGVO-konform, mit einer Governance-Doku, die einer
+              Prüfung standhält. <strong>PSD2, XS2A, EU AI Act und DSGVO</strong>
+              sind mein täglicher Arbeitskontext im Open Banking, kein
+              aufgesetztes Zusatzpaket.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ÜBERGANGSBAND ← SPRINT ═══════════════ -->
+    <section class="transition" aria-label="Zurück zu Modus Sprint">
+      <svg class="transition-path" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M1220 150 C 900 150, 820 50, 500 50 S 100 60, -40 60" />
+        <circle cx="500" cy="50" r="4" />
+      </svg>
+      <div class="wrap">
+        <div class="transition-grid">
+          <div>
+            <div class="transition-eyebrow">Die Grundlage · Phase I–II</div>
+            <h2>
+              Noch kein klarer Use Case?
+              <em>Modus Sprint</em> findet ihn.
+            </h2>
+            <p>
+              Build setzt auf eine durchgerechnete Grundlage. Die liefert der
+              Sprint in 10 Tagen, samt Festpreis für genau diesen Build, und ich
+              rechne die 3.500 € voll an.
+            </p>
+          </div>
+          <div></div>
+          <a href="/sprint/" class="btn-transition">
+            Modus Sprint ansehen
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CLOSING CTA → /#kontakt ═══════════════ -->
+    <section class="dark-section final">
+      <svg class="final-orbit" viewBox="0 0 800 800" aria-hidden="true">
+        <circle cx="400" cy="400" r="120" />
+        <circle cx="400" cy="400" r="200" />
+        <circle cx="400" cy="400" r="290" />
+        <circle cx="400" cy="400" r="380" />
+      </svg>
+      <div class="wrap">
+        <div class="final-content">
+          <div class="eyebrow" style="margin-bottom: 0; justify-content: center; color: #d4a574">
+            Reden wir · IX
+          </div>
+          <h2 class="display-xxl">Use Case<br /><em class="serif">im Kopf?</em></h2>
+          <p class="lead" style="margin: 0 auto">
+            Erzählen Sie mir davon. Im Erstgespräch sage ich Ihnen ehrlich, ob er
+            in 30 Tagen produktiv steht, oder ob vorher noch etwas fehlt.
+          </p>
+          <div style="margin-top: 2.6rem">
+            <a href="/#kontakt" class="btn-transition">
+              Erstgespräch vereinbaren
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer>
+      <div class="wrap">
+        <div class="footer-inner">
+          <div>© 2026 Modus Vey · Alexander Vey · Kassel · Methode statt Magie</div>
+          <div>
+            <a href="/">Start</a>
+            <a href="/sprint/">Modus Sprint</a>
+            <a href="https://alexvey.com/impressum/">Impressum</a>
+            <a href="https://alexvey.com/datenschutz/">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Theme-Toggle Handler -->
+    <script>
+      function toggleTheme() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme') || 'light';
+        var next = current === 'night' ? 'light' : 'night';
+        html.setAttribute('data-theme', next);
+        try {
+          localStorage.setItem('mv-theme', next);
+        } catch (e) {}
+        var btn = document.getElementById('theme-toggle');
+        if (btn)
+          btn.setAttribute(
+            'aria-label',
+            next === 'night' ? 'Helles Theme aktivieren' : 'Dunkles Theme aktivieren',
+          );
+      }
+      (function () {
+        var current = document.documentElement.getAttribute('data-theme') || 'light';
+        var btn = document.getElementById('theme-toggle');
+        if (btn)
+          btn.setAttribute(
+            'aria-label',
+            current === 'night' ? 'Helles Theme aktivieren' : 'Dunkles Theme aktivieren',
+          );
+      })();
+      if (window.matchMedia) {
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addEventListener('change', function (e) {
+            try {
+              if (localStorage.getItem('mv-theme')) return;
+            } catch (err) {}
+            document.documentElement.setAttribute('data-theme', e.matches ? 'night' : 'light');
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -44,19 +44,14 @@
        LEFT TEXT AREA
   ═══════════════════════════════════════════ -->
 
-  <!-- Nav mark glyph: 4 Säulen + MV-Monogramm -->
-  <g transform="translate(80,54)">
-    <rect x="0.5" y="0.5" width="21" height="21" fill="none" stroke="rgba(244,239,229,0.55)" stroke-width="0.8"/>
-    <!-- 4 Säulen -->
-    <circle cx="5.5" cy="5.5" r="1.4" fill="#1E4F4A"/>
-    <circle cx="16.5" cy="5.5" r="1.4" fill="rgba(244,239,229,0.4)"/>
-    <circle cx="16.5" cy="16.5" r="1.4" fill="rgba(244,239,229,0.4)"/>
-    <circle cx="5.5" cy="16.5" r="1.4" fill="rgba(244,239,229,0.4)"/>
-    <!-- M legs -->
-    <path d="M7.5 14 V8 M14.5 14 V8" fill="none" stroke="rgba(244,239,229,0.7)" stroke-width="0.9" stroke-linecap="round"/>
-    <!-- V valley -->
-    <path d="M7.5 8 L11 12.5 L14.5 8" fill="none" stroke="#2A7A6F" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
+  <!-- Nav mark glyph: MV-Mark (Ring + Chevrons + Mittelbalken) -->
+  <svg x="80" y="54" width="22" height="22" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="11" fill="none" stroke="rgba(244,239,229,0.7)" stroke-width="0.7"/>
+    <circle cx="12" cy="12" r="11.5" fill="none" stroke="rgba(244,239,229,0.3)" stroke-width="0.42"/>
+    <path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" fill="rgba(244,239,229,0.85)"/>
+    <path d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z" fill="#2A7A6F"/>
+    <path d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z" fill="rgba(244,239,229,0.85)"/>
+  </svg>
   <!-- Wordmark -->
   <text x="110" y="69" fill="rgba(244,239,229,0.8)" font-family="'Geist',-apple-system,'Helvetica Neue',sans-serif" font-size="14" font-weight="500">Modus</text>
   <circle cx="153" cy="63.5" r="1.8" fill="#1E4F4A"/>
@@ -90,12 +85,12 @@
     <!-- Festpreis -->
     <rect x="158" y="436" width="70" height="20" rx="2" fill="rgba(30,79,74,0.18)" stroke="rgba(42,122,111,0.5)" stroke-width="0.8"/>
     <text x="193" y="450" text-anchor="middle" fill="#2A7A6F">Festpreis</text>
-    <!-- BAFA -->
-    <rect x="236" y="436" width="88" height="20" rx="2" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
-    <text x="280" y="450" text-anchor="middle" fill="#7E7A70">80% BAFA</text>
+    <!-- Sprint anrechenbar (hook) -->
+    <rect x="236" y="436" width="124" height="20" rx="2" fill="rgba(30,79,74,0.18)" stroke="rgba(42,122,111,0.5)" stroke-width="0.8"/>
+    <text x="298" y="450" text-anchor="middle" fill="#2A7A6F">Sprint anrechenbar</text>
     <!-- DSGVO -->
-    <rect x="332" y="436" width="72" height="20" rx="2" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
-    <text x="368" y="450" text-anchor="middle" fill="#7E7A70">EU · DSGVO</text>
+    <rect x="368" y="436" width="72" height="20" rx="2" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+    <text x="404" y="450" text-anchor="middle" fill="#7E7A70">EU · DSGVO</text>
   </g>
 
   <!-- Domain -->
@@ -217,14 +212,15 @@
   <text x="1036" y="476" fill="#7C8B7E" font-family="'JetBrains Mono','Courier New',monospace" font-size="9" letter-spacing="1">LÖSEN</text>
   <text x="754" y="476" text-anchor="end" fill="#7C8B7E" font-family="'JetBrains Mono','Courier New',monospace" font-size="9" letter-spacing="1">LIEFERN</text>
 
-  <!-- Center MODUS circle with MV-Monogramm -->
+  <!-- Center MODUS circle with AV-Mark -->
   <circle cx="895" cy="315" r="30" fill="#0E1014" stroke="rgba(244,239,229,0.18)" stroke-width="1"/>
   <circle cx="895" cy="315" r="19" fill="none" stroke="rgba(244,239,229,0.09)" stroke-width="0.5" stroke-dasharray="2 2"/>
-  <!-- MV-Monogramm: M (bone) + V (teal) -->
-  <g stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M886 322 V308 M904 322 V308" stroke="#F4EFE5" stroke-width="2.2"/>
-    <path d="M886 308 L895 319 L904 308" stroke="#2A7A6F" stroke-width="2.2"/>
-  </g>
+  <!-- MV-Mark: Chevrons + Mittelbalken (V in Teal, wie die Pfade) -->
+  <svg x="880" y="300" width="30" height="30" viewBox="0 0 24 24">
+    <path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" fill="#F4EFE5"/>
+    <path d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z" fill="#2A7A6F"/>
+    <path d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z" fill="#F4EFE5"/>
+  </svg>
   <text x="895" y="340" text-anchor="middle" fill="#7E7A70" font-family="'JetBrains Mono','Courier New',monospace" font-size="7.5">MODUS</text>
 
 </svg>

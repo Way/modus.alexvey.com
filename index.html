@@ -152,30 +152,12 @@
         <a href="#" class="nav-mark" aria-label="Modus Vey">
           <span class="glyph">
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <!-- MV Notch Circle — V als Aussparung -->
-              <mask id="mv-nav-gap">
-                <rect width="24" height="24" fill="white" />
-                <polygon
-                  points="6.1 7.4, 9.1 7.4, 12 13.2, 14.9 7.4, 17.9 7.4, 12 18.0"
-                  fill="black"
-                />
-              </mask>
-              <circle
-                cx="12"
-                cy="12"
-                r="11"
-                fill="var(--ink)"
-                mask="url(#mv-nav-gap)"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                r="11.4"
-                fill="none"
-                stroke="var(--ink)"
-                stroke-width="0.6"
-                opacity="0.4"
-              />
+              <!-- MV-Mark — Ring + Chevrons + Mittelbalken -->
+              <circle cx="12" cy="12" r="11" fill="none" stroke="var(--ink)" stroke-width="0.7" />
+              <circle cx="12" cy="12" r="11.5" fill="none" stroke="var(--ink)" stroke-width="0.42" opacity="0.4" />
+              <path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" fill="var(--ink)" />
+              <path d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z" fill="var(--ink)" />
+              <path d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z" fill="var(--ink)" />
             </svg>
           </span>
           Modus<span class="dot"></span>Vey
@@ -394,7 +376,7 @@
                 LIEFERN
               </text>
 
-              <!-- Zentrum (Modus) mit MV-Monogramm -->
+              <!-- Zentrum (Modus) mit AV-Mark -->
               <circle
                 cx="270"
                 cy="270"
@@ -412,19 +394,21 @@
                 stroke-width="0.5"
                 stroke-dasharray="2 2"
               />
-              <!-- MV-Monogramm: M (ink) + V (teal) -->
-              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <!-- MV-Mark: Chevrons + Mittelbalken (V in Teal, wie die Pfade) -->
+              <svg x="255" y="255" width="30" height="30" viewBox="0 0 24 24">
                 <path
-                  d="M261 277 V263 M279 277 V263"
-                  stroke="var(--ink)"
-                  stroke-width="2.2"
+                  d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z"
+                  fill="var(--ink)"
                 />
                 <path
-                  d="M261 263 L270 274 L279 263"
-                  stroke="var(--teal)"
-                  stroke-width="2.2"
+                  d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z"
+                  fill="var(--teal)"
                 />
-              </g>
+                <path
+                  d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z"
+                  fill="var(--ink)"
+                />
+              </svg>
               <text
                 x="270"
                 y="300"
@@ -1282,7 +1266,7 @@
                 <img
                   class="mark-light"
                   src="brand/mark.svg"
-                  alt="Modus Vey · Notch-Circle-Mark"
+                  alt="Modus Vey · AV-Monogramm"
                   width="512"
                   height="512"
                   loading="lazy"

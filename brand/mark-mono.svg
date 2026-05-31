@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
-  <title>Modus Vey</title>
-  <desc>Notch Circle — monochrom, übernimmt umgebende Textfarbe.</desc>
-  <defs>
-    <mask id="mv-gap">
-      <rect width="24" height="24" fill="white"></rect>
-      <polygon points="6.1 7.4, 9.1 7.4, 12 13.2, 14.9 7.4, 17.9 7.4, 12 18.0" fill="black"></polygon>
-    </mask>
-  </defs>
-  <circle cx="12" cy="12" r="11" mask="url(#mv-gap)"></circle>
-  <circle cx="12" cy="12" r="11.4" fill="none" stroke-width="0.6" opacity="0.4"></circle>
-</svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="0.7"></circle><circle cx="12" cy="12" r="11.5" fill="none" stroke="currentColor" stroke-width="0.42" opacity="0.4"></circle><path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" fill="currentColor"></path><path d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z" fill="currentColor"></path><path d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z" fill="currentColor"></path></svg>

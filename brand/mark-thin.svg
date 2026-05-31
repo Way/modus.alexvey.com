@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <title>Modus Vey</title>
-  <desc>Notch Circle — kompakt, ohne Outer-Ring (für 16-32px).</desc>
-  <defs>
-    <mask id="mv-gap">
-      <rect width="24" height="24" fill="white"></rect>
-      <polygon points="6.1 7.4, 9.1 7.4, 12 13.2, 14.9 7.4, 17.9 7.4, 12 18.0" fill="black"></polygon>
-    </mask>
-  </defs>
-  <circle cx="12" cy="12" r="11" fill="#15161A" mask="url(#mv-gap)"></circle>
-  
-</svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="none" stroke="#15161A" stroke-width="0.95"></circle><path d="M8.061 11.6 L12.15 2.399 L16.24 11.6 L14.16 11.6 L11.85 6.401 L9.539 11.6 Z" fill="#15161A"></path><path d="M7.76 12.4 L11.85 21.601 L15.939 12.4 L14.461 12.4 L12.15 17.599 L9.84 12.4 Z" fill="#15161A"></path><path d="M10.144 7.901 L13.856 7.901 L13.856 9.251 L10.144 9.251 Z" fill="#15161A"></path></svg>

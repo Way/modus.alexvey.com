@@ -881,6 +881,27 @@
         animation: pulse-tick 3s ease-in-out infinite;
       }
 
+      /* KOMPASS — pendelnde Nadel */
+      @keyframes compass-wander {
+        0%,
+        100% {
+          transform: rotate(-6deg);
+        }
+        30% {
+          transform: rotate(11deg);
+        }
+        55% {
+          transform: rotate(1deg);
+        }
+        78% {
+          transform: rotate(7deg);
+        }
+      }
+      .compass-wander {
+        transform-origin: center;
+        animation: compass-wander 9s ease-in-out infinite;
+      }
+
       /* Hover-Animationen für Modul-Illustrationen */
 
       /* BUILD — Datenfluss durch Pipeline */

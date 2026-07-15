@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modus Kompass · KI-Werkzeuge finden in 5 Tagen</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Modus Kompass: In 5 Arbeitstagen finde ich die fertigen KI-Werkzeuge, die Ihrem Team mindestens 5 Stunden pro Woche zurückgeben. Oder Sie zahlen nichts. 1.500 € fix, voll auf den Sprint anrechenbar."
+    />
+    <meta name="author" content="Alexander Vey" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://modus.alexvey.com/kompass/" />
+    <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+    <link
+      rel="alternate icon"
+      type="image/png"
+      sizes="32x32"
+      href="/brand/favicon-32.png"
+    />
+    <link
+      rel="alternate icon"
+      type="image/png"
+      sizes="16x16"
+      href="/brand/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#15161A" />
+
+    <!-- Theme init — prevents FOUC by setting data-theme before paint -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('mv-theme');
+          var system = window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'night'
+            : 'light';
+          document.documentElement.setAttribute('data-theme', saved || system);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://modus.alexvey.com/kompass/" />
+    <meta property="og:title" content="Modus Kompass · KI-Werkzeuge finden in 5 Tagen" />
+    <meta
+      property="og:description"
+      content="In 5 Arbeitstagen finde ich die fertigen KI-Werkzeuge, die Ihrem Team mindestens 5 Stunden pro Woche zurückgeben. Oder Sie zahlen nichts. 1.500 € fix, voll anrechenbar."
+    />
+    <meta property="og:image" content="https://modus.alexvey.com/brand/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Modus Vey — Methode statt Magie" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Modus Vey" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Modus Kompass · KI-Werkzeuge finden in 5 Tagen" />
+    <meta
+      name="twitter:description"
+      content="In 5 Arbeitstagen die KI-Werkzeuge, die Ihrem Team 5+ Stunden pro Woche zurückgeben. Oder Sie zahlen nichts. 1.500 € fix, voll anrechenbar."
+    />
+    <meta name="twitter:image" content="https://modus.alexvey.com/brand/og.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Service",
+            "@id": "https://modus.alexvey.com/kompass/#service",
+            "name": "Modus Kompass",
+            "serviceType": "KI-Werkzeug-Analyse",
+            "description": "5 Arbeitstage Werkzeug-Analyse für den Mittelstand: strukturiertes Interview, Stundenrechnung, 3 bis 7 fertige KI-Werkzeuge mit Quick-Win-Matrix und Plan für die erste Woche. Geld-zurück-Garantie: mindestens 5 gefundene Stunden pro Woche, sonst kostenfrei.",
+            "provider": { "@id": "https://modus.alexvey.com/#person" },
+            "areaServed": { "@type": "Country", "name": "Deutschland" },
+            "offers": {
+              "@type": "Offer",
+              "price": "1500",
+              "priceCurrency": "EUR",
+              "description": "Festpreis, voll auf einen anschließenden Modus Sprint anrechenbar. Geld-zurück-Garantie."
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Modus Vey",
+                "item": "https://modus.alexvey.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Modus Kompass",
+                "item": "https://modus.alexvey.com/kompass/"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/module.css" />
+
+    <!-- Analytics -->
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="2fbba2cb-c37f-4a38-b6ef-2e90c5c9a5fe"
+    ></script>
+  </head>
+  <body>
+    <!-- ═══════════════ NAV ═══════════════ -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="/" class="nav-mark" aria-label="Modus Vey — Startseite">
+          <span class="glyph">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <!-- MV-Mark — Ring + Chevrons + Mittelbalken -->
+              <circle cx="12" cy="12" r="11" fill="none" stroke="var(--ink)" stroke-width="0.7" />
+              <circle cx="12" cy="12" r="11.5" fill="none" stroke="var(--ink)" stroke-width="0.42" opacity="0.4" />
+              <path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" fill="var(--ink)" />
+              <path d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z" fill="var(--ink)" />
+              <path d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z" fill="var(--ink)" />
+            </svg>
+          </span>
+          Modus<span class="dot"></span>Vey
+        </a>
+        <div class="nav-links">
+          <span class="nav-context">Modul&nbsp;·&nbsp;<strong>Kompass</strong></span>
+          <a href="/sprint/">Sprint</a>
+          <a href="/#methode">Methode</a>
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Dunkles Theme aktivieren"
+            onclick="toggleTheme()"
+          >
+            <svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <a href="/#kontakt" class="nav-cta">Erstgespräch</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <header class="module-hero">
+      <div class="wrap">
+        <div class="module-hero-grid">
+          <div class="module-hero-text">
+            <div class="eyebrow">Modul · 0 · Einstieg</div>
+            <h1 class="display-xxl">
+              Fünf Tage.<br /><span class="line-2">Fünf Stunden.</span>
+            </h1>
+            <p class="lead">
+              Der Kompass findet in einer Arbeitswoche, wo fertige KI-Werkzeuge
+              Ihrem Team mindestens fünf Stunden zurückgeben. Pro Woche, jede
+              Woche. Finde ich die Stunden nicht, zahlen Sie nichts.
+            </p>
+            <div class="hero-cta">
+              <a href="/#kontakt" class="btn btn-primary">
+                Erstgespräch vereinbaren
+                <span class="arrow">→</span>
+              </a>
+              <a href="/sprint/" class="btn btn-ghost">Wie der Sprint darauf aufbaut</a>
+            </div>
+          </div>
+
+          <!-- Signatur: Kompassrose -->
+          <div class="module-figure">
+            <span class="figure-dots" aria-hidden="true"><span></span></span>
+            <svg viewBox="0 0 200 130" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <line x1="0" y1="65" x2="200" y2="65" class="illu-bg-line" />
+              <line x1="100" y1="0" x2="100" y2="130" class="illu-bg-line" />
+
+              <!-- Ringe -->
+              <circle cx="100" cy="68" r="46" class="illu-stroke" />
+              <circle cx="100" cy="68" r="41" class="illu-bg-line" />
+
+              <!-- Kardinal-Ticks -->
+              <g class="illu-stroke" stroke-width="1">
+                <line x1="100" y1="22" x2="100" y2="29" />
+                <line x1="100" y1="107" x2="100" y2="114" />
+                <line x1="54" y1="68" x2="61" y2="68" />
+                <line x1="139" y1="68" x2="146" y2="68" />
+              </g>
+
+              <!-- Interkardinal-Ticks -->
+              <g class="illu-stroke" stroke-width="0.7">
+                <line x1="132.5" y1="35.5" x2="129" y2="39" />
+                <line x1="132.5" y1="100.5" x2="129" y2="97" />
+                <line x1="67.5" y1="100.5" x2="71" y2="97" />
+                <line x1="67.5" y1="35.5" x2="71" y2="39" />
+              </g>
+
+              <!-- Nord-Markierung -->
+              <text x="100" y="16" text-anchor="middle" font-size="7" letter-spacing="0.1em" class="illu-faint">N</text>
+
+              <!-- Animierte Nadel -->
+              <g class="compass-wander" style="transform-origin: 100px 68px">
+                <polygon points="100,34 91.6,76.4 100,68 108.4,76.4" class="compass-needle" />
+                <polygon points="100,101.6 94.4,73.6 100,68 105.6,73.6" fill="var(--ink-faint)" />
+                <circle cx="100" cy="68" r="2.4" class="illu-fill" />
+              </g>
+
+              <!-- Achsen-Annotationen -->
+              <text x="8" y="66" font-size="6" letter-spacing="0.1em" class="illu-faint">5·TAGE</text>
+              <text x="158" y="66" font-size="6" letter-spacing="0.1em" class="illu-faint">1.500€</text>
+              <line x1="22" y1="120" x2="178" y2="120" class="illu-bg-line" />
+              <line x1="22" y1="118" x2="22" y2="122" class="illu-stroke" stroke-width="0.6" />
+              <line x1="178" y1="118" x2="178" y2="122" class="illu-stroke" stroke-width="0.6" />
+              <line x1="100" y1="118" x2="100" y2="122" class="illu-accent" stroke-width="1" />
+              <text x="100" y="130" text-anchor="middle" font-size="5.5" letter-spacing="0.14em" class="illu-faint">PHASE I–IV · MASSSTAB 1:10</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- META BAR -->
+        <div class="meta-bar">
+          <div>
+            <span class="meta-num">5&thinsp;<em>Tage</em></span>
+            <span class="meta-label">Arbeitstage bis zur Karte</span>
+          </div>
+          <div>
+            <span class="meta-num">1.500&thinsp;<em>€</em></span>
+            <span class="meta-label">Festpreis, keine Überraschung</span>
+          </div>
+          <div>
+            <span class="meta-num">5+&thinsp;<em>Std</em></span>
+            <span class="meta-label">pro Woche gefunden, oder 0 €</span>
+          </div>
+          <div>
+            <span class="meta-num">100&thinsp;<em>%</em></span>
+            <span class="meta-label">Anrechnung auf den Sprint</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════════════ PHASEN-LEISTE ═══════════════ -->
+    <section class="phase-rail-section">
+      <div class="wrap">
+        <div class="phase-rail-head">
+          <div class="eyebrow">Der Plan</div>
+          <p>
+            Jedes Modus-Vey-Projekt folgt demselben Plan: vier Phasen, feste
+            Reihenfolge. Der Kompass läuft in fünf Tagen einmal komplett durch,
+            auf Werkzeug-Ebene: fertige Tools statt eigener Systeme. Die große
+            Runde übernehmen Sprint und Build, wenn sie sich rechnet.
+          </p>
+        </div>
+        <div class="phase-rail">
+          <div class="phase phase--active">
+            <span class="phase-node"></span>
+            <span class="phase-rom">I</span>
+            <span class="phase-name">Zuhören</span>
+            <span class="phase-tag">Tag 1</span>
+          </div>
+          <div class="phase phase--active">
+            <span class="phase-node"></span>
+            <span class="phase-rom">II</span>
+            <span class="phase-name">Verstehen</span>
+            <span class="phase-tag">Tag 2–3</span>
+          </div>
+          <div class="phase phase--active">
+            <span class="phase-node"></span>
+            <span class="phase-rom">III</span>
+            <span class="phase-name">Lösen</span>
+            <span class="phase-tag">Tag 4</span>
+          </div>
+          <div class="phase phase--active">
+            <span class="phase-node"></span>
+            <span class="phase-rom">IV</span>
+            <span class="phase-name">Liefern</span>
+            <span class="phase-tag">Tag 5</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FÜR WEN ═══════════════ -->
+    <section class="module-section" id="passt">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Passt das? · 01</div>
+            <h2 class="display-xl">Erst orientieren.<br /><em class="serif">Dann investieren.</em></h2>
+          </div>
+          <p class="lead">
+            Die meisten Betriebe brauchen als ersten Schritt kein KI-Projekt.
+            Sie brauchen jemanden, der zuhört und dann sagt, welche drei
+            Werkzeuge sich diese Woche lohnen.
+          </p>
+        </div>
+
+        <div class="prose">
+          <p>
+            Genau das ist der Kompass: ein Rezept, keine Operation. Ich
+            verschreibe Werkzeuge, die es fertig zu kaufen gibt, und verdiene an
+            keinem davon. Gebaut wird nichts, installiert wird nichts, gebunden
+            werden Sie an nichts.
+          </p>
+          <p>
+            Die Rechnung dahinter ist unspektakulär. Fünf Stunden pro Woche sind
+            bei 60 € Stundensatz rund 15.000 € im Jahr. Die Werkzeuge, die diese
+            Stunden einsammeln, kosten zusammen meist unter 100 € im Monat.
+            Deshalb kann ich die Garantie anbieten: Finde ich keine fünf
+            Stunden, zahlen Sie nichts. Das Risiko liegt bei mir.
+          </p>
+        </div>
+
+        <div class="fit-grid">
+          <div class="fit-col fit-col--yes">
+            <h3>Passt, wenn</h3>
+            <ul class="fit-list">
+              <li>E-Mails, Angebote und Ablage Ihre Woche auffressen und Sie wissen wollen, was fertige KI-Werkzeuge davon übernehmen.</li>
+              <li>Sie KI ausprobieren wollen, ohne gleich ein Projekt zu starten oder ein Budget zu verteidigen.</li>
+              <li>in Ihrem Team 2 bis 50 Menschen regelmäßig am Schreibtisch arbeiten.</li>
+              <li>Tool-Listen und KI-Newsletter Ihnen bisher mehr Nebel als Orientierung gebracht haben.</li>
+            </ul>
+          </div>
+          <div class="fit-col fit-col--no">
+            <h3>Eher nicht, wenn</h3>
+            <ul class="fit-list">
+              <li>Sie ein System auf Ihren eigenen Daten brauchen. Dann ist der Sprint der richtige Einstieg.</li>
+              <li>Sie eine Strategie-Präsentation für die Geschäftsführung erwarten. Das mache ich nicht.</li>
+              <li>niemand im Betrieb 60 Minuten für ein einziges Gespräch übrig hat. Dann fehlt gerade die Grundlage.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ABLAUF ═══════════════ -->
+    <section class="module-section num-bg" data-num="0">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Ablauf · 02</div>
+            <h2 class="display-xl">Fünf Tage,<br /><em class="serif">Schritt für Schritt.</em></h2>
+          </div>
+          <p class="lead">
+            Ihr Aufwand: zwei Termine, zusammen 90 Minuten. Dazwischen arbeite
+            ich.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-step tl-step--accent">
+            <div class="tl-day">Tag 01 · Zuhören<span class="tl-phase-mark">Phase I</span></div>
+            <h3>Das Gespräch</h3>
+            <p>
+              60 Minuten mit den Menschen, die die Arbeit täglich machen. Meine
+              Lieblingsfrage: Welchen Prozess würden Sie löschen, wenn Sie einen
+              Zauberstab hätten? Die Antwort zeigt fast immer auf denselben
+              Stapel: E-Mail, Angebote, Ablage, Doppeleingaben.
+            </p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-day">Tag 02–03 · Verstehen<span class="tl-phase-mark">Phase II</span></div>
+            <h3>Nachrechnen statt raten</h3>
+            <p>
+              Ich zerlege das Gespräch in wiederkehrende Handgriffe und rechne
+              nach, wo die Stunden versickern. Dabei prüfe ich früh, welche
+              Daten überhaupt an ein Werkzeug gehen dürfen. DSGVO ist Teil der
+              Auswahl, kein Anhang.
+            </p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-day">Tag 04 · Lösen<span class="tl-phase-mark">Phase III</span></div>
+            <h3>Werkzeuge auswählen</h3>
+            <p>
+              Drei bis sieben fertige Werkzeuge, jedes gegen Aufwand und Wirkung
+              gestellt. Der Markt ruft zehntausend Tools aus. Auf Ihre Karte
+              kommen nur die, die zu Ihrem Betrieb, Ihrem Budget und Ihrem
+              Datenschutz passen.
+            </p>
+          </div>
+          <div class="tl-step tl-step--accent">
+            <div class="tl-day">Tag 05 · Liefern<span class="tl-phase-mark">Phase IV</span></div>
+            <h3>Die Übergabe</h3>
+            <p>
+              30 Minuten, gemeinsam durch die Karte. Wir planen die erste Woche:
+              welches Werkzeug zuerst, wer probiert es aus, woran Sie den Effekt
+              messen. Danach entscheiden Sie in Ruhe, ob Sie mehr wollen. Ohne
+              Drängeln.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ WAS SIE BEKOMMEN ═══════════════ -->
+    <section class="module-section">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Ergebnis · 03</div>
+            <h2 class="display-xl">Eine Karte,<br /><em class="serif">vier Bausteine.</em></h2>
+          </div>
+          <p class="lead">
+            Bewusst einfach gehalten. Eine Karte, die verwirrt, wird nicht
+            umgesetzt, spart keine Stunde und war ihr Geld nicht wert.
+          </p>
+        </div>
+
+        <div class="deliverables">
+          <div class="deliverable">
+            <div class="d-num">01</div>
+            <div class="d-icon">
+              <svg viewBox="0 0 38 38" aria-hidden="true">
+                <rect x="7" y="7" width="24" height="24" class="illu-stroke" />
+                <path d="M11 26 L16 17 L22 21 L27 12" class="illu-accent" fill="none" />
+                <circle cx="27" cy="12" r="2.5" class="illu-fill" />
+                <line x1="11" y1="11" x2="17" y2="11" class="illu-stroke" stroke-width="0.8" />
+              </svg>
+            </div>
+            <h3>Die Standortkarte</h3>
+            <p>
+              Eine Seite: wo Ihr Betrieb steht, wo Zeit versickert, was zuerst
+              dran ist. Wer dafür mehr als eine Seite braucht, hat nicht
+              priorisiert.
+            </p>
+          </div>
+          <div class="deliverable">
+            <div class="d-num">02</div>
+            <div class="d-icon">
+              <svg viewBox="0 0 38 38" aria-hidden="true">
+                <rect x="7" y="15" width="24" height="14" class="illu-stroke" />
+                <path d="M14 15 V11 H24 V15" class="illu-stroke" fill="none" />
+                <line x1="19" y1="15" x2="19" y2="29" class="illu-stroke" stroke-width="0.8" />
+                <line x1="15" y1="21" x2="23" y2="21" class="illu-accent" />
+              </svg>
+            </div>
+            <h3>Der Werkzeugkasten</h3>
+            <p>
+              Drei bis sieben fertige Werkzeuge, jedes mit Preis,
+              Datenschutz-Einschätzung und dem Grund, warum genau dieses. Keine
+              Liste zum Selbst-Aussortieren.
+            </p>
+          </div>
+          <div class="deliverable">
+            <div class="d-num">03</div>
+            <div class="d-icon">
+              <svg viewBox="0 0 38 38" aria-hidden="true">
+                <line x1="8" y1="6" x2="8" y2="32" class="illu-stroke" />
+                <line x1="8" y1="32" x2="32" y2="32" class="illu-stroke" />
+                <circle cx="14" cy="12" r="3" class="illu-accent" fill="none" />
+                <circle cx="14" cy="12" r="1.2" class="illu-fill" />
+                <circle cx="22" cy="18" r="1.5" fill="var(--ink-faint)" />
+                <circle cx="27" cy="26" r="1.5" fill="var(--ink-faint)" />
+              </svg>
+            </div>
+            <h3>Die Quick-Win-Matrix</h3>
+            <p>
+              Aufwand gegen Wirkung. Links oben stehen die Gewinner: große
+              Wirkung, kleiner Aufwand, diese Woche startbar.
+            </p>
+          </div>
+          <div class="deliverable">
+            <div class="d-num">04</div>
+            <div class="d-icon">
+              <svg viewBox="0 0 38 38" aria-hidden="true">
+                <circle cx="19" cy="19" r="13" class="illu-stroke" />
+                <path d="M19 6 A13 13 0 0 1 30.3 12.5" class="illu-accent" fill="none" />
+                <line x1="19" y1="19" x2="19" y2="10" class="illu-stroke" stroke-width="1" />
+                <line x1="19" y1="19" x2="26" y2="19" class="illu-stroke" stroke-width="1" />
+              </svg>
+            </div>
+            <h3>Die Stundenrechnung</h3>
+            <p>
+              Wo die fünf Stunden pro Woche stecken, Handgriff für Handgriff
+              gerechnet. Auf ihr steht die Garantie: Finde ich sie nicht, zahlen
+              Sie nichts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ERGEBNIS-BEISPIEL ═══════════════ -->
+    <section class="module-section module-section--tight">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">So sieht die Karte aus · 04</div>
+            <h2 class="display-xl">Ein Auszug,<br /><em class="serif">illustrativ.</em></h2>
+          </div>
+          <p class="lead">
+            Die Zeilen unten sind ein erfundenes Beispiel, kein Kundenprojekt.
+            Aber so konkret liest sich die Karte: Werkzeug, Aufwand, Wirkung,
+            Kosten, Start.
+          </p>
+        </div>
+
+        <div class="artifact">
+          <div class="artifact-bar">
+            <span>Modus Kompass · Karten-Auszug</span>
+            <span class="stamp">Beispiel-Darstellung</span>
+          </div>
+          <table class="usecase-table">
+            <thead>
+              <tr>
+                <th>Empfehlung</th>
+                <th>Aufwand</th>
+                <th>Wirkung</th>
+                <th class="uc-hide-sm">Kosten</th>
+                <th>Start</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="uc-name">E-Mail-Entwürfe direkt im Postfach</td>
+                <td><span class="pegel"><i class="on"></i><i></i><i></i></span></td>
+                <td><span class="pegel"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+                <td class="uc-hide-sm">~20 €/Monat</td>
+                <td class="uc-rec">→ diese Woche</td>
+              </tr>
+              <tr>
+                <td class="uc-name">Gesprächsnotizen automatisch mitschreiben</td>
+                <td><span class="pegel"><i class="on"></i><i></i><i></i></span></td>
+                <td><span class="pegel"><i class="on"></i><i class="on"></i><i></i></span></td>
+                <td class="uc-hide-sm">~15 €/Monat</td>
+                <td class="uc-rec">→ diese Woche</td>
+              </tr>
+              <tr>
+                <td class="uc-name">Angebotstexte aus Bausteinen erzeugen</td>
+                <td><span class="pegel"><i class="on"></i><i class="on"></i><i></i></span></td>
+                <td><span class="pegel"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+                <td class="uc-hide-sm">~30 €/Monat</td>
+                <td class="uc-rec">→ Woche 2</td>
+              </tr>
+              <tr>
+                <td class="uc-name">Kundenservice komplett automatisieren</td>
+                <td><span class="pegel"><i class="warn"></i><i class="warn"></i><i class="warn"></i></span></td>
+                <td><span class="pegel"><i class="on"></i><i class="on"></i><i></i></span></td>
+                <td class="uc-hide-sm">vierstellig</td>
+                <td class="uc-park">geparkt · zu früh</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ABGRENZUNG ═══════════════ -->
+    <section class="module-section">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Abgrenzung · 05</div>
+            <h2 class="display-xl">Rezept,<br /><em class="serif">keine Apotheke.</em></h2>
+          </div>
+          <p class="lead">
+            Damit es keine Missverständnisse gibt: Der Kompass empfiehlt.
+            Eingeführt, gebaut und geschult wird danach, wenn Sie es wollen.
+          </p>
+        </div>
+
+        <div class="scope-grid">
+          <div class="scope-block scope-block--is">
+            <h3>Kompass ist</h3>
+            <ul class="scope-list">
+              <li>eine Werkzeug-Verschreibung mit Rechnung dahinter.</li>
+              <li>unabhängig: keine Provision, kein Affiliate, keine Anbieter-Partnerschaft.</li>
+              <li>der günstigste Weg herauszufinden, ob KI bei Ihnen trägt.</li>
+              <li>zu 100 % auf den Sprint anrechenbar.</li>
+            </ul>
+          </div>
+          <div class="scope-block">
+            <h3>Kompass ist nicht</h3>
+            <ul class="scope-list">
+              <li>keine Einführung, keine Schulung, kein Projektstart.</li>
+              <li>kein eigenes System auf Ihren Daten. Dafür gibt es Sprint und Build.</li>
+              <li>kein 80-Seiten-Gutachten. Eine Karte, die man benutzt.</li>
+              <li>keine Software, die ich Ihnen verkaufe.</li>
+            </ul>
+          </div>
+          <div class="scope-block scope-block--req">
+            <h3>Voraussetzungen</h3>
+            <ul class="scope-list">
+              <li>60 Minuten mit den Menschen, die die Arbeit machen.</li>
+              <li>Ehrlichkeit darüber, wie der Alltag wirklich läuft.</li>
+              <li>Schreibtischarbeit im Betrieb: E-Mail, Angebote, Verwaltung.</li>
+              <li>jemand am Tisch, der entscheiden darf.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ VERGLEICH KOMPASS / SPRINT ═══════════════ -->
+    <section class="module-section module-section--tight">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Im Vergleich · 06</div>
+            <h2 class="display-xl">Kompass<br /><em class="serif">oder Sprint?</em></h2>
+          </div>
+          <p class="lead">
+            Beide stehen für sich. Der Kompass verschreibt fertige Werkzeuge,
+            der Sprint vermisst eigene Use Cases. Wer unsicher ist, startet mit
+            dem Kompass: Er ist der kleinste erste Schritt.
+          </p>
+        </div>
+
+        <div class="matrix-wrap">
+          <table class="matrix">
+            <thead>
+              <tr>
+                <th class="row-label">&nbsp;</th>
+                <th class="col-active">
+                  Modus <em>Kompass</em><span class="th-tag">Einstieg · 0</span>
+                </th>
+                <th>
+                  Modus <em>Sprint</em><span class="th-tag">Analyse · I</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-label">Ziel</td>
+                <td class="col-active">Fertige Werkzeuge, die sofort Zeit sparen</td>
+                <td>Klarheit, welcher eigene Use Case sich lohnt</td>
+              </tr>
+              <tr>
+                <td class="row-label">Dauer</td>
+                <td class="col-active">5 Arbeitstage</td>
+                <td>10 Arbeitstage</td>
+              </tr>
+              <tr>
+                <td class="row-label">Ergebnis</td>
+                <td class="col-active">Standortkarte + Werkzeugkasten</td>
+                <td>Fahrplan + Festpreis-Angebot für den Build</td>
+              </tr>
+              <tr>
+                <td class="row-label">Preis</td>
+                <td class="col-active">1.500 € fix</td>
+                <td>3.500 € fix</td>
+              </tr>
+              <tr>
+                <td class="row-label">Garantie</td>
+                <td class="col-active">5 Std pro Woche gefunden, oder 0 €</td>
+                <td>ehrliche Absage ist ein Ergebnis</td>
+              </tr>
+              <tr>
+                <td class="row-label">Anrechnung</td>
+                <td class="col-active">100 % auf den Sprint</td>
+                <td>100 % auf den Build</td>
+              </tr>
+              <tr>
+                <td class="row-label">Sinnvoll, wenn</td>
+                <td class="col-active">Sie schnell und günstig anfangen wollen</td>
+                <td>ein eigenes System im Raum steht</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ KONDITIONEN ═══════════════ -->
+    <section class="module-section module-section--tight">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Konditionen · 07</div>
+            <h2 class="display-xl">Ein Preis,<br /><em class="serif">eine Garantie.</em></h2>
+          </div>
+          <p class="lead">
+            Der Kompass ist der kleinste Baustein bei Modus Vey und der einzige
+            mit Geld-zurück-Garantie. Er soll die erste Entscheidung leicht
+            machen, nicht selbst zur Hürde werden.
+          </p>
+        </div>
+        <div class="meta-bar">
+          <div>
+            <span class="meta-num">1.500&thinsp;<em>€</em></span>
+            <span class="meta-label">Festpreis, netto</span>
+          </div>
+          <div>
+            <span class="meta-num">5&thinsp;<em>Tage</em></span>
+            <span class="meta-label">vom Gespräch bis zur Karte</span>
+          </div>
+          <div>
+            <span class="meta-num">5+&thinsp;<em>Std</em></span>
+            <span class="meta-label">pro Woche gefunden, oder 0 €</span>
+          </div>
+          <div>
+            <span class="meta-num">EU&thinsp;<em>only</em></span>
+            <span class="meta-label">DSGVO &amp; AI Act</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <section class="module-section">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 1.5rem">Fragen · 08</div>
+            <h2 class="display-xl">Bevor Sie<br /><em class="serif">fragen.</em></h2>
+          </div>
+          <p class="lead">
+            Das höre ich am häufigsten. Wenn Ihre Frage fehlt, stellen Sie sie im
+            Erstgespräch.
+          </p>
+        </div>
+
+        <div class="faq">
+          <details class="faq-item">
+            <summary>Wie können Sie fünf Stunden pro Woche garantieren?</summary>
+            <div class="faq-a">
+              Weil ich rechne, bevor ich verspreche. In fast jedem Betrieb mit
+              Schreibtischarbeit stecken fünf Stunden pro Woche in E-Mail,
+              Ablage, Angeboten und Doppeleingaben. Die Stundenrechnung in der
+              Karte zeigt schwarz auf weiß, wo. Finde ich sie nicht, stelle ich
+              keine Rechnung. <strong>Das Risiko liegt bei mir, nicht bei
+              Ihnen.</strong>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Verdienen Sie an den empfohlenen Werkzeugen?</summary>
+            <div class="faq-a">
+              Nein. Keine Affiliate-Links, keine Provision, keine Partnerschaft
+              mit Anbietern. Ich empfehle wie ein Arzt, der ein Rezept
+              ausstellt und nicht die Apotheke besitzt. Nur so bleibt die
+              Empfehlung etwas wert.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Was passiert mit dem, was wir im Gespräch besprechen?</summary>
+            <div class="faq-a">
+              Es bleibt unter uns. Notizen und Auswertung laufen DSGVO-konform
+              mit Auftragsverarbeitungsvertrag und EU-Verarbeitung; auf Wunsch
+              werte ich ganz ohne KI-Unterstützung aus. Ihre Daten bewegen sich
+              nicht. Wir reden nur über sie.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Reicht der Kompass, oder brauchen wir danach den Sprint?</summary>
+            <div class="faq-a">
+              Oft reicht der Kompass. Fertige Werkzeuge decken mehr ab, als die
+              meisten erwarten. Der Sprint lohnt sich erst, wenn ein eigener Use
+              Case auf Ihren Daten im Raum steht. Falls es so kommt: Die 1.500 €
+              rechne ich voll auf den Sprint an.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Führen Sie die Werkzeuge auch ein?</summary>
+            <div class="faq-a">
+              Die Karte ist so gebaut, dass Ihr Team selbst loslegen kann,
+              inklusive Plan für die erste Woche. Wenn Sie Begleitung wollen,
+              machen wir das als separaten, kleinen Auftrag. Sie entscheiden
+              nach der Übergabe, nicht davor.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ÜBERGANGSBAND → SPRINT ═══════════════ -->
+    <section class="transition" aria-label="Weiter zu Modus Sprint">
+      <svg class="transition-path" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-20 150 C 300 150, 380 50, 700 50 S 1100 60, 1240 60" />
+        <circle cx="700" cy="50" r="4" />
+      </svg>
+      <div class="wrap">
+        <div class="transition-grid">
+          <div>
+            <div class="transition-eyebrow">Weiter im Plan · Die große Runde</div>
+            <h2>
+              Der Kompass zeigt die Richtung.
+              <em>Modus Sprint</em> vermisst das Gelände.
+            </h2>
+            <p>
+              Taucht im Kompass ein Use Case auf, der ein eigenes System
+              verdient, geht es im Sprint weiter: zehn Tage, durchgerechnete
+              Kandidaten, Festpreis für den Build. Ihre 1.500 € nehme ich dabei
+              voll mit.
+            </p>
+          </div>
+          <div></div>
+          <a href="/sprint/" class="btn-transition">
+            Modus Sprint ansehen
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CLOSING CTA → /#kontakt ═══════════════ -->
+    <section class="dark-section final">
+      <svg class="final-orbit" viewBox="0 0 800 800" aria-hidden="true">
+        <circle cx="400" cy="400" r="120" />
+        <circle cx="400" cy="400" r="200" />
+        <circle cx="400" cy="400" r="290" />
+        <circle cx="400" cy="400" r="380" />
+      </svg>
+      <div class="wrap">
+        <div class="final-content">
+          <div class="eyebrow" style="margin-bottom: 0; justify-content: center; color: #d4a574">
+            Reden wir · IX
+          </div>
+          <h2 class="display-xxl">Klingt das nach<br /><em class="serif">Ihrem Einstieg?</em></h2>
+          <p class="lead" style="margin: 0 auto">
+            Im Erstgespräch sage ich Ihnen ehrlich, ob der Kompass der richtige
+            erste Schritt ist. Oder ob Sie ihn gar nicht brauchen. Kostenlos,
+            eine halbe Stunde, kein Pitch.
+          </p>
+          <div style="margin-top: 2.6rem">
+            <a href="/#kontakt" class="btn-transition">
+              Erstgespräch vereinbaren
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer>
+      <div class="wrap">
+        <div class="footer-inner">
+          <div>© 2026 Modus Vey · Alexander Vey · Kassel · Methode statt Magie</div>
+          <div>
+            <a href="/">Start</a>
+            <a href="/sprint/">Modus Sprint</a>
+            <a href="https://alexvey.com/impressum/">Impressum</a>
+            <a href="https://alexvey.com/datenschutz/">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Theme-Toggle Handler -->
+    <script>
+      function toggleTheme() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme') || 'light';
+        var next = current === 'night' ? 'light' : 'night';
+        html.setAttribute('data-theme', next);
+        try {
+          localStorage.setItem('mv-theme', next);
+        } catch (e) {}
+        var btn = document.getElementById('theme-toggle');
+        if (btn)
+          btn.setAttribute(
+            'aria-label',
+            next === 'night' ? 'Helles Theme aktivieren' : 'Dunkles Theme aktivieren',
+          );
+      }
+      (function () {
+        var current = document.documentElement.getAttribute('data-theme') || 'light';
+        var btn = document.getElementById('theme-toggle');
+        if (btn)
+          btn.setAttribute(
+            'aria-label',
+            current === 'night' ? 'Helles Theme aktivieren' : 'Dunkles Theme aktivieren',
+          );
+      })();
+      if (window.matchMedia) {
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addEventListener('change', function (e) {
+            try {
+              if (localStorage.getItem('mv-theme')) return;
+            } catch (err) {}
+            document.documentElement.setAttribute('data-theme', e.matches ? 'night' : 'light');
+          });
+      }
+    </script>
+  </body>
+</html>

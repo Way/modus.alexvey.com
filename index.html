@@ -502,18 +502,117 @@
             </h2>
           </div>
           <p class="lead">
-            Erst Analyse, dann Lösung. <em class="serif">Sprint</em> findet den
-            Use Case, <em class="serif">Build</em> liefert ihn produktiv aus.
-            Schulung, Audit und Private Cloud kommen als Ausbaustufe.
+            Erst Orientierung, dann Analyse, dann Lösung.
+            <em class="serif">Kompass</em> verschreibt fertige Werkzeuge,
+            <em class="serif">Sprint</em> findet den Use Case,
+            <em class="serif">Build</em> liefert ihn produktiv aus. Schulung,
+            Audit und Private Cloud kommen als Ausbaustufe.
           </p>
         </div>
 
         <div class="bento">
-          <!-- ─── SPRINT (große Karte, 3 Spalten) → /sprint/ ─── -->
-          <a href="/sprint/" class="bento-card card-sprint span-3 bento-card--link" aria-label="Modus Sprint — Modulseite ansehen">
+          <!-- ─── KOMPASS (2 Spalten) → /kompass/ ─── -->
+          <a href="/kompass/" class="bento-card span-2 bento-card--link" aria-label="Modus Kompass — Modulseite ansehen">
             <span class="card-go" aria-hidden="true">Modul<span class="arrow">→</span></span>
             <div>
-              <div class="card-tag">EINSTIEGSPUNKT · I</div>
+              <div class="card-tag">EINSTIEG · 0</div>
+              <div class="card-illu">
+                <!-- Kompassrose -->
+                <svg viewBox="0 0 200 110" preserveAspectRatio="xMidYMid meet">
+                  <!-- Hintergrund-Grid -->
+                  <line x1="0" y1="55" x2="200" y2="55" class="illu-bg-line" />
+                  <line x1="100" y1="0" x2="100" y2="110" class="illu-bg-line" />
+
+                  <!-- Ringe -->
+                  <circle cx="100" cy="60" r="38" class="illu-stroke" />
+                  <circle cx="100" cy="60" r="34" class="illu-bg-line" />
+
+                  <!-- Kardinal-Ticks -->
+                  <g class="illu-stroke" stroke-width="1">
+                    <line x1="100" y1="22" x2="100" y2="27" />
+                    <line x1="100" y1="93" x2="100" y2="98" />
+                    <line x1="62" y1="60" x2="67" y2="60" />
+                    <line x1="133" y1="60" x2="138" y2="60" />
+                  </g>
+
+                  <!-- Interkardinal-Ticks -->
+                  <g class="illu-stroke" stroke-width="0.7">
+                    <line x1="126.9" y1="33.1" x2="124" y2="36" />
+                    <line x1="126.9" y1="86.9" x2="124" y2="84" />
+                    <line x1="73.1" y1="86.9" x2="76" y2="84" />
+                    <line x1="73.1" y1="33.1" x2="76" y2="36" />
+                  </g>
+
+                  <!-- Nord-Markierung -->
+                  <text
+                    x="100"
+                    y="16"
+                    text-anchor="middle"
+                    font-family="JetBrains Mono"
+                    font-size="6"
+                    fill="var(--ink-faint)"
+                    letter-spacing="0.1em"
+                  >
+                    N
+                  </text>
+
+                  <!-- Animierte Nadel -->
+                  <g class="compass-wander" style="transform-origin: 100px 60px">
+                    <polygon points="100,31 92.8,67.2 100,60 107.2,67.2" class="compass-needle" />
+                    <polygon points="100,89 95.2,64.8 100,60 104.8,64.8" fill="var(--ink-faint)" />
+                    <circle cx="100" cy="60" r="2" class="illu-fill" />
+                  </g>
+
+                  <!-- Side annotations -->
+                  <text
+                    x="10"
+                    y="55"
+                    font-family="JetBrains Mono"
+                    font-size="6"
+                    fill="var(--ink-faint)"
+                    letter-spacing="0.1em"
+                  >
+                    5·TAGE
+                  </text>
+                  <text
+                    x="155"
+                    y="55"
+                    font-family="JetBrains Mono"
+                    font-size="6"
+                    fill="var(--ink-faint)"
+                    letter-spacing="0.1em"
+                  >
+                    1.500€
+                  </text>
+
+                  <!-- Linie unten -->
+                  <line x1="20" y1="100" x2="180" y2="100" class="illu-bg-line" />
+                  <line x1="20" y1="98" x2="20" y2="102" class="illu-stroke" stroke-width="0.6" />
+                  <line x1="180" y1="98" x2="180" y2="102" class="illu-stroke" stroke-width="0.6" />
+                  <line x1="100" y1="98" x2="100" y2="102" class="illu-accent" stroke-width="1" />
+                </svg>
+              </div>
+              <h3 class="card-name">Modus <em>Kompass</em></h3>
+              <p class="card-desc">
+                Eine Woche, ein Gespräch, eine Karte: welche fertigen
+                KI-Werkzeuge Ihrem Team sofort mindestens fünf Stunden pro
+                Woche zurückgeben. Ich verschreibe, was es schon gibt, und
+                verdiene an keiner Lizenz. Finde ich die Stunden nicht, zahlen
+                Sie nichts. Geht es danach in den Sprint, rechne ich die
+                1.500 € voll an.
+              </p>
+            </div>
+            <div class="card-foot">
+              <span class="price">1.500 €</span>
+              <span class="duration">5 Tage · Garantie</span>
+            </div>
+          </a>
+
+          <!-- ─── SPRINT (2 Spalten) → /sprint/ ─── -->
+          <a href="/sprint/" class="bento-card card-sprint span-2 bento-card--link" aria-label="Modus Sprint — Modulseite ansehen">
+            <span class="card-go" aria-hidden="true">Modul<span class="arrow">→</span></span>
+            <div>
+              <div class="card-tag">ANALYSE · I</div>
               <div class="card-illu">
                 <!-- Stoppwatch / Chronograph -->
                 <svg viewBox="0 0 200 110" preserveAspectRatio="xMidYMid meet">
@@ -669,8 +768,8 @@
             </div>
           </a>
 
-          <!-- ─── BUILD (3 Spalten, neben Sprint) → /build/ ─── -->
-          <a href="/build/" class="bento-card span-3 bento-card--link" aria-label="Modus Build — Modulseite ansehen">
+          <!-- ─── BUILD (2 Spalten) → /build/ ─── -->
+          <a href="/build/" class="bento-card span-2 bento-card--link" aria-label="Modus Build — Modulseite ansehen">
             <span class="card-go" aria-hidden="true">Modul<span class="arrow">→</span></span>
             <div>
               <div class="card-tag">UMSETZUNG · II</div>
@@ -1340,7 +1439,8 @@
     <aside class="verdict-bar" aria-label="Empfehlung">
       <div class="wrap">
         <strong
-          >Erst <em class="serif">Analyse,</em> dann Lösung.
+          >Erst <em class="serif">Orientierung,</em> dann Lösung.
+          <em class="serif">Kompass</em> verschreibt Werkzeuge,
           <em class="serif">Sprint</em> findet den Use Case,
           <em class="serif">Build</em> liefert ihn produktiv aus.</strong
         >

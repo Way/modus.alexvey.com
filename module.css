@@ -834,6 +834,7 @@
   line-height: 1.65;
   color: var(--ink-soft);
   max-width: 70ch;
+  text-wrap: pretty;
 }
 .faq-item .faq-a strong {
   color: var(--ink);
@@ -884,6 +885,7 @@
   letter-spacing: -0.02em;
   color: var(--bone);
   max-width: 30ch;
+  text-wrap: balance;
 }
 .transition h2 em {
   font-family: var(--serif);
@@ -897,6 +899,7 @@
   max-width: 52ch;
   font-size: 1rem;
   line-height: 1.55;
+  text-wrap: pretty;
 }
 @media (max-width: 820px) {
   .transition p {
@@ -924,10 +927,16 @@
   transition:
     background 0.2s,
     color 0.2s,
-    transform 0.2s;
+    transform 0.2s,
+    scale 0.15s ease;
 }
 .btn-transition:hover {
   transform: translateY(-2px);
+}
+/* Standalone `scale` composes with the hover `transform: translateY`,
+   so the press feedback keeps the lift instead of cancelling it. */
+.btn-transition:active {
+  scale: 0.96;
 }
 .transition .btn-transition:hover {
   background: #0e1014;

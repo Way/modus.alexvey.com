@@ -137,6 +137,25 @@
         color: var(--ink);
       }
 
+      /* Headings: balance line lengths so no single word orphans on its own line.
+         Body copy: pretty avoids orphans without rebalancing the whole block. */
+      .display-xxl,
+      .display-xl,
+      .display-lg,
+      .display-md,
+      .annahme-claim,
+      .methode-step h3,
+      .bento-card .card-name {
+        text-wrap: balance;
+      }
+      .lead,
+      .bento-card .card-desc,
+      .annahme-counter,
+      .methode-step p,
+      .ueber-content p {
+        text-wrap: pretty;
+      }
+
       em.serif {
         font-family: var(--serif);
         font-style: italic;
@@ -254,10 +273,15 @@
         background: var(--ink);
         color: var(--bone) !important;
         border-radius: 999px;
-        transition: background 0.2s;
+        transition:
+          background 0.2s,
+          scale 0.15s ease;
       }
       .nav-cta:hover {
         background: var(--teal);
+      }
+      .nav-cta:active {
+        scale: 0.96;
       }
 
       @media (max-width: 720px) {
@@ -328,11 +352,18 @@
         text-decoration: none;
         border-radius: 999px;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          scale 0.15s ease;
         display: inline-flex;
         align-items: center;
         gap: 0.6rem;
         border: 1px solid transparent;
+      }
+      .btn:active {
+        scale: 0.96;
       }
       .btn-primary {
         background: var(--ink);
@@ -645,7 +676,10 @@
         padding: 1.8rem;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+        transition:
+          background 0.4s cubic-bezier(0.2, 0, 0.2, 1),
+          border-color 0.4s cubic-bezier(0.2, 0, 0.2, 1),
+          transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1740,6 +1774,7 @@
 
       /* Theme-Toggle-Button im Nav */
       .theme-toggle {
+        position: relative;
         background: transparent;
         border: 1px solid var(--bone-line-strong);
         width: 34px;
@@ -1753,14 +1788,26 @@
         transition:
           border-color 0.2s,
           color 0.2s,
+          scale 0.15s ease,
           transform 0.3s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
         padding: 0;
         margin-right: 0.25rem;
+      }
+      /* Extend the hit target to 40px without growing the visible 34px circle
+         (rotate on hover stays on the button; scale-on-press composes via `scale`). */
+      .theme-toggle::before {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        border-radius: 50%;
       }
       .theme-toggle:hover {
         border-color: var(--teal);
         color: var(--teal);
         transform: rotate(15deg);
+      }
+      .theme-toggle:active {
+        scale: 0.96;
       }
       .theme-toggle:focus-visible {
         outline: 2px solid var(--teal);

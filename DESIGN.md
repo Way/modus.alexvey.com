@@ -1,6 +1,6 @@
 # DESIGN.md
 
-Direction for modus.alexvey.com. Direction A "Werkbank", chosen on the Harmony card for the repositioning. The earlier "Editorial-Technische Kartografie" system in `brand/README.md` and `brand/tokens.css` no longer drives the pages. Only the logo and mark stay.
+Direction for modus.alexvey.com. Direction A "Werkbank", chosen on the Harmony card for the repositioning. The earlier "Editorial-Technische Kartografie" system is removed. Only the logo and mark stay. `brand/og.html` is the source of `brand/og.png`.
 The reasons below are drafts. The owner confirms or changes them.
 
 Reading this as: B2B consulting site for German Mittelstand owners and managers, calm craft tone, dial ENERGY 1 / RHYTHM 2 / MOTION 1.

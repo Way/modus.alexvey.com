@@ -17,6 +17,7 @@ Dial: ENERGY 1 / RHYTHM 2 / MOTION 1
 - Margin notes: short side notes carry the honest "no" and the risk statements. They move under the text on narrow screens.
 - Offer rows: the three modules are plain rows with duration, not priced cards. Reason: there are no prices on the site, so nothing needs a card.
 - Proof: no references exist yet. A dashed "Pilotkunden gesucht" box holds the place. Examples are tagged "Beispiel". Reason: fake proof breaks the honesty claim.
+- Photos: five AI-generated still lifes of workshop details (bench, notebook, compass, pegs, tools) in `img/`, no people, no brands, labelled "KI-generiertes Bild". Reason: they carry the craft tone, and the label keeps the honesty claim intact. Real photos replace them when they exist.
 - Background: flat color, no grid or texture. Reason: the map identity is gone, so the grid would have no purpose.
 - Motion: one short rise on the hero text. It stops under `prefers-reduced-motion`.
 - Mobile: header wraps, tables scroll inside their own wrapper, no horizontal page scroll.

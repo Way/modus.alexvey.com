@@ -15,8 +15,8 @@
   /* ─── Schrift-Töne ─── */
   --ink:                #15161a;
   --ink-soft:           #2d2e33;
-  --ink-mute:           #6e6b63;
-  --ink-faint:          #a39e92;
+  --ink-mute:           #5f5c54;
+  --ink-faint:          #6a665d;
 
   /* ─── Dark Sektionen ─── */
   --night:              #0e1014;
@@ -25,15 +25,15 @@
   --night-line-mid:     #ffffff1f;
   --on-night:           #f4efe5;
   --on-night-soft:      #c5bfb1;
-  --on-night-mute:      #7e7a70;
+  --on-night-mute:      #9a968b;
 
   /* ─── Akzente ─── */
   --teal:               #1e4f4a;   /* Hauptakzent, Modus Vey Petrol */
   --teal-bright:        #2a7a6f;   /* Hover, aktive Zustände */
   --teal-soft:          #d4ddd9;   /* Hintergrund-Tönung */
-  --amber:              #b8632b;   /* Warmer Highlight, sparsam */
+  --amber:              #a14f19;   /* Warmer Highlight, sparsam */
   --amber-soft:         #e8d5bb;   /* Markierungs-Hintergrund */
-  --sage:               #7c8b7e;   /* Eyebrow / Kategorie-Label */
+  --sage:               #5a6b5d;   /* Eyebrow / Kategorie-Label */
 
   /* ─── Schriften ─── */
   --display:            'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -66,9 +66,11 @@
   --ink:                var(--on-night);
   --ink-soft:           var(--on-night-soft);
   --ink-mute:           var(--on-night-mute);
-  --ink-faint:          #5d594f;
+  --ink-faint:          #8a867b;
+  --sage:               #8fa391;
   --teal-soft:          #1a3733;
   --amber-soft:         #4a2a18;
+  --amber:            #d98a4a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,8 +83,10 @@
     --ink:                var(--on-night);
     --ink-soft:           var(--on-night-soft);
     --ink-mute:           var(--on-night-mute);
-    --ink-faint:          #5d594f;
+    --ink-faint:          #8a867b;
+  --sage:               #8fa391;
     --teal-soft:          #1a3733;
     --amber-soft:         #4a2a18;
+    --amber:            #d98a4a;
   }
 }

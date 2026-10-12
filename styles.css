@@ -1,40 +1,32 @@
-      /* ════════════════════════════════════════════════════════════
-   MODUS VEY — DESIGN SYSTEM v4
-   Aesthetic: Editorial-Technische Kartografie
-   ════════════════════════════════════════════════════════════ */
 
       :root {
-        /* Hauptpalette: warmes Bone/Parchment */
         --bone: #f4efe5;
         --bone-soft: #ece5d6;
         --bone-line: #1a1a1a0a;
         --bone-line-mid: #1a1a1a14;
         --bone-line-strong: #1a1a1a28;
 
-        /* Schrift-Töne */
         --ink: #15161a;
         --ink-soft: #2d2e33;
-        --ink-mute: #6e6b63;
-        --ink-faint: #a39e92;
+        --ink-mute: #5f5c54;
+        --ink-faint: #6a665d;
 
-        /* Dark Sektionen */
         --night: #0e1014;
         --night-soft: #161920;
         --night-line: #ffffff14;
         --night-line-mid: #ffffff1f;
         --on-night: #f4efe5;
         --on-night-soft: #c5bfb1;
-        --on-night-mute: #7e7a70;
+        --on-night-mute: #9a968b;
 
-        /* Akzente */
-        --teal: #1e4f4a; /* Hauptakzent, Modus Vey Petrol */
-        --teal-bright: #2a7a6f; /* Hover, aktive Zustände */
-        --teal-soft: #d4ddd9; /* Hintergrund-Tönung */
-        --amber: #b8632b; /* Warmer Highlight, sparsam */
-        --amber-soft: #e8d5bb; /* Markierungs-Hintergrund */
-        --sage: #7c8b7e; /* Eyebrow / Kategorie-Label */
+        --teal: #1e4f4a;
+        --teal-bright: #2a7a6f;
+        --teal-soft: #d4ddd9;
+        --amber: #a14f19;
+        --teal-ink: var(--teal);
+        --amber-soft: #e8d5bb;
+        --sage: #5a6b5d;
 
-        /* Schriften */
         --display: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
         --body: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
         --serif: 'Instrument Serif', Georgia, serif;
@@ -64,14 +56,12 @@
         line-height: 1.55;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
         font-feature-settings:
           'ss01' on,
           'ss02' on,
           'cv11' on;
       }
 
-      /* ═══ SUBTILE GRAPHPAPIER-TEXTUR (subtil, nicht dominant) ═══ */
       body::before {
         content: '';
         position: fixed;
@@ -85,12 +75,11 @@
         opacity: 0.4;
       }
 
-      /* ────────────────────── TYPOGRAFIE ────────────────────── */
       .eyebrow {
         font-family: var(--mono);
         font-size: 0.72rem;
         font-weight: 500;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--sage);
         display: inline-flex;
@@ -160,7 +149,7 @@
         font-family: var(--serif);
         font-style: italic;
         font-weight: 400;
-        color: var(--teal);
+        color: var(--teal-ink);
       }
       em.serif-amber {
         color: var(--amber);
@@ -178,7 +167,6 @@
         color: var(--ink-mute);
       }
 
-      /* Container */
       .wrap {
         max-width: 1240px;
         margin: 0 auto;
@@ -200,9 +188,6 @@
         }
       }
 
-      /* ════════════════════════════════════════════════════════════
-   NAVIGATION
-   ════════════════════════════════════════════════════════════ */
       .nav {
         position: fixed;
         top: 0;
@@ -257,6 +242,9 @@
         align-items: center;
       }
       .nav-links a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
         font-family: var(--mono);
         font-size: 0.78rem;
         letter-spacing: 0.02em;
@@ -265,11 +253,11 @@
         transition: color 0.2s;
       }
       .nav-links a:hover {
-        color: var(--teal);
+        color: var(--teal-ink);
       }
 
-      .nav-cta {
-        padding: 0.5rem 1rem;
+      .nav-links .nav-cta {
+        padding: 0 1.1rem;
         background: var(--ink);
         color: var(--bone) !important;
         border-radius: 999px;
@@ -284,15 +272,20 @@
         scale: 0.96;
       }
 
-      @media (max-width: 720px) {
+      @media (max-width: 900px) {
+        .nav-links {
+          gap: 0.5rem;
+        }
         .nav-links a:not(.nav-cta) {
           display: none;
         }
       }
+      @media (max-width: 560px) {
+        .nav-links .nav-cta {
+          display: none;
+        }
+      }
 
-      /* ════════════════════════════════════════════════════════════
-   HERO
-   ════════════════════════════════════════════════════════════ */
       .hero {
         padding-top: 9rem;
         padding-bottom: 6rem;
@@ -328,7 +321,7 @@
         font-family: var(--serif);
         font-style: italic;
         font-weight: 400;
-        color: var(--teal);
+        color: var(--teal-ink);
         letter-spacing: -0.02em;
       }
 
@@ -381,14 +374,7 @@
         border-color: var(--ink);
         background: var(--bone-soft);
       }
-      .btn .arrow {
-        transition: transform 0.2s;
-      }
-      .btn:hover .arrow {
-        transform: translateX(3px);
-      }
 
-      /* ─── HERO SIGNATURE: DIE MODUS-KARTE ─── */
       .modus-karte {
         width: 100%;
         aspect-ratio: 1 / 1;
@@ -409,14 +395,12 @@
         overflow: visible;
       }
 
-      /* Karten-Hintergrund-Grid (sichtbarer als bei body) */
       .karte-grid {
         stroke: rgba(26, 26, 26, 0.06);
         stroke-width: 0.5;
         fill: none;
       }
 
-      /* Rahmen + Eckmarkierungen */
       .karte-frame {
         fill: none;
         stroke: var(--ink);
@@ -428,7 +412,6 @@
         fill: none;
       }
 
-      /* Pfade zwischen Knoten */
       .karte-path-bg {
         fill: none;
         stroke: var(--bone-line-mid);
@@ -474,7 +457,6 @@
         }
       }
 
-      /* Knoten */
       .karte-node {
         fill: var(--bone);
         stroke: var(--ink);
@@ -483,16 +465,6 @@
       .karte-node-active {
         fill: var(--teal);
         stroke: var(--teal);
-        animation: node-pulse 4s ease-in-out infinite;
-      }
-      @keyframes node-pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.4;
-        }
       }
 
       .karte-node-glow {
@@ -531,14 +503,12 @@
         }
       }
 
-      /* Maßstab-Markierungen (Tick-Marks an Linien) */
       .karte-tick {
         stroke: var(--ink);
         stroke-width: 0.8;
         fill: none;
       }
 
-      /* Annotationen */
       .karte-label {
         font-family: 'JetBrains Mono', monospace;
         font-size: 9px;
@@ -559,7 +529,6 @@
         letter-spacing: 0.08em;
       }
 
-      /* Kompassrose */
       .compass {
         fill: none;
         stroke: var(--ink);
@@ -569,7 +538,6 @@
         fill: var(--teal);
       }
 
-      /* ────────────────── META-LEISTE ────────────────── */
       .meta-bar {
         margin-top: 5rem;
         border-top: 1px solid var(--bone-line-mid);
@@ -601,7 +569,7 @@
         font-family: var(--serif);
         font-style: italic;
         font-weight: 400;
-        color: var(--teal);
+        color: var(--teal-ink);
       }
       .meta-label {
         font-family: var(--mono);
@@ -624,9 +592,6 @@
         }
       }
 
-      /* ════════════════════════════════════════════════════════════
-   BENTO MODULE
-   ════════════════════════════════════════════════════════════ */
       .bento-section {
         padding-top: 8rem;
         padding-bottom: 8rem;
@@ -695,7 +660,6 @@
         transform: scale(1.04);
       }
 
-      /* Eck-Zeichen wie auf alten Karten */
       .bento-card::before,
       .bento-card::after {
         content: '';
@@ -718,7 +682,6 @@
         border-top: none;
       }
 
-      /* Spans */
       .span-3 {
         grid-column: span 3;
       }
@@ -766,7 +729,7 @@
         font-family: var(--serif);
         font-style: italic;
         font-weight: 400;
-        color: var(--teal);
+        color: var(--teal-ink);
       }
 
       .bento-card .card-desc {
@@ -786,7 +749,7 @@
         padding-top: 0.9rem;
       }
       .bento-card .price {
-        color: var(--teal);
+        color: var(--teal-ink);
         font-weight: 500;
       }
       .bento-card .duration {
@@ -795,62 +758,6 @@
         letter-spacing: 0.06em;
       }
 
-      /* Teaser-Variante: nachgelagerte Module als Ausbaustufe */
-      .bento-card--teaser {
-        background: transparent;
-        border-style: dashed;
-        border-color: var(--bone-line-mid);
-      }
-      .bento-card--teaser:hover {
-        background: var(--bone-soft);
-        border-style: solid;
-      }
-      .bento-card--teaser .card-illu {
-        opacity: 0.55;
-        height: 80px;
-      }
-      .bento-card--teaser:hover .card-illu {
-        opacity: 0.85;
-      }
-      .bento-card--teaser .card-tag {
-        color: var(--ink-faint);
-      }
-      .bento-card--teaser .card-name {
-        font-size: 1.35rem;
-        color: var(--ink-mute);
-      }
-      .bento-card--teaser .card-name em {
-        color: var(--ink-soft);
-      }
-      .bento-card--teaser:hover .card-name,
-      .bento-card--teaser:hover .card-name em {
-        color: var(--ink);
-      }
-      .bento-card--teaser:hover .card-name em {
-        color: var(--teal);
-      }
-      .bento-card--teaser .card-desc {
-        font-size: 0.84rem;
-        color: var(--ink-faint);
-      }
-      .bento-card--teaser .card-foot {
-        color: var(--ink-faint);
-      }
-      .bento-card--teaser .status {
-        font-family: var(--mono);
-        font-size: 0.72rem;
-        letter-spacing: 0.1em;
-        color: var(--ink-soft);
-        text-transform: uppercase;
-      }
-      .bento-card--teaser .horizon {
-        font-family: var(--mono);
-        font-size: 0.7rem;
-        letter-spacing: 0.06em;
-        color: var(--ink-faint);
-      }
-
-      /* Modul-Illustrationen Container */
       .card-illu {
         width: 100%;
         height: 110px;
@@ -887,9 +794,6 @@
         stroke-width: 1.4;
       }
 
-      /* SPRINT card — gleiche Hierarchie wie Build */
-
-      /* Stoppwatch-Animation */
       @keyframes rotate-second {
         from {
           transform: rotate(0deg);
@@ -902,20 +806,7 @@
         transform-origin: center;
         animation: rotate-second 8s linear infinite;
       }
-      @keyframes pulse-tick {
-        0%,
-        100% {
-          opacity: 0.3;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-      .pulse {
-        animation: pulse-tick 3s ease-in-out infinite;
-      }
 
-      /* KOMPASS — pendelnde Nadel */
       @keyframes compass-wander {
         0%,
         100% {
@@ -936,9 +827,6 @@
         animation: compass-wander 9s ease-in-out infinite;
       }
 
-      /* Hover-Animationen für Modul-Illustrationen */
-
-      /* BUILD — Datenfluss durch Pipeline */
       @keyframes build-flow-pulse {
         0%,
         100% {
@@ -973,124 +861,27 @@
         animation: build-dot-blink 1.5s ease-in-out infinite;
       }
 
-      /* SCHULUNG — Buchseite Akzent + Lese-Cursor */
-      @keyframes book-accent-pulse {
-        0%,
-        100% {
-          opacity: 0.55;
-          stroke-width: 1.4;
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
         }
-        50% {
-          opacity: 1;
-          stroke-width: 1.8;
-        }
-      }
-      .bento-card:hover .book-accent {
-        animation: book-accent-pulse 1.8s ease-in-out infinite;
-      }
-      @keyframes book-dot-blink {
-        0%,
-        100% {
-          opacity: 0.4;
-        }
-        50% {
+        .hero-text > * {
+          animation: none;
           opacity: 1;
         }
-      }
-      .bento-card:hover .book-dot {
-        animation: book-dot-blink 1.4s ease-in-out infinite;
-        animation-delay: 0.3s;
-      }
-
-      /* AUDIT — Lupe scannt, Bars pulsieren, Tick zeichnet */
-      @keyframes audit-scan {
-        0%,
-        100% {
-          transform: translate(0, 0);
-        }
-        50% {
-          transform: translate(4px, -2px);
-        }
-      }
-      .bento-card:hover .audit-glass {
-        animation: audit-scan 2.6s ease-in-out infinite;
-      }
-      @keyframes audit-bar-pulse {
-        0%,
-        100% {
-          opacity: 0.45;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-      .bento-card:hover .audit-bars > * {
-        animation: audit-bar-pulse 1.4s ease-in-out infinite;
-      }
-      .bento-card:hover .audit-bars > *:nth-child(1) {
-        animation-delay: 0s;
-      }
-      .bento-card:hover .audit-bars > *:nth-child(2) {
-        animation-delay: 0.25s;
-      }
-      .bento-card:hover .audit-bars > *:nth-child(3) {
-        animation-delay: 0.5s;
-      }
-      @keyframes audit-tick-draw {
-        from {
-          stroke-dashoffset: 14;
-        }
-        to {
+        .karte-path {
+          animation: none;
           stroke-dashoffset: 0;
         }
-      }
-      .bento-card:hover .audit-tick {
-        stroke-dasharray: 14;
-        animation: audit-tick-draw 0.9s ease-out forwards;
-      }
-
-      /* PRIVAT — Konzentrische Ringe pulsieren von innen nach außen */
-      @keyframes lock-ring-pulse {
-        0%,
-        100% {
-          opacity: 0.45;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-      .bento-card:hover .lock-ring {
-        animation: lock-ring-pulse 2s ease-in-out infinite;
-      }
-      .bento-card:hover .lock-ring-1 {
-        animation-delay: 0s;
-      }
-      .bento-card:hover .lock-ring-2 {
-        animation-delay: 0.18s;
-      }
-      .bento-card:hover .lock-ring-3 {
-        animation-delay: 0.36s;
-      }
-      .bento-card:hover .lock-ring-4 {
-        animation-delay: 0.54s;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
+        .karte-node-glow,
+        .stopwatch-second,
+        .compass-wander,
         .bento-card:hover .build-flow > *,
-        .bento-card:hover .build-dot,
-        .bento-card:hover .book-accent,
-        .bento-card:hover .book-dot,
-        .bento-card:hover .audit-glass,
-        .bento-card:hover .audit-bars > *,
-        .bento-card:hover .audit-tick,
-        .bento-card:hover .lock-ring {
+        .bento-card:hover .build-dot {
           animation: none;
         }
       }
 
-      /* ════════════════════════════════════════════════════════════
-   METHODE — DARK SECTION
-   ════════════════════════════════════════════════════════════ */
       .dark-section {
         background: var(--night);
         color: var(--on-night);
@@ -1198,7 +989,6 @@
         line-height: 1.6;
       }
 
-      /* Verbindungspunkte zwischen Schritten */
       .methode-step::after {
         content: '';
         position: absolute;
@@ -1221,9 +1011,6 @@
         }
       }
 
-      /* ════════════════════════════════════════════════════════════
-   ANNAHMEN
-   ════════════════════════════════════════════════════════════ */
       .annahmen-list {
         display: flex;
         flex-direction: column;
@@ -1257,7 +1044,7 @@
         font-family: var(--serif);
         font-style: italic;
         font-size: 4rem;
-        color: var(--teal);
+        color: var(--teal-ink);
         line-height: 0.85;
         font-weight: 400;
       }
@@ -1291,16 +1078,13 @@
         display: block;
         font-family: var(--mono);
         font-size: 0.66rem;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--sage);
         margin-bottom: 0.7rem;
         font-weight: 500;
       }
 
-      /* ════════════════════════════════════════════════════════════
-   ÜBER
-   ════════════════════════════════════════════════════════════ */
       .ueber-grid {
         display: grid;
         grid-template-columns: 0.85fr 1.4fr;
@@ -1390,7 +1174,7 @@
         font-style: italic;
         font-size: 1.15rem;
         line-height: 1.3;
-        color: var(--teal);
+        color: var(--teal-ink);
       }
       @media (max-width: 640px) {
         .ueber-pillars {
@@ -1430,9 +1214,6 @@
         font-weight: 500;
       }
 
-      /* ════════════════════════════════════════════════════════════
-   FINAL CTA
-   ════════════════════════════════════════════════════════════ */
       .final {
         padding: 8rem 0;
         text-align: center;
@@ -1495,7 +1276,6 @@
         border-bottom-color: #d4a574;
       }
 
-      /* Final BG-Visual */
       .final-orbit {
         position: absolute;
         width: 800px;
@@ -1511,9 +1291,6 @@
         stroke: rgba(255, 255, 255, 0.05);
       }
 
-      /* ════════════════════════════════════════════════════════════
-   FOOTER
-   ════════════════════════════════════════════════════════════ */
       footer {
         background: var(--night-soft);
         color: var(--on-night-mute);
@@ -1539,9 +1316,6 @@
         color: var(--on-night);
       }
 
-      /* ════════════════════════════════════════════════════════════
-   ANIMATIONEN AUFBAU
-   ════════════════════════════════════════════════════════════ */
       @keyframes fade-up {
         from {
           opacity: 0;
@@ -1569,39 +1343,6 @@
         animation-delay: 0.55s;
       }
 
-      /* ════════════════════════════════════════════════════════════
-   v5 BRAND REFRESH — Editorial Kartografie System Layer
-   Source: /brand/kartografie.css
-   ════════════════════════════════════════════════════════════ */
-
-      /* ─── A) Roman-Numeral Section-Backdrops ─── */
-      .bento-section::before,
-      #annahmen::before,
-      #ueber::before {
-        font-family: var(--serif);
-        font-style: italic;
-        font-weight: 400;
-        font-size: clamp(160px, 28vw, 380px);
-        line-height: 0.85;
-        letter-spacing: -0.04em;
-        pointer-events: none;
-        z-index: 0;
-        position: absolute;
-        top: 50%;
-        right: clamp(1rem, 5vw, 5rem);
-        transform: translateY(-50%);
-        opacity: 0.05;
-        color: var(--teal);
-      }
-      .bento-section::before {
-        content: 'II';
-      }
-      #annahmen::before {
-        content: 'IV';
-      }
-      #ueber::before {
-        content: 'V';
-      }
       .bento-section > .wrap,
       #annahmen > .wrap,
       #ueber > .wrap {
@@ -1609,37 +1350,6 @@
         z-index: 1;
       }
 
-      /* ─── B) Pre-Kontakt Verdict-Bar ─── */
-      .verdict-bar {
-        background: var(--teal);
-        color: var(--bone);
-        padding: clamp(1.4rem, 3vh, 2.1rem) 0;
-        position: relative;
-        border-top: 1px solid var(--bone-line-strong);
-        border-bottom: 1px solid var(--bone-line-strong);
-      }
-      .verdict-bar .wrap {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        justify-content: center;
-        gap: clamp(1rem, 3vw, 2.5rem);
-      }
-      .verdict-bar strong {
-        font-family: var(--display);
-        font-weight: 400;
-        font-size: clamp(1.05rem, 1.8vw, 1.4rem);
-        line-height: 1.35;
-        letter-spacing: -0.01em;
-        color: var(--bone);
-        max-width: 64ch;
-        text-align: center;
-      }
-      .verdict-bar em.serif {
-        color: var(--amber-soft);
-      }
-
-      /* ─── C) Modus-Karte Dot-Corner-Frame ─── */
       .modus-karte {
         position: relative;
       }
@@ -1686,32 +1396,6 @@
         right: -5px;
       }
 
-      /* ─── E) Status-Badges → Mono-Caption Look ─── */
-      .bento-card--teaser .status {
-        color: var(--sage);
-        letter-spacing: 0.18em;
-        display: inline-flex;
-        align-items: baseline;
-        gap: 0.55rem;
-      }
-      .bento-card--teaser .status::before {
-        content: '';
-        display: inline-block;
-        width: 10px;
-        height: 1px;
-        background: var(--sage);
-        align-self: center;
-        opacity: 0.75;
-      }
-      .bento-card--teaser .horizon {
-        letter-spacing: 0.14em;
-        color: var(--ink-faint);
-      }
-
-      /* ════════════════════════════════════════════════════════════
-   NIGHT THEME — Editorial Kartografie Dark Mode (v5)
-   Aktiviert via [data-theme='night'] auf <html>.
-   ════════════════════════════════════════════════════════════ */
       [data-theme='night'] {
         --bone: var(--night);
         --bone-soft: var(--night-soft);
@@ -1722,13 +1406,16 @@
         --ink: var(--on-night);
         --ink-soft: var(--on-night-soft);
         --ink-mute: var(--on-night-mute);
-        --ink-faint: #5d594f;
+        --ink-faint: #8a867b;
+        --sage: #8fa391;
         --teal-soft: #1a3733;
         --amber-soft: #4a2a18;
-        --teal: var(--teal-bright); /* brighter accent for legibility on dark */
+        --teal: var(--teal-bright);
+        --teal-ink: #5fb8aa;
+        --amber: #d98a4a;
       }
 
-      /* .dark-section ist hardcoded auf --night → würde mit Page-BG verschmelzen.
+      /* .dark-section ist hardcoded auf --night, würde mit Page-BG verschmelzen.
          Anheben auf --night-soft für Differenzierung. */
       [data-theme='night'] .dark-section {
         background: var(--night-soft);
@@ -1736,9 +1423,9 @@
         border-bottom: 1px solid var(--night-line);
       }
 
-      /* Teal-Vignette für #methode — editorial Glow von oben, in beiden Themes.
+      /* Teal-Vignette für #methode: editorial Glow von oben, in beiden Themes.
          Selector-Spezifität (0,1,1,0) gleich wie [data-theme='night'] .dark-section,
-         steht hier später → gewinnt im Kaskaden-Vergleich. */
+         steht hier später to gewinnt im Kaskaden-Vergleich. */
       #methode.dark-section {
         background: radial-gradient(
           ellipse 110% 75% at 50% 0%,
@@ -1754,25 +1441,6 @@
         background: rgba(14, 16, 20, 0.78);
       }
 
-      /* Roman-Numeral-Backdrop: auf dunkel weiß-aus-on-night-soft */
-      [data-theme='night'] .bento-section::before,
-      [data-theme='night'] #annahmen::before,
-      [data-theme='night'] #ueber::before {
-        color: var(--on-night-soft);
-        opacity: 0.04;
-      }
-
-      /* Verdict-Bar ist eine "Light-Insel auf Teal", die NICHT mitswappen soll —
-         Text bleibt stabil hell, auch wenn --bone in den Night-Modus swappt. */
-      [data-theme='night'] .verdict-bar,
-      [data-theme='night'] .verdict-bar strong {
-        color: #f4efe5;
-      }
-      [data-theme='night'] .verdict-bar em.serif {
-        color: #e8d5bb;
-      }
-
-      /* Theme-Toggle-Button im Nav */
       .theme-toggle {
         position: relative;
         background: transparent;
@@ -1793,17 +1461,17 @@
         padding: 0;
         margin-right: 0.25rem;
       }
-      /* Extend the hit target to 40px without growing the visible 34px circle
+      /* Extend the hit target to 44px without growing the visible 34px circle
          (rotate on hover stays on the button; scale-on-press composes via `scale`). */
       .theme-toggle::before {
         content: '';
         position: absolute;
-        inset: -3px;
+        inset: -5px;
         border-radius: 50%;
       }
       .theme-toggle:hover {
         border-color: var(--teal);
-        color: var(--teal);
+        color: var(--teal-ink);
         transform: rotate(15deg);
       }
       .theme-toggle:active {
@@ -1831,7 +1499,6 @@
         display: none;
       }
 
-      /* ─── Verlinkte Modul-Karten (führen auf /sprint/ und /build/) ─── */
       a.bento-card--link {
         cursor: pointer;
         text-decoration: none;
@@ -1845,7 +1512,7 @@
         font-size: 0.68rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--ink-faint);
+        color: var(--ink-mute);
         display: inline-flex;
         align-items: center;
         gap: 0.4rem;
@@ -1855,12 +1522,159 @@
         z-index: 2;
       }
       a.bento-card--link:hover .card-go {
-        color: var(--teal);
+        color: var(--teal-ink);
         gap: 0.6rem;
       }
-      a.bento-card--link .card-go .arrow {
-        transition: transform 0.2s;
-      }
-      a.bento-card--link:hover .card-go .arrow {
-        transform: translateX(2px);
-      }
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+.dark-section a:focus-visible,
+.dark-section button:focus-visible {
+  outline-color: #d4a574;
+}
+
+.nav-menu {
+  display: none;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--bone-line-strong);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.nav-panel {
+  display: none;
+}
+@media (max-width: 900px) {
+  .nav-menu {
+    display: inline-flex;
+  }
+  .nav-panel:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    padding: 0.25rem 1.25rem 1rem;
+    border-top: 1px solid var(--bone-line-mid);
+  }
+  .nav-panel .nav-cta {
+    display: none;
+  }
+  .nav-panel a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--bone-line);
+  }
+}
+
+.section-header--stacked {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.section-header--stacked h2 {
+  max-width: 22ch;
+}
+.section-header--stacked p {
+  max-width: 56ch;
+}
+.section-header--aligned {
+  grid-template-columns: 0.85fr 1.4fr;
+  gap: 5rem;
+}
+@media (max-width: 980px) {
+  .section-header--aligned {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.ausbau {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  gap: 5rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--bone-line-mid);
+}
+.ausbau-title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.ausbau-list {
+  list-style: none;
+}
+.ausbau-list li {
+  display: grid;
+  grid-template-columns: 11rem 1fr auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--bone-line-mid);
+}
+.ausbau-list li:first-child {
+  padding-top: 0;
+}
+.ausbau-name {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+.ausbau-name em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal-ink);
+}
+.ausbau-desc {
+  font-size: 0.92rem;
+  color: var(--ink-mute);
+}
+.ausbau-status {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+@media (max-width: 980px) {
+  .ausbau {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+@media (max-width: 720px) {
+  .ausbau-list li {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
+@media (max-width: 560px) {
+  .nav-panel .nav-cta {
+    display: flex;
+    color: var(--teal-ink);
+    font-weight: 500;
+  }
+}
+.nav-mark,
+footer a,
+.final-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}

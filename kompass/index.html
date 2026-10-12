@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modus Kompass · KI-Werkzeuge finden in 5 Tagen</title>
 
-    <!-- SEO -->
     <meta
       name="description"
       content="Modus Kompass: In 5 Arbeitstagen finde ich die fertigen KI-Werkzeuge, die Ihrem Team mindestens 5 Stunden pro Woche zurückgeben. Oder Sie zahlen nichts. 1.500 € fix, voll auf den Sprint anrechenbar."
@@ -30,7 +29,6 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#15161A" />
 
-    <!-- Theme init — prevents FOUC by setting data-theme before paint -->
     <script>
       (function () {
         try {
@@ -45,7 +43,6 @@
       })();
     </script>
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://modus.alexvey.com/kompass/" />
     <meta property="og:title" content="Modus Kompass · KI-Werkzeuge finden in 5 Tagen" />
@@ -56,11 +53,10 @@
     <meta property="og:image" content="https://modus.alexvey.com/brand/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Modus Vey — Methode statt Magie" />
+    <meta property="og:image:alt" content="Modus Vey: Methode statt Magie" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:site_name" content="Modus Vey" />
 
-    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Modus Kompass · KI-Werkzeuge finden in 5 Tagen" />
     <meta
@@ -69,7 +65,6 @@
     />
     <meta name="twitter:image" content="https://modus.alexvey.com/brand/og.png" />
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -119,7 +114,6 @@
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/module.css" />
 
-    <!-- Analytics -->
     <script
       defer
       src="https://cloud.umami.is/script.js"
@@ -127,13 +121,11 @@
     ></script>
   </head>
   <body>
-    <!-- ═══════════════ NAV ═══════════════ -->
     <nav class="nav">
       <div class="nav-inner">
-        <a href="/" class="nav-mark" aria-label="Modus Vey — Startseite">
+        <a href="/" class="nav-mark" aria-label="Modus Vey, zur Startseite">
           <span class="glyph">
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <!-- MV-Mark — Ring + Chevrons + Mittelbalken -->
               <circle cx="12" cy="12" r="11" fill="none" stroke="var(--ink)" stroke-width="0.7" />
               <circle cx="12" cy="12" r="11.5" fill="none" stroke="var(--ink)" stroke-width="0.42" opacity="0.4" />
               <path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" fill="var(--ink)" />
@@ -178,7 +170,6 @@
       </div>
     </nav>
 
-    <!-- ═══════════════ HERO ═══════════════ -->
     <header class="module-hero">
       <div class="wrap">
         <div class="module-hero-grid">
@@ -195,24 +186,20 @@
             <div class="hero-cta">
               <a href="/#kontakt" class="btn btn-primary">
                 Erstgespräch vereinbaren
-                <span class="arrow">→</span>
               </a>
               <a href="/sprint/" class="btn btn-ghost">Wie der Sprint darauf aufbaut</a>
             </div>
           </div>
 
-          <!-- Signatur: Kompassrose -->
           <div class="module-figure">
             <span class="figure-dots" aria-hidden="true"><span></span></span>
             <svg viewBox="0 0 200 130" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
               <line x1="0" y1="65" x2="200" y2="65" class="illu-bg-line" />
               <line x1="100" y1="0" x2="100" y2="130" class="illu-bg-line" />
 
-              <!-- Ringe -->
               <circle cx="100" cy="68" r="46" class="illu-stroke" />
               <circle cx="100" cy="68" r="41" class="illu-bg-line" />
 
-              <!-- Kardinal-Ticks -->
               <g class="illu-stroke" stroke-width="1">
                 <line x1="100" y1="22" x2="100" y2="29" />
                 <line x1="100" y1="107" x2="100" y2="114" />
@@ -220,7 +207,6 @@
                 <line x1="139" y1="68" x2="146" y2="68" />
               </g>
 
-              <!-- Interkardinal-Ticks -->
               <g class="illu-stroke" stroke-width="0.7">
                 <line x1="132.5" y1="35.5" x2="129" y2="39" />
                 <line x1="132.5" y1="100.5" x2="129" y2="97" />
@@ -228,17 +214,14 @@
                 <line x1="67.5" y1="35.5" x2="71" y2="39" />
               </g>
 
-              <!-- Nord-Markierung -->
               <text x="100" y="16" text-anchor="middle" font-size="7" letter-spacing="0.1em" class="illu-faint">N</text>
 
-              <!-- Animierte Nadel -->
               <g class="compass-wander" style="transform-origin: 100px 68px">
                 <polygon points="100,34 91.6,76.4 100,68 108.4,76.4" class="compass-needle" />
                 <polygon points="100,101.6 94.4,73.6 100,68 105.6,73.6" fill="var(--ink-faint)" />
                 <circle cx="100" cy="68" r="2.4" class="illu-fill" />
               </g>
 
-              <!-- Achsen-Annotationen -->
               <text x="8" y="66" font-size="6" letter-spacing="0.1em" class="illu-faint">5·TAGE</text>
               <text x="158" y="66" font-size="6" letter-spacing="0.1em" class="illu-faint">1.500€</text>
               <line x1="22" y1="120" x2="178" y2="120" class="illu-bg-line" />
@@ -250,7 +233,6 @@
           </div>
         </div>
 
-        <!-- META BAR -->
         <div class="meta-bar">
           <div>
             <span class="meta-num">5&thinsp;<em>Tage</em></span>
@@ -272,7 +254,6 @@
       </div>
     </header>
 
-    <!-- ═══════════════ PHASEN-LEISTE ═══════════════ -->
     <section class="phase-rail-section">
       <div class="wrap">
         <div class="phase-rail-head">
@@ -313,7 +294,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ FÜR WEN ═══════════════ -->
     <section class="module-section" id="passt">
       <div class="wrap">
         <div class="section-header">
@@ -366,7 +346,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ ABLAUF ═══════════════ -->
     <section class="module-section num-bg" data-num="0">
       <div class="wrap">
         <div class="section-header">
@@ -425,7 +404,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ WAS SIE BEKOMMEN ═══════════════ -->
     <section class="module-section">
       <div class="wrap">
         <div class="section-header">
@@ -513,7 +491,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ ERGEBNIS-BEISPIEL ═══════════════ -->
     <section class="module-section module-section--tight">
       <div class="wrap">
         <div class="section-header">
@@ -549,21 +526,21 @@
                 <td><span class="pegel"><i class="on"></i><i></i><i></i></span></td>
                 <td><span class="pegel"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
                 <td class="uc-hide-sm">~20 €/Monat</td>
-                <td class="uc-rec">→ diese Woche</td>
+                <td class="uc-rec">diese Woche</td>
               </tr>
               <tr>
                 <td class="uc-name">Gesprächsnotizen automatisch mitschreiben</td>
                 <td><span class="pegel"><i class="on"></i><i></i><i></i></span></td>
                 <td><span class="pegel"><i class="on"></i><i class="on"></i><i></i></span></td>
                 <td class="uc-hide-sm">~15 €/Monat</td>
-                <td class="uc-rec">→ diese Woche</td>
+                <td class="uc-rec">diese Woche</td>
               </tr>
               <tr>
                 <td class="uc-name">Angebotstexte aus Bausteinen erzeugen</td>
                 <td><span class="pegel"><i class="on"></i><i class="on"></i><i></i></span></td>
                 <td><span class="pegel"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
                 <td class="uc-hide-sm">~30 €/Monat</td>
-                <td class="uc-rec">→ Woche 2</td>
+                <td class="uc-rec">Woche 2</td>
               </tr>
               <tr>
                 <td class="uc-name">Kundenservice komplett automatisieren</td>
@@ -578,7 +555,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ ABGRENZUNG ═══════════════ -->
     <section class="module-section">
       <div class="wrap">
         <div class="section-header">
@@ -624,7 +600,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ VERGLEICH KOMPASS / SPRINT ═══════════════ -->
     <section class="module-section module-section--tight">
       <div class="wrap">
         <div class="section-header">
@@ -694,7 +669,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ KONDITIONEN ═══════════════ -->
     <section class="module-section module-section--tight">
       <div class="wrap">
         <div class="section-header">
@@ -722,20 +696,19 @@
             <span class="meta-label">pro Woche gefunden, oder 0 €</span>
           </div>
           <div>
-            <span class="meta-num">EU&thinsp;<em>only</em></span>
-            <span class="meta-label">DSGVO &amp; AI Act</span>
+            <span class="meta-num">Ohne&thinsp;<em>Provision</em></span>
+            <span class="meta-label">auf empfohlene Werkzeuge</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════ FAQ ═══════════════ -->
     <section class="module-section">
       <div class="wrap">
-        <div class="section-header">
+        <div class="section-header section-header--stacked">
           <div>
             <div class="eyebrow" style="margin-bottom: 1.5rem">Fragen · 08</div>
-            <h2 class="display-xl">Bevor Sie<br /><em class="serif">fragen.</em></h2>
+            <h2 class="display-xl">Fragen zu Garantie<br />und <em class="serif">Ablauf.</em></h2>
           </div>
           <p class="lead">
             Das höre ich am häufigsten. Wenn Ihre Frage fehlt, stellen Sie sie im
@@ -747,11 +720,10 @@
           <details class="faq-item">
             <summary>Wie können Sie fünf Stunden pro Woche garantieren?</summary>
             <div class="faq-a">
-              Weil ich rechne, bevor ich verspreche. In fast jedem Betrieb mit
-              Schreibtischarbeit stecken fünf Stunden pro Woche in E-Mail,
-              Ablage, Angeboten und Doppeleingaben. Die Stundenrechnung in der
-              Karte zeigt schwarz auf weiß, wo. Finde ich sie nicht, stelle ich
-              keine Rechnung. <strong>Das Risiko liegt bei mir, nicht bei
+              Weil ich rechne, bevor ich verspreche. In Betrieben mit Schreibtischarbeit
+              fressen E-Mail, Ablage, Angebote und Doppeleingaben viel Zeit. Die
+              Stundenrechnung in der Karte zeigt schwarz auf weiß, wo. Finde ich
+              keine fünf Stunden, stelle ich keine Rechnung. <strong>Das Risiko liegt bei mir, nicht bei
               Ihnen.</strong>
             </div>
           </details>
@@ -767,9 +739,8 @@
           <details class="faq-item">
             <summary>Was passiert mit dem, was wir im Gespräch besprechen?</summary>
             <div class="faq-a">
-              Es bleibt unter uns. Notizen und Auswertung laufen DSGVO-konform
-              mit Auftragsverarbeitungsvertrag und EU-Verarbeitung; auf Wunsch
-              werte ich ganz ohne KI-Unterstützung aus. Ihre Daten bewegen sich
+              Es bleibt unter uns. Auf Wunsch werte ich ganz ohne
+              KI-Unterstützung aus. Ihre Daten bewegen sich
               nicht. Wir reden nur über sie.
             </div>
           </details>
@@ -795,7 +766,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ ÜBERGANGSBAND → SPRINT ═══════════════ -->
     <section class="transition" aria-label="Weiter zu Modus Sprint">
       <svg class="transition-path" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
         <path d="M-20 150 C 300 150, 380 50, 700 50 S 1100 60, 1240 60" />
@@ -819,13 +789,11 @@
           <div></div>
           <a href="/sprint/" class="btn-transition">
             Modus Sprint ansehen
-            <span class="arrow">→</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════ CLOSING CTA → /#kontakt ═══════════════ -->
     <section class="dark-section final">
       <svg class="final-orbit" viewBox="0 0 800 800" aria-hidden="true">
         <circle cx="400" cy="400" r="120" />
@@ -847,14 +815,12 @@
           <div style="margin-top: 2.6rem">
             <a href="/#kontakt" class="btn-transition">
               Erstgespräch vereinbaren
-              <span class="arrow">→</span>
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════ FOOTER ═══════════════ -->
     <footer>
       <div class="wrap">
         <div class="footer-inner">
@@ -869,7 +835,8 @@
       </div>
     </footer>
 
-    <!-- Theme-Toggle Handler -->
+    <script src="/nav.js" defer></script>
+
     <script>
       function toggleTheme() {
         var html = document.documentElement;

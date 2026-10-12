@@ -1,20 +1,22 @@
 # DESIGN.md
 
-Direction for modus.alexvey.com. Source of truth for tokens and components: `brand/README.md`, `brand/tokens.css`.
-The reasons below are drafts read from the brand files. The owner confirms or changes them.
+Direction for modus.alexvey.com. Direction A "Werkbank", chosen on the Harmony card for the repositioning. The earlier "Editorial-Technische Kartografie" system in `brand/README.md` and `brand/tokens.css` no longer drives the pages. Only the logo and mark stay.
+The reasons below are drafts. The owner confirms or changes them.
 
-Reading this as: B2B consulting site for German Mittelstand decision makers, in an editorial cartography style (bone paper, ink, teal), dial ENERGY 2 / RHYTHM 2 / MOTION 2.
+Reading this as: B2B consulting site for German Mittelstand owners and managers, calm craft tone, dial ENERGY 1 / RHYTHM 2 / MOTION 1.
 
-Dial: ENERGY 2 / RHYTHM 2 / MOTION 2
+Dial: ENERGY 1 / RHYTHM 2 / MOTION 1
 
 ## Decisions and reasons
 
-- Palette: bone, ink, teal, plus amber and sage. Teal carries the brand. Amber marks a verdict, sage labels. One accent at a time.
-- Text colors meet WCAG AA in both themes (computed with `antislop-human/contrast-check.py`).
-- Typefaces: Geist for text (neutral, readable at small sizes), Instrument Serif italic for single emphasis words, JetBrains Mono for labels and numbers. Reason for Geist and JetBrains Mono: owner to confirm.
-- Background texture: faint graph paper. It supports the map and plate identity (coordinates, scale bars, plate revisions). It stays under 40% opacity.
-- Labels: short mono eyebrows above section headings give each section a name. No numerals, 0.1em tracking.
-- Cards: the three live modules are cards because they are priced products that link to a page. Modules not yet built are a plain list, not cards.
-- Motion: one hero drawing that cycles through the four method steps, a stopwatch hand and a compass needle on the module cards. All stop under `prefers-reduced-motion`.
-- Section rhythm: split header (Module, Methode), stacked header (Haltung), header aligned to the content grid (Über), dark full-bleed (Methode, Kontakt).
-- Theme: light by default, dark by system setting or toggle. Both themes are built and checked.
+- Source of truth: `werkbank/werkbank.css`. All pages load it. Tokens sit on `:root`.
+- Palette: warm paper, deep ink, one clay accent. The accent marks links on hover, margin-note titles, list dashes and tags. Reason: one accent keeps the page calm.
+- Dark theme follows the system setting and uses charcoal, not black. No toggle yet. Reason: the audience reads in daylight and at night, so both themes must work.
+- Typefaces: Newsreader for headlines and body (a text serif reads like a good letter and matches the honest-advisor tone), Geist only for small labels, nav and tables. Reason for Geist: neutral and readable at small sizes.
+- Layout: one reading column of about 66 characters, wide margins, ruled lines instead of cards. Reason: the content is prose and short lists, so a column serves it.
+- Margin notes: short side notes carry the honest "no" and the risk statements. They move under the text on narrow screens.
+- Offer rows: the three modules are plain rows with duration, not priced cards. Reason: there are no prices on the site, so nothing needs a card.
+- Proof: no references exist yet. A dashed "Pilotkunden gesucht" box holds the place. Examples are tagged "Beispiel". Reason: fake proof breaks the honesty claim.
+- Background: flat color, no grid or texture. Reason: the map identity is gone, so the grid would have no purpose.
+- Motion: one short rise on the hero text. It stops under `prefers-reduced-motion`.
+- Mobile: header wraps, tables scroll inside their own wrapper, no horizontal page scroll.

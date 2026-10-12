@@ -3,84 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modus Vey · KI-Beratung mit Methode</title>
-
-    <!-- SEO -->
+    <title>Modus Vey · KI, die in Ihrem Betrieb läuft</title>
     <meta
       name="description"
-      content="KI-Beratung für den deutschen Mittelstand. Alex Vey liefert in 30 Tagen einen lauffähigen KI-Use-Case auf Ihren Daten. Mit Methode, Festpreis und Klartext."
+      content="KI-Beratung für den Mittelstand. Alex Vey findet den Use Case, baut ihn auf Ihren Daten und übergibt ihn so, dass Sie ihn selbst betreiben."
     />
     <meta name="author" content="Alex Vey" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://modus.alexvey.com/" />
     <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
-    <link
-      rel="alternate icon"
-      type="image/png"
-      sizes="32x32"
-      href="/brand/favicon-32.png"
-    />
-    <link
-      rel="alternate icon"
-      type="image/png"
-      sizes="16x16"
-      href="/brand/favicon-16.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/brand/apple-touch-icon.png"
-    />
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#15161A" />
-
-    <!-- Theme init — prevents FOUC by setting data-theme before paint -->
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem('mv-theme');
-          var system = window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'night'
-            : 'light';
-          document.documentElement.setAttribute('data-theme', saved || system);
-        } catch (e) {
-          document.documentElement.setAttribute('data-theme', 'light');
-        }
-      })();
-    </script>
-
-    <!-- Open Graph -->
+    <meta name="color-scheme" content="light dark" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://modus.alexvey.com/" />
-    <meta property="og:title" content="Modus Vey · KI-Beratung mit Methode" />
+    <meta property="og:title" content="Modus Vey · KI, die in Ihrem Betrieb läuft" />
     <meta
       property="og:description"
-      content="KI-Beratung für den deutschen Mittelstand. Alex Vey liefert in 30 Tagen einen lauffähigen KI-Use-Case auf Ihren Daten. Mit Methode, Festpreis und Klartext."
+      content="KI-Beratung für den Mittelstand. Use Case finden, auf Ihren Daten bauen, übergeben."
     />
-    <meta
-      property="og:image"
-      content="https://modus.alexvey.com/brand/og.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Modus Vey — Methode statt Magie" />
+    <meta property="og:image" content="https://modus.alexvey.com/brand/og.png" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:site_name" content="Modus Vey" />
-
-    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Modus Vey · KI-Beratung mit Methode" />
-    <meta
-      name="twitter:description"
-      content="KI-Beratung für den deutschen Mittelstand. Alex Vey liefert in 30 Tagen einen lauffähigen KI-Use-Case auf Ihren Daten. Mit Methode, Festpreis und Klartext."
-    />
-    <meta
-      name="twitter:image"
-      content="https://modus.alexvey.com/brand/og.png"
-    />
-    <meta name="twitter:image:alt" content="Modus Vey — Methode statt Magie" />
-
-    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -92,1466 +38,361 @@
             "jobTitle": "KI-Berater",
             "email": "modus@alexvey.com",
             "url": "https://modus.alexvey.com/",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Kassel",
-              "addressCountry": "DE"
-            }
+            "address": { "@type": "PostalAddress", "addressLocality": "Kassel", "addressCountry": "DE" }
           },
           {
             "@type": "ProfessionalService",
             "@id": "https://modus.alexvey.com/#service",
-            "name": "Modus Vey — KI-Beratung",
-            "description": "KI-Beratung für den deutschen Mittelstand. In 30 Tagen liefere ich einen lauffähigen KI-Use-Case mit Methode und Festpreis.",
+            "name": "Modus Vey KI-Beratung",
+            "description": "KI-Beratung für den Mittelstand. Use Case finden, auf Ihren Daten bauen, übergeben.",
             "url": "https://modus.alexvey.com/",
             "provider": { "@id": "https://modus.alexvey.com/#person" },
             "areaServed": { "@type": "Country", "name": "Deutschland" },
-            "serviceType": [
-              "KI-Beratung",
-              "AI Consulting",
-              "Digitalisierung Mittelstand"
-            ],
-            "priceRange": "Festpreis",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Kassel",
-              "addressCountry": "DE"
-            }
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://modus.alexvey.com/#website",
-            "url": "https://modus.alexvey.com/",
-            "name": "Modus Vey",
-            "description": "KI-Beratung mit Methode — Alex Vey",
-            "inLanguage": "de-DE"
+            "serviceType": ["KI-Beratung", "AI Consulting"],
+            "address": { "@type": "PostalAddress", "addressLocality": "Kassel", "addressCountry": "DE" }
           }
         ]
       }
     </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css" />
-
-    <!-- Analytics -->
-    <script
-      defer
-      src="https://cloud.umami.is/script.js"
-      data-website-id="2fbba2cb-c37f-4a38-b6ef-2e90c5c9a5fe"
-    ></script>
+    <link rel="stylesheet" href="/werkbank/werkbank.css" />
   </head>
   <body>
-    <!-- ═══════════════ NAV ═══════════════ -->
-    <nav class="nav">
-      <div class="nav-inner">
-        <a href="#" class="nav-mark" aria-label="Modus Vey">
-          <span class="glyph">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <!-- MV-Mark — Ring + Chevrons + Mittelbalken -->
-              <circle cx="12" cy="12" r="11" fill="none" stroke="var(--ink)" stroke-width="0.7" />
-              <circle cx="12" cy="12" r="11.5" fill="none" stroke="var(--ink)" stroke-width="0.42" opacity="0.4" />
-              <path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" fill="var(--ink)" />
-              <path d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z" fill="var(--ink)" />
-              <path d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z" fill="var(--ink)" />
-            </svg>
-          </span>
-          Modus<span class="dot"></span>Vey
-        </a>
-        <div class="nav-links">
-          <a href="#module">Module</a>
-          <a href="#methode">Methode</a>
-          <a href="#annahmen">Haltung</a>
-          <button
-            id="theme-toggle"
-            class="theme-toggle"
-            type="button"
-            aria-label="Dunkles Theme aktivieren"
-            onclick="toggleTheme()"
-          >
-            <svg
-              class="moon"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <circle
-                cx="12"
-                cy="12"
-                r="4"
-                stroke="currentColor"
-                stroke-width="1.5"
-              />
-              <path
-                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-          <a href="#kontakt" class="nav-cta">Erstgespräch</a>
-        </div>
-      </div>
-    </nav>
+    <a class="skip" href="#main">Zum Inhalt</a>
 
-    <!-- ═══════════════ HERO ═══════════════ -->
-    <header class="hero">
+    <header class="site-head">
       <div class="wrap">
-        <div class="hero-grid">
-          <div class="hero-text">
-            <div class="eyebrow">Modus operandi · I</div>
-            <h1 class="display-xxl hero-headline">
-              Methode<br /><span class="line-2">statt Magie.</span>
-            </h1>
-            <p class="lead hero-sub">
-              KI-Beratung für den deutschen Mittelstand. In 30 Tagen steht ein
-              lauffähiger Use Case auf Ihren Daten.
-              <em class="serif"
-                >Oder ich sage Ihnen ehrlich, dass KI hier nicht das Problem
-                löst.</em
-              >
-            </p>
-            <div class="hero-cta">
-              <a href="#kontakt" class="btn btn-primary">
-                Erstgespräch vereinbaren
-                <span class="arrow">→</span>
-              </a>
-              <a href="#annahmen" class="btn btn-ghost"> Wie ich denke </a>
-            </div>
-          </div>
-
-          <!-- ═══ MODUS-KARTE: Signature Visual ═══ -->
-          <div class="modus-karte">
-            <span class="karte-dots" aria-hidden="true"><span></span></span>
-            <svg viewBox="0 0 540 540" xmlns="http://www.w3.org/2000/svg">
-              <!-- Innerer Grid -->
-              <defs>
-                <pattern
-                  id="karte-grid-pattern"
-                  width="30"
-                  height="30"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path d="M 30 0 L 0 0 0 30" class="karte-grid" />
-                </pattern>
-              </defs>
-              <rect
-                x="40"
-                y="40"
-                width="460"
-                height="460"
-                fill="url(#karte-grid-pattern)"
-              />
-
-              <!-- Eckmarkierungen (technische Zeichnung) -->
-              <g class="karte-corner-mark">
-                <path d="M 30 50 L 30 30 L 50 30" />
-                <path d="M 510 50 L 510 30 L 490 30" />
-                <path d="M 30 490 L 30 510 L 50 510" />
-                <path d="M 510 490 L 510 510 L 490 510" />
-              </g>
-
-              <!-- Mittiger Kreuzungspunkt -->
-              <line
-                x1="270"
-                y1="40"
-                x2="270"
-                y2="500"
-                stroke="var(--bone-line-mid)"
-                stroke-width="0.5"
-                stroke-dasharray="2 4"
-              />
-              <line
-                x1="40"
-                y1="270"
-                x2="500"
-                y2="270"
-                stroke="var(--bone-line-mid)"
-                stroke-width="0.5"
-                stroke-dasharray="2 4"
-              />
-
-              <!-- Maßstabsleiste oben -->
-              <g transform="translate(40, 18)">
-                <line x1="0" y1="0" x2="460" y2="0" class="karte-tick" />
-                <line x1="0" y1="-3" x2="0" y2="3" class="karte-tick" />
-                <line x1="115" y1="-2" x2="115" y2="2" class="karte-tick" />
-                <line x1="230" y1="-3" x2="230" y2="3" class="karte-tick" />
-                <line x1="345" y1="-2" x2="345" y2="2" class="karte-tick" />
-                <line x1="460" y1="-3" x2="460" y2="3" class="karte-tick" />
-                <text x="230" y="-7" text-anchor="middle" class="karte-label">
-                  · 30 Tage ·
-                </text>
-              </g>
-
-              <!-- Koordinatenbeschriftungen -->
-              <text x="40" y="525" class="karte-label-coord">N 51° 19'</text>
-              <text x="500" y="525" text-anchor="end" class="karte-label-coord">
-                E 9° 29'
-              </text>
-
-              <!-- Pfade zwischen Knoten (gestrichelte Hintergrund) -->
-              <g class="karte-path-bg" stroke-dasharray="3 3">
-                <path d="M 150 150 Q 270 110 390 150" />
-                <path d="M 390 150 Q 430 270 390 390" />
-                <path d="M 390 390 Q 270 430 150 390" />
-                <path d="M 150 390 Q 110 270 150 150" />
-                <path d="M 150 150 L 390 390" />
-                <path d="M 390 150 L 150 390" />
-              </g>
-
-              <!-- Animierte Hauptpfade (Zyklus durch die 4 Methodik-Schritte) -->
-              <path class="karte-path p1" d="M 150 150 Q 270 110 390 150" />
-              <path class="karte-path p2" d="M 390 150 Q 430 270 390 390" />
-              <path class="karte-path p3" d="M 390 390 Q 270 430 150 390" />
-              <path class="karte-path p4" d="M 150 390 Q 110 270 150 150" />
-
-              <!-- Tick-Marks an den Pfaden (wie Maßstab) -->
-              <g class="karte-tick" opacity="0.5">
-                <line x1="200" y1="123" x2="200" y2="129" />
-                <line x1="270" y1="113" x2="270" y2="119" />
-                <line x1="340" y1="123" x2="340" y2="129" />
-
-                <line x1="411" y1="200" x2="417" y2="200" />
-                <line x1="421" y1="270" x2="427" y2="270" />
-                <line x1="411" y1="340" x2="417" y2="340" />
-
-                <line x1="200" y1="411" x2="200" y2="417" />
-                <line x1="270" y1="421" x2="270" y2="427" />
-                <line x1="340" y1="411" x2="340" y2="417" />
-
-                <line x1="123" y1="200" x2="129" y2="200" />
-                <line x1="113" y1="270" x2="119" y2="270" />
-                <line x1="123" y1="340" x2="129" y2="340" />
-              </g>
-
-              <!-- Glow um Knoten -->
-              <circle cx="150" cy="150" r="14" class="karte-node-glow g1" />
-              <circle cx="390" cy="150" r="14" class="karte-node-glow g2" />
-              <circle cx="390" cy="390" r="14" class="karte-node-glow g3" />
-              <circle cx="150" cy="390" r="14" class="karte-node-glow g4" />
-
-              <!-- Knoten (4 Eckpunkte = Methodik-Schritte) -->
-              <circle cx="150" cy="150" r="6" class="karte-node-active" />
-              <circle cx="390" cy="150" r="6" class="karte-node-active" />
-              <circle cx="390" cy="390" r="6" class="karte-node-active" />
-              <circle cx="150" cy="390" r="6" class="karte-node-active" />
-
-              <!-- Roman Numerals an den Knoten -->
-              <text x="135" y="139" text-anchor="end" class="karte-label-roman">
-                I
-              </text>
-              <text x="405" y="139" class="karte-label-roman">II</text>
-              <text x="405" y="409" class="karte-label-roman">III</text>
-              <text x="135" y="409" text-anchor="end" class="karte-label-roman">
-                IV
-              </text>
-
-              <!-- Methoden-Beschriftungen — als Eck-Annotationen platziert,
-               kollisionsfrei mit Pfaden und Diagonalen -->
-              <text x="115" y="117" text-anchor="end" class="karte-label">
-                ZUHÖREN
-              </text>
-              <text x="425" y="117" text-anchor="start" class="karte-label">
-                VERSTEHEN
-              </text>
-              <text x="425" y="437" text-anchor="start" class="karte-label">
-                LÖSEN
-              </text>
-              <text x="115" y="437" text-anchor="end" class="karte-label">
-                LIEFERN
-              </text>
-
-              <!-- Zentrum (Modus) mit AV-Mark -->
-              <circle
-                cx="270"
-                cy="270"
-                r="32"
-                fill="var(--bone)"
-                stroke="var(--ink)"
-                stroke-width="1"
-              />
-              <circle
-                cx="270"
-                cy="270"
-                r="20"
-                fill="var(--bone)"
-                stroke="var(--bone-line-strong)"
-                stroke-width="0.5"
-                stroke-dasharray="2 2"
-              />
-              <!-- MV-Mark: Chevrons + Mittelbalken (V in Teal, wie die Pfade) -->
-              <svg x="255" y="255" width="30" height="30" viewBox="0 0 24 24">
-                <path
-                  d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z"
-                  fill="var(--ink)"
-                />
-                <path
-                  d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z"
-                  fill="var(--teal)"
-                />
-                <path
-                  d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z"
-                  fill="var(--ink)"
-                />
-              </svg>
-              <text
-                x="270"
-                y="300"
-                text-anchor="middle"
-                class="karte-label"
-                style="font-size: 8px"
-              >
-                MODUS
-              </text>
-
-              <!-- Kompass oben rechts -->
-              <g transform="translate(465, 65)">
-                <circle cx="0" cy="0" r="18" class="compass" />
-                <line x1="0" y1="-18" x2="0" y2="-12" class="compass" />
-                <line x1="0" y1="18" x2="0" y2="12" class="compass" />
-                <line x1="-18" y1="0" x2="-12" y2="0" class="compass" />
-                <line x1="18" y1="0" x2="12" y2="0" class="compass" />
-                <polygon points="0,-12 -3,3 0,0 3,3" class="compass-needle" />
-                <polygon points="0,12 -2,2 0,0 2,2" fill="var(--ink-faint)" />
-                <text
-                  x="0"
-                  y="-22"
-                  text-anchor="middle"
-                  class="karte-label"
-                  style="font-size: 7px"
-                >
-                  N
-                </text>
-              </g>
-
-              <!-- Maßangaben-Box unten links -->
-              <g transform="translate(60, 70)">
-                <rect
-                  x="-2"
-                  y="-10"
-                  width="80"
-                  height="34"
-                  fill="none"
-                  stroke="var(--bone-line-strong)"
-                  stroke-width="0.5"
-                />
-                <text x="0" y="0" class="karte-label" style="font-size: 7px">
-                  METHODE
-                </text>
-                <text
-                  x="0"
-                  y="11"
-                  class="karte-label-coord"
-                  style="font-size: 8px; fill: var(--ink-soft)"
-                >
-                  M-2026.05
-                </text>
-                <text x="0" y="20" class="karte-label-coord">REV. V</text>
-              </g>
-            </svg>
-          </div>
-        </div>
-
-        <!-- META BAR -->
-        <div class="meta-bar">
-          <div>
-            <span class="meta-num">3.500&thinsp;<em>€</em></span>
-            <span class="meta-label">Festpreis ab Sprint</span>
-          </div>
-          <div>
-            <span class="meta-num">30&thinsp;<em>Tage</em></span>
-            <span class="meta-label">Bis zur Übergabe</span>
-          </div>
-          <div>
-            <span class="meta-num">100&thinsp;<em>%</em></span>
-            <span class="meta-label">Sprint-Anrechnung auf Build</span>
-          </div>
-          <div>
-            <span class="meta-num">EU&thinsp;<em>only</em></span>
-            <span class="meta-label">DSGVO &amp; AI Act</span>
-          </div>
-        </div>
+        <a class="brand" href="/" aria-label="Modus Vey, Startseite">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="11" fill="none" stroke-width="0.7" />
+            <path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" />
+            <path d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z" />
+            <path d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z" />
+          </svg>
+          Modus Vey
+        </a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <a href="#werkstuecke">Angebot</a>
+          <a href="#anwendungen">Anwendungen</a>
+          <a href="#wissen">Wissen</a>
+          <a href="#haltung">Haltung</a>
+          <a href="#kontakt">Erstgespräch</a>
+        </nav>
       </div>
     </header>
 
-    <!-- ═══════════════ MODULE — BENTO ═══════════════ -->
-    <section id="module" class="bento-section">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow" style="margin-bottom: 1.5rem">
-              Leistungen · II
-            </div>
-            <h2 class="display-xl">
-              Modular<br />zum <em class="serif">Ziel.</em>
-            </h2>
-          </div>
-          <p class="lead">
-            Erst Orientierung, dann Analyse, dann Lösung.
-            <em class="serif">Kompass</em> verschreibt fertige Werkzeuge,
-            <em class="serif">Sprint</em> findet den Use Case,
-            <em class="serif">Build</em> liefert ihn produktiv aus. Schulung,
-            Audit und Private Cloud kommen als Ausbaustufe.
+    <main id="main">
+      <section class="hero">
+        <div class="wrap">
+          <p class="label rise">KI-Beratung für den Mittelstand</p>
+          <h1 class="rise">KI, die in Ihrem Betrieb läuft. Nicht in Folien.</h1>
+          <p class="lede rise">
+            Ich finde den Use Case, baue ihn auf Ihren Daten und übergebe ihn
+            so, dass Sie ihn selbst betreiben. Und wenn KI bei Ihnen nichts
+            bringt, sage ich es Ihnen.
           </p>
+          <div class="actions rise">
+            <a class="btn" href="#kontakt">Erstgespräch vereinbaren</a>
+            <a class="btn btn-quiet" href="#werkstuecke">Was ich anbiete</a>
+          </div>
+          <ul class="facts" aria-label="Eckdaten">
+            <li><strong>30 Tage</strong>bis zum laufenden Use Case</li>
+            <li><strong>Ihr Code</strong>gehört vollständig Ihnen</li>
+            <li><strong>Nur EU</strong>Hosting, DSGVO, AI Act</li>
+            <li><strong>Angebot vorab</strong>verbindlich, vor dem Start</li>
+          </ul>
         </div>
+      </section>
 
-        <div class="bento">
-          <!-- ─── KOMPASS (2 Spalten) → /kompass/ ─── -->
-          <a href="/kompass/" class="bento-card span-2 bento-card--link" aria-label="Modus Kompass — Modulseite ansehen">
-            <span class="card-go" aria-hidden="true">Modul<span class="arrow">→</span></span>
-            <div>
-              <div class="card-tag">EINSTIEG · 0</div>
-              <div class="card-illu">
-                <!-- Kompassrose -->
-                <svg viewBox="0 0 200 110" preserveAspectRatio="xMidYMid meet">
-                  <!-- Hintergrund-Grid -->
-                  <line x1="0" y1="55" x2="200" y2="55" class="illu-bg-line" />
-                  <line x1="100" y1="0" x2="100" y2="110" class="illu-bg-line" />
-
-                  <!-- Ringe -->
-                  <circle cx="100" cy="60" r="38" class="illu-stroke" />
-                  <circle cx="100" cy="60" r="34" class="illu-bg-line" />
-
-                  <!-- Kardinal-Ticks -->
-                  <g class="illu-stroke" stroke-width="1">
-                    <line x1="100" y1="22" x2="100" y2="27" />
-                    <line x1="100" y1="93" x2="100" y2="98" />
-                    <line x1="62" y1="60" x2="67" y2="60" />
-                    <line x1="133" y1="60" x2="138" y2="60" />
-                  </g>
-
-                  <!-- Interkardinal-Ticks -->
-                  <g class="illu-stroke" stroke-width="0.7">
-                    <line x1="126.9" y1="33.1" x2="124" y2="36" />
-                    <line x1="126.9" y1="86.9" x2="124" y2="84" />
-                    <line x1="73.1" y1="86.9" x2="76" y2="84" />
-                    <line x1="73.1" y1="33.1" x2="76" y2="36" />
-                  </g>
-
-                  <!-- Nord-Markierung -->
-                  <text
-                    x="100"
-                    y="16"
-                    text-anchor="middle"
-                    font-family="JetBrains Mono"
-                    font-size="6"
-                    fill="var(--ink-faint)"
-                    letter-spacing="0.1em"
-                  >
-                    N
-                  </text>
-
-                  <!-- Animierte Nadel -->
-                  <g class="compass-wander" style="transform-origin: 100px 60px">
-                    <polygon points="100,31 92.8,67.2 100,60 107.2,67.2" class="compass-needle" />
-                    <polygon points="100,89 95.2,64.8 100,60 104.8,64.8" fill="var(--ink-faint)" />
-                    <circle cx="100" cy="60" r="2" class="illu-fill" />
-                  </g>
-
-                  <!-- Side annotations -->
-                  <text
-                    x="10"
-                    y="55"
-                    font-family="JetBrains Mono"
-                    font-size="6"
-                    fill="var(--ink-faint)"
-                    letter-spacing="0.1em"
-                  >
-                    5·TAGE
-                  </text>
-                  <text
-                    x="155"
-                    y="55"
-                    font-family="JetBrains Mono"
-                    font-size="6"
-                    fill="var(--ink-faint)"
-                    letter-spacing="0.1em"
-                  >
-                    1.500€
-                  </text>
-
-                  <!-- Linie unten -->
-                  <line x1="20" y1="100" x2="180" y2="100" class="illu-bg-line" />
-                  <line x1="20" y1="98" x2="20" y2="102" class="illu-stroke" stroke-width="0.6" />
-                  <line x1="180" y1="98" x2="180" y2="102" class="illu-stroke" stroke-width="0.6" />
-                  <line x1="100" y1="98" x2="100" y2="102" class="illu-accent" stroke-width="1" />
-                </svg>
-              </div>
-              <h3 class="card-name">Modus <em>Kompass</em></h3>
-              <p class="card-desc">
-                Eine Woche, ein Gespräch, eine Karte: welche fertigen
-                KI-Werkzeuge Ihrem Team sofort mindestens fünf Stunden pro
-                Woche zurückgeben. Ich verschreibe, was es schon gibt, und
-                verdiene an keiner Lizenz. Finde ich die Stunden nicht, zahlen
-                Sie nichts. Geht es danach in den Sprint, rechne ich die
-                1.500 € voll an.
-              </p>
-            </div>
-            <div class="card-foot">
-              <span class="price">1.500 €</span>
-              <span class="duration">5 Tage · Garantie</span>
-            </div>
-          </a>
-
-          <!-- ─── SPRINT (2 Spalten) → /sprint/ ─── -->
-          <a href="/sprint/" class="bento-card card-sprint span-2 bento-card--link" aria-label="Modus Sprint — Modulseite ansehen">
-            <span class="card-go" aria-hidden="true">Modul<span class="arrow">→</span></span>
-            <div>
-              <div class="card-tag">ANALYSE · I</div>
-              <div class="card-illu">
-                <!-- Stoppwatch / Chronograph -->
-                <svg viewBox="0 0 200 110" preserveAspectRatio="xMidYMid meet">
-                  <!-- Hintergrund-Grid -->
-                  <line x1="0" y1="55" x2="200" y2="55" class="illu-bg-line" />
-                  <line
-                    x1="100"
-                    y1="0"
-                    x2="100"
-                    y2="110"
-                    class="illu-bg-line"
-                  />
-
-                  <!-- Stoppwatch Krone -->
-                  <line x1="100" y1="14" x2="100" y2="22" class="illu-stroke" />
-                  <line
-                    x1="94"
-                    y1="10"
-                    x2="106"
-                    y2="10"
-                    class="illu-stroke"
-                    stroke-width="2"
-                  />
-
-                  <!-- Außenring -->
-                  <circle cx="100" cy="60" r="38" class="illu-stroke" />
-                  <circle cx="100" cy="60" r="34" class="illu-bg-line" />
-
-                  <!-- Tick marks (12 Positionen) -->
-                  <g class="illu-stroke" stroke-width="1">
-                    <line x1="100" y1="24" x2="100" y2="29" />
-                    <line x1="100" y1="91" x2="100" y2="96" />
-                    <line x1="64" y1="60" x2="69" y2="60" />
-                    <line x1="131" y1="60" x2="136" y2="60" />
-                    <line
-                      class="pulse"
-                      x1="118.5"
-                      y1="29.5"
-                      x2="116"
-                      y2="33.5"
-                    />
-                    <line x1="129.5" y1="42.5" x2="125.5" y2="45" />
-                    <line x1="129.5" y1="77.5" x2="125.5" y2="75" />
-                    <line x1="118.5" y1="90.5" x2="116" y2="86.5" />
-                    <line x1="81.5" y1="90.5" x2="84" y2="86.5" />
-                    <line x1="70.5" y1="77.5" x2="74.5" y2="75" />
-                    <line x1="70.5" y1="42.5" x2="74.5" y2="45" />
-                    <line x1="81.5" y1="29.5" x2="84" y2="33.5" />
-                  </g>
-
-                  <!-- Zeiger -->
-                  <line
-                    x1="100"
-                    y1="60"
-                    x2="100"
-                    y2="35"
-                    class="illu-stroke"
-                    stroke-width="1.5"
-                  />
-                  <line
-                    x1="100"
-                    y1="60"
-                    x2="118"
-                    y2="60"
-                    class="illu-stroke"
-                    stroke-width="1.2"
-                  />
-
-                  <!-- Sekundenzeiger (animiert) -->
-                  <g
-                    class="stopwatch-second"
-                    style="transform-origin: 100px 60px"
-                  >
-                    <line
-                      x1="100"
-                      y1="60"
-                      x2="100"
-                      y2="28"
-                      class="illu-accent"
-                      stroke-width="1.4"
-                    />
-                    <circle cx="100" cy="60" r="2" class="illu-fill" />
-                  </g>
-
-                  <!-- Side annotations -->
-                  <text
-                    x="10"
-                    y="55"
-                    font-family="JetBrains Mono"
-                    font-size="6"
-                    fill="var(--ink-faint)"
-                    letter-spacing="0.1em"
-                  >
-                    10·TAGE
-                  </text>
-                  <text
-                    x="155"
-                    y="55"
-                    font-family="JetBrains Mono"
-                    font-size="6"
-                    fill="var(--ink-faint)"
-                    letter-spacing="0.1em"
-                  >
-                    3.500€
-                  </text>
-
-                  <!-- Linie unten -->
-                  <line
-                    x1="20"
-                    y1="100"
-                    x2="180"
-                    y2="100"
-                    class="illu-bg-line"
-                  />
-                  <line
-                    x1="20"
-                    y1="98"
-                    x2="20"
-                    y2="102"
-                    class="illu-stroke"
-                    stroke-width="0.6"
-                  />
-                  <line
-                    x1="180"
-                    y1="98"
-                    x2="180"
-                    y2="102"
-                    class="illu-stroke"
-                    stroke-width="0.6"
-                  />
-                  <line
-                    x1="100"
-                    y1="98"
-                    x2="100"
-                    y2="102"
-                    class="illu-accent"
-                    stroke-width="1"
-                  />
-                </svg>
-              </div>
-              <h3 class="card-name">Modus <em>Sprint</em></h3>
-              <p class="card-desc">
-                Zwei Wochen, ein Ziel: herausfinden, wo KI bei Ihnen Geld oder
-                Zeit spart. Und wo nicht. Am Ende liegt ein Fahrplan vor. Drei
-                bis fünf Use Cases, jeder mit Aufwand, Nutzen und Risiko
-                hinterlegt. Inklusive Festpreis für den Build. Buchen Sie ihn,
-                rechne ich den Sprint voll an.
-              </p>
-            </div>
-            <div class="card-foot">
-              <span class="price">3.500 €</span>
-              <span class="duration">10 Tage</span>
-            </div>
-          </a>
-
-          <!-- ─── BUILD (2 Spalten) → /build/ ─── -->
-          <a href="/build/" class="bento-card span-2 bento-card--link" aria-label="Modus Build — Modulseite ansehen">
-            <span class="card-go" aria-hidden="true">Modul<span class="arrow">→</span></span>
-            <div>
-              <div class="card-tag">UMSETZUNG · II</div>
-              <div class="card-illu">
-                <!-- Architektonische Schichten -->
-                <svg viewBox="0 0 200 110" preserveAspectRatio="xMidYMid meet">
-                  <!-- Hintergrund-Grid -->
-                  <g class="illu-bg-line">
-                    <line x1="0" y1="20" x2="200" y2="20" />
-                    <line x1="0" y1="90" x2="200" y2="90" />
-                    <line x1="40" y1="0" x2="40" y2="110" />
-                    <line x1="160" y1="0" x2="160" y2="110" />
-                  </g>
-
-                  <!-- Schicht 4 (oben) - User Interface -->
-                  <rect
-                    x="50"
-                    y="22"
-                    width="100"
-                    height="14"
-                    class="illu-stroke"
-                  />
-                  <line
-                    x1="60"
-                    y1="29"
-                    x2="92"
-                    y2="29"
-                    class="illu-stroke"
-                    stroke-width="0.6"
-                  />
-                  <circle cx="142" cy="29" r="2" class="illu-fill build-dot" />
-
-                  <!-- Schicht 3 - Pipeline -->
-                  <rect
-                    x="50"
-                    y="42"
-                    width="100"
-                    height="14"
-                    class="illu-stroke"
-                  />
-                  <g class="build-flow">
-                    <line x1="58" y1="49" x2="64" y2="49" class="illu-accent" />
-                    <line x1="68" y1="49" x2="76" y2="49" class="illu-accent" />
-                    <line x1="80" y1="49" x2="92" y2="49" class="illu-accent" />
-                  </g>
-                  <line
-                    x1="96"
-                    y1="49"
-                    x2="104"
-                    y2="49"
-                    class="illu-stroke"
-                    stroke-width="0.8"
-                  />
-                  <line
-                    x1="108"
-                    y1="49"
-                    x2="120"
-                    y2="49"
-                    class="illu-stroke"
-                    stroke-width="0.8"
-                  />
-                  <line
-                    x1="124"
-                    y1="49"
-                    x2="142"
-                    y2="49"
-                    class="illu-stroke"
-                    stroke-width="0.8"
-                  />
-
-                  <!-- Schicht 2 - Daten -->
-                  <rect
-                    x="50"
-                    y="62"
-                    width="100"
-                    height="14"
-                    class="illu-stroke"
-                  />
-                  <line x1="58" y1="66" x2="142" y2="66" class="illu-bg-line" />
-                  <line x1="58" y1="69" x2="142" y2="69" class="illu-bg-line" />
-                  <line x1="58" y1="72" x2="142" y2="72" class="illu-bg-line" />
-
-                  <!-- Verbindungslinien zwischen Schichten -->
-                  <g class="illu-bg-line">
-                    <line x1="100" y1="36" x2="100" y2="42" />
-                    <line x1="100" y1="56" x2="100" y2="62" />
-                  </g>
-
-                  <!-- Annotationen -->
-                  <text
-                    x="155"
-                    y="32"
-                    font-family="JetBrains Mono"
-                    font-size="5.5"
-                    fill="var(--ink-faint)"
-                  >
-                    UI
-                  </text>
-                  <text
-                    x="155"
-                    y="52"
-                    font-family="JetBrains Mono"
-                    font-size="5.5"
-                    fill="var(--ink-faint)"
-                  >
-                    RAG
-                  </text>
-                  <text
-                    x="155"
-                    y="72"
-                    font-family="JetBrains Mono"
-                    font-size="5.5"
-                    fill="var(--ink-faint)"
-                  >
-                    DATA
-                  </text>
-
-                  <text
-                    x="45"
-                    y="32"
-                    text-anchor="end"
-                    font-family="JetBrains Mono"
-                    font-size="5.5"
-                    fill="var(--ink-faint)"
-                  >
-                    III
-                  </text>
-                  <text
-                    x="45"
-                    y="52"
-                    text-anchor="end"
-                    font-family="JetBrains Mono"
-                    font-size="5.5"
-                    fill="var(--ink-faint)"
-                  >
-                    II
-                  </text>
-                  <text
-                    x="45"
-                    y="72"
-                    text-anchor="end"
-                    font-family="JetBrains Mono"
-                    font-size="5.5"
-                    fill="var(--ink-faint)"
-                  >
-                    I
-                  </text>
-                </svg>
-              </div>
-              <h3 class="card-name">Modus <em>Build</em></h3>
-              <p class="card-desc">
-                Implementierung in 30 Tagen: ein Use Case, klar abgegrenzt,
-                lauffähig auf Ihren Daten. Der Code gehört Ihnen, die
-                Architektur ist dokumentiert. Den genauen Preis legt der Sprint
-                fest, je nach Datenlage und Integrationstiefe.
-              </p>
-            </div>
-            <div class="card-foot">
-              <span class="price">ab 18.000 €</span>
-              <span class="duration">30 Tage · ein Use Case</span>
-            </div>
-          </a>
-
-          <!-- ─── SCHULUNG (2 Spalten · Teaser) ─── -->
-          <div class="bento-card bento-card--teaser span-2">
-            <div>
-              <div class="card-tag">QUALIFIZIERUNG · III · AUSBAUSTUFE</div>
-              <div class="card-illu">
-                <!-- Buch mit Linien -->
-                <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
-                  <line x1="0" y1="80" x2="160" y2="80" class="illu-bg-line" />
-
-                  <!-- Buchrücken -->
-                  <line x1="80" y1="20" x2="80" y2="80" class="illu-stroke" />
-
-                  <!-- Linke Buchseite -->
-                  <path
-                    d="M 25 20 L 80 20 L 80 80 L 25 80 Q 22 50 25 20 Z"
-                    class="illu-stroke"
-                  />
-                  <line x1="35" y1="32" x2="73" y2="32" class="illu-bg-line" />
-                  <line x1="35" y1="38" x2="68" y2="38" class="illu-bg-line" />
-                  <line
-                    x1="35"
-                    y1="44"
-                    x2="73"
-                    y2="44"
-                    class="illu-accent book-accent"
-                  />
-                  <line x1="35" y1="50" x2="65" y2="50" class="illu-bg-line" />
-                  <line x1="35" y1="56" x2="73" y2="56" class="illu-bg-line" />
-                  <line x1="35" y1="62" x2="60" y2="62" class="illu-bg-line" />
-
-                  <!-- Rechte Buchseite -->
-                  <path
-                    d="M 135 20 L 80 20 L 80 80 L 135 80 Q 138 50 135 20 Z"
-                    class="illu-stroke"
-                  />
-                  <line x1="87" y1="32" x2="125" y2="32" class="illu-bg-line" />
-                  <line x1="87" y1="38" x2="120" y2="38" class="illu-bg-line" />
-                  <line x1="87" y1="44" x2="115" y2="44" class="illu-bg-line" />
-                  <line x1="87" y1="50" x2="125" y2="50" class="illu-bg-line" />
-                  <circle cx="92" cy="58" r="2" class="illu-fill book-dot" />
-                  <line
-                    x1="98"
-                    y1="58"
-                    x2="125"
-                    y2="58"
-                    class="illu-stroke"
-                    stroke-width="0.8"
-                  />
-
-                  <!-- Annotationen -->
-                  <text
-                    x="80"
-                    y="93"
-                    text-anchor="middle"
-                    font-family="JetBrains Mono"
-                    font-size="6"
-                    fill="var(--ink-faint)"
-                    letter-spacing="0.08em"
-                  >
-                    ART. 4 KI-VO
-                  </text>
-                </svg>
-              </div>
-              <h3 class="card-name">Modus <em>Schulung</em></h3>
-              <p class="card-desc">
-                AZAV-konforme Mitarbeiterqualifizierung. Erfüllt Ihre
-                Schulungspflicht aus Art. 4 EU AI Act. Folgt, sobald Sprint und
-                Build stehen.
-              </p>
-            </div>
-            <div class="card-foot">
-              <span class="status">In Vorbereitung</span>
-              <span class="horizon">2026</span>
-            </div>
-          </div>
-
-          <!-- ─── AUDIT (2 Spalten · Teaser) ─── -->
-          <div class="bento-card bento-card--teaser span-2">
-            <div>
-              <div class="card-tag">PRÜFUNG · IV · AUSBAUSTUFE</div>
-              <div class="card-illu">
-                <!-- Lupe mit Diagramm -->
-                <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
-                  <line x1="0" y1="85" x2="160" y2="85" class="illu-bg-line" />
-
-                  <!-- Hintergrund-Diagramm (Bars) -->
-                  <g class="illu-bg-line">
-                    <line x1="100" y1="55" x2="100" y2="80" />
-                    <line x1="115" y1="40" x2="115" y2="80" />
-                    <line x1="130" y1="60" x2="130" y2="80" />
-                  </g>
-                  <g class="illu-stroke audit-bars" stroke-width="0.8">
-                    <line x1="100" y1="65" x2="100" y2="80" />
-                    <line x1="115" y1="50" x2="115" y2="80" />
-                    <line x1="130" y1="68" x2="130" y2="80" />
-                  </g>
-                  <line x1="95" y1="80" x2="138" y2="80" class="illu-bg-line" />
-
-                  <!-- Lupe -->
-                  <g class="audit-glass" style="transform-origin: 60px 45px">
-                    <circle cx="60" cy="45" r="22" class="illu-stroke" />
-                    <circle cx="60" cy="45" r="18" class="illu-bg-line" />
-                    <line
-                      x1="76"
-                      y1="61"
-                      x2="92"
-                      y2="77"
-                      class="illu-stroke"
-                      stroke-width="2"
-                    />
-                    <line
-                      x1="74"
-                      y1="63"
-                      x2="90"
-                      y2="79"
-                      class="illu-stroke"
-                      stroke-width="2"
-                    />
-                  </g>
-
-                  <!-- Innerhalb Lupe: Strichliste mit einem grünen Tick -->
-                  <line
-                    x1="48"
-                    y1="38"
-                    x2="58"
-                    y2="38"
-                    class="illu-stroke"
-                    stroke-width="0.6"
-                  />
-                  <line x1="60" y1="38" x2="70" y2="38" class="illu-bg-line" />
-                  <line
-                    x1="48"
-                    y1="44"
-                    x2="64"
-                    y2="44"
-                    class="illu-stroke"
-                    stroke-width="0.6"
-                  />
-                  <line
-                    x1="48"
-                    y1="50"
-                    x2="68"
-                    y2="50"
-                    class="illu-stroke"
-                    stroke-width="0.6"
-                  />
-                  <line x1="48" y1="56" x2="60" y2="56" class="illu-bg-line" />
-
-                  <!-- Tick / Akzent -->
-                  <path
-                    d="M 50 47 L 53 50 L 58 44"
-                    class="illu-accent audit-tick"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.4"
-                  />
-
-                  <text
-                    x="80"
-                    y="98"
-                    text-anchor="middle"
-                    font-family="JetBrains Mono"
-                    font-size="6"
-                    fill="var(--ink-faint)"
-                    letter-spacing="0.08em"
-                  >
-                    AI ACT READINESS
-                  </text>
-                </svg>
-              </div>
-              <h3 class="card-name">Modus <em>Audit</em></h3>
-              <p class="card-desc">
-                EU-AI-Act-Readiness-Check. Klartext-Bericht statt
-                Compliance-Theater. Auf Anfrage verfügbar.
-              </p>
-            </div>
-            <div class="card-foot">
-              <span class="status">Auf Anfrage</span>
-              <span class="horizon">2026</span>
-            </div>
-          </div>
-
-          <!-- ─── PRIVAT (2 Spalten · Teaser) ─── -->
-          <div class="bento-card bento-card--teaser span-2">
-            <div>
-              <div class="card-tag">SOUVERÄNITÄT · V · AUSBAUSTUFE</div>
-              <div class="card-illu">
-                <!-- Konzentrische Schloss-Schichten -->
-                <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
-                  <!-- Hintergrund-Grid -->
-                  <g class="illu-bg-line">
-                    <line x1="0" y1="50" x2="160" y2="50" />
-                    <line x1="80" y1="0" x2="80" y2="100" />
-                  </g>
-
-                  <!-- Konzentrische Ringe -->
-                  <circle
-                    cx="80"
-                    cy="50"
-                    r="38"
-                    class="illu-bg-line lock-ring lock-ring-4"
-                  />
-                  <circle
-                    cx="80"
-                    cy="50"
-                    r="30"
-                    class="illu-stroke lock-ring lock-ring-3"
-                  />
-                  <circle
-                    cx="80"
-                    cy="50"
-                    r="22"
-                    class="illu-bg-line lock-ring lock-ring-2"
-                  />
-                  <circle
-                    cx="80"
-                    cy="50"
-                    r="14"
-                    class="illu-accent lock-ring lock-ring-1"
-                  />
-
-                  <!-- Bügel oben -->
-                  <path
-                    d="M 70 22 Q 70 12 80 12 Q 90 12 90 22"
-                    class="illu-stroke"
-                    fill="none"
-                  />
-
-                  <!-- Schloss-Körper -->
-                  <rect
-                    x="70"
-                    y="42"
-                    width="20"
-                    height="16"
-                    class="illu-stroke"
-                    fill="var(--bone-soft)"
-                  />
-                  <circle cx="80" cy="50" r="2.5" class="illu-fill" />
-                  <line
-                    x1="80"
-                    y1="51"
-                    x2="80"
-                    y2="56"
-                    class="illu-stroke"
-                    stroke-width="1"
-                  />
-
-                  <!-- Tick-Marks an Außenring -->
-                  <g class="illu-stroke" stroke-width="0.6">
-                    <line x1="80" y1="10" x2="80" y2="14" />
-                    <line x1="118" y1="50" x2="114" y2="50" />
-                    <line x1="80" y1="86" x2="80" y2="82" />
-                    <line x1="42" y1="50" x2="46" y2="50" />
-                  </g>
-
-                  <!-- Annotationen -->
-                  <text
-                    x="20"
-                    y="95"
-                    font-family="JetBrains Mono"
-                    font-size="6"
-                    fill="var(--ink-faint)"
-                    letter-spacing="0.08em"
-                  >
-                    DSGVO · EU-HOST
-                  </text>
-                </svg>
-              </div>
-              <h3 class="card-name">Modus <em>Privat</em></h3>
-              <p class="card-desc">
-                Privates KI-Setup für Ihr Unternehmen. EU-Hosting, keine
-                US-Server, kein Datentransfer in Drittländer. Spätere
-                Ausbaustufe.
-              </p>
-            </div>
-            <div class="card-foot">
-              <span class="status">In Planung</span>
-              <span class="horizon">2026/27</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════ METHODE — DARK ═══════════════ -->
-    <section id="methode" class="dark-section">
-      <div class="wrap methode-frame">
-        <div class="section-header">
+      <section id="fuer-wen">
+        <div class="wrap with-note">
           <div>
-            <div class="eyebrow" style="margin-bottom: 1.5rem; color: #d4a574">
-              Methode · III
-            </div>
-            <h2 class="display-xl">
-              Vier Schritte.<br />Kein <em class="serif">fünfter.</em>
-            </h2>
+            <p class="label">Für wen</p>
+            <h2 class="section-title">Für Betriebe, in denen Schreibtischarbeit die Woche füllt.</h2>
+            <p>
+              Mein Alltag sind Teams mit 2 bis 50 Menschen, die E-Mails,
+              Angebote, Ablage und Doppeleingaben bewältigen. Und Firmen,
+              deren Daten nicht einfach in eine Cloud wandern dürfen:
+              Finanzdienstleister, Zulieferer, verwaltungsnahe Betriebe.
+            </p>
+            <p>
+              Sie brauchen keine KI-Strategie. Sie brauchen jemanden, der
+              zuhört, nachrechnet und danach auch bauen kann.
+            </p>
           </div>
-          <p class="lead">
-            Ich arbeite in einem festen Rhythmus. Nicht weil Methode hübsch
-            klingt, sondern weil sie verhindert, was KI-Projekte sonst zerlegt:
-            ausufernde Phasen, Scope-Wachstum, Berater-Lock-in. Die vier Schritte
-            bleiben gleich. Was darin entsteht, baue ich um Ihren Betrieb herum.
+          <aside class="note">
+            <strong>Warum Regulatorik?</strong>
+            Ich arbeite täglich mit PSD2, XS2A, EU AI Act und DSGVO im Open
+            Banking. Das ist kein Zusatzpaket, sondern mein Arbeitskontext.
+          </aside>
+        </div>
+      </section>
+
+      <section id="werkstuecke">
+        <div class="wrap">
+          <p class="label">Angebot</p>
+          <h2 class="section-title">Drei Werkstücke. Sie wählen den Anfang.</h2>
+          <p class="lede" style="margin-bottom: 2.5rem">
+            Jedes Werkstück steht für sich. Vor jedem Start bekommen Sie ein
+            verbindliches Angebot. Was Sie vorher bezahlt haben, rechne ich
+            voll auf das nächste an.
           </p>
-        </div>
-
-        <div class="methode-grid">
-          <div class="methode-step">
-            <div class="step-num">I <small>Zuhören</small></div>
-            <h3>Ich höre zu, wie Sie arbeiten.</h3>
-            <p>
-              Bevor ich über KI rede, höre ich Ihrem Betrieb zu. Welche Prozesse
-              sind fragil? Wo sitzt Wissen in Köpfen, das überall gebraucht
-              wird? Und ich kläre früh, was einen Zeitplan sprengt:
-              Datenfreigaben, Security-Review, Mitbestimmung. Lieber in Woche
-              eins als in Woche vier.
-            </p>
-          </div>
-          <div class="methode-step">
-            <div class="step-num">II <small>Verstehen</small></div>
-            <h3>Ich verstehe, wo KI wirklich hilft.</h3>
-            <p>
-              Drei bis fünf Anwendungsfälle, priorisiert nach
-              Wirtschaftlichkeit, Risiko und Realisierbarkeit. Kein Hebel ist
-              abstrakt. Jeder hat eine Zeitschätzung und eine Zahl.
-            </p>
-          </div>
-          <div class="methode-step">
-            <div class="step-num">III <small>Lösen</small></div>
-            <h3>Ich löse das Problem mit Ihrem Team. Nicht für es.</h3>
-            <p>
-              In 30 Tagen ein lauffähiger Use Case bis zur Übergabe. Code gehört
-              Ihnen, Architektur ist dokumentiert, Mitarbeiter sind
-              eingearbeitet. Black Box ist Lock-in.
-            </p>
-          </div>
-          <div class="methode-step">
-            <div class="step-num">IV <small>Liefern</small></div>
-            <h3>Ich liefere ein System, das Sie verstehen.</h3>
-            <p>
-              Sie können das System weiter betreiben, weiterentwickeln und in
-              zwei Jahren entscheiden, ob es noch zu Ihnen passt. Ohne mich
-              fragen zu müssen.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════ DREI ANNAHMEN ═══════════════ -->
-    <section id="annahmen">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow" style="margin-bottom: 1.5rem">
-              Haltung · IV
-            </div>
-            <h2 class="display-xl">
-              Drei Annahmen,<br />gegen die ich
-              <em class="serif-amber">arbeite.</em>
-            </h2>
-          </div>
-          <p class="lead">
-            Wenn Sie woanders KI-Beratung einkaufen, hören Sie diese drei Sätze
-            fast immer mit. Meine Methode arbeitet gegen alle drei.
-          </p>
-        </div>
-
-        <div class="annahmen-list">
-          <div class="annahme">
-            <div class="annahme-num">1.</div>
-            <div class="annahme-claim">
-              KI ist nicht primär eine <em>Tool-Frage.</em>
-            </div>
-            <div class="annahme-counter">
-              KI ist eine <strong>Prozess- und Datenfrage</strong>. Tools sind
-              die letzten 20 Prozent. Davor liegen Workflow, Datenqualität,
-              Akzeptanz. Genau hier scheitert jedes zweite Projekt.
-            </div>
-          </div>
-
-          <div class="annahme">
-            <div class="annahme-num">2.</div>
-            <div class="annahme-claim">
-              Die wenigsten brauchen ein <em>eigenes Modell.</em>
-            </div>
-            <div class="annahme-counter">
-              Was Sie brauchen, ist ein sauberer Use Case auf
-              <strong>Standard-Modellen mit Ihren Daten</strong>. RAG schlägt
-              Fine-Tuning fast immer. Günstiger, schneller, prüfbarer.
-              Souveränität liegt in der Architektur.
-            </div>
-          </div>
-
-          <div class="annahme">
-            <div class="annahme-num">3.</div>
-            <div class="annahme-claim">
-              Eine Lizenz ist eine <em>Erlaubnis,</em> kein <em>System.</em>
-            </div>
-            <div class="annahme-counter">
-              KI-Reife entsteht aus
-              <strong
-                >dokumentierten Use Cases, geschulten Mitarbeitern,
-                klassifizierten Anwendungen</strong
-              >
-              und einem Datenschutzkonzept, das einer Prüfung standhält. Eine
-              ChatGPT-Lizenz für alle ist davon der erste Schritt, nicht das
-              Ziel.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════ ÜBER ═══════════════ -->
-    <section id="ueber">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow" style="margin-bottom: 1.5rem">Über · V</div>
-            <h2 class="display-xl">Alex Vey.</h2>
-          </div>
-          <p class="lead">
-            Eine Beratung, die nicht ihre Methode verkauft, sondern Ihre Methode
-            findet.
-          </p>
-        </div>
-
-        <div class="ueber-grid">
-          <div>
-            <div class="portrait-frame">
-              <div class="portrait-mark">
-                <img
-                  class="mark-light"
-                  src="brand/mark.svg"
-                  alt="Modus Vey · AV-Monogramm"
-                  width="512"
-                  height="512"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <img
-                  class="mark-night"
-                  src="brand/mark-on-night.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width="512"
-                  height="512"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
-            <div class="portrait-meta">
-              <div>Alex Vey</div>
-              <div style="color: var(--ink-faint)">Kassel · Hessen</div>
-              <div style="color: var(--ink-faint)">alexvey.com</div>
-            </div>
-          </div>
-          <div class="ueber-content">
-            <p>
-              Bei Modus Vey arbeite ich so, wie ein guter Hausarzt arbeitet:
-              zuhören, präzise diagnostizieren, nur das verschreiben, was
-              wirklich hilft.
-            </p>
-            <p>
-              Hauptberuflich verantworte ich bei
-              <strong>fino.digital</strong> in Kassel die Schnittstelle zwischen
-              Software-Architektur und Regulatorik im Open Banking.
-              <strong>PSD2, XS2A, EU AI Act, DSGVO</strong> sind keine Punkte
-              auf einer LinkedIn-Liste, sondern mein tägliches Arbeitsumfeld.
-            </p>
-            <p>
-              Weiterhin bin ich als freier Berater tätig, spezialisiert auf
-              <strong>AI Explore und Implementation</strong> - von ersten PoCs
-              bis zu produktiven Systemen im regulierten Umfeld. Ich kombiniere
-              Use-Case-Discovery, Daten- und Prozessanalyse mit konkreter
-              Umsetzung – von RAG-Pipelines bis zu Governance- und
-              Betriebskonzepten, die regulatorischen Prüfungen standhalten.
-            </p>
-            <p>
-              Was Sie davon haben: einen Partner, der KI nicht nur „einsetzt“,
-              sondern als System denkt - fachlich, technisch und regulatorisch.
-              Und der nur dort KI vorschlägt, wo sie Ihrem Team messbar nützt.
-            </p>
-            <div class="ueber-pillars">
+          <ol class="pieces">
+            <li class="piece">
+              <p class="when">Einstieg · 5 Tage</p>
               <div>
-                <div class="ueber-pillar-label">Abschluss</div>
-                <div class="ueber-pillar-value">M.Sc. Computer Science</div>
+                <h3><a href="/kompass/">Kompass</a></h3>
+                <p>
+                  Ein Gespräch, eine Karte: welche fertigen KI-Werkzeuge Ihrem
+                  Team mindestens fünf Stunden pro Woche zurückgeben. Finde
+                  ich sie nicht, zahlen Sie nichts.
+                </p>
               </div>
+            </li>
+            <li class="piece">
+              <p class="when">Analyse · 10 Tage</p>
               <div>
-                <div class="ueber-pillar-label">Praxis</div>
-                <div class="ueber-pillar-value">20+ Jahre Engineering</div>
+                <h3><a href="/sprint/">Sprint</a></h3>
+                <p>
+                  Drei bis fünf Use Cases mit Aufwand, Nutzen und Risiko. Am
+                  Ende ein Fahrplan und ein verbindliches Angebot für den
+                  Build.
+                </p>
               </div>
+            </li>
+            <li class="piece">
+              <p class="when">Umsetzung · 30 Tage</p>
               <div>
-                <div class="ueber-pillar-label">Haltung</div>
-                <div class="ueber-pillar-value">Builder, der berät</div>
+                <h3><a href="/build/">Build</a></h3>
+                <p>
+                  Ein Use Case, lauffähig auf Ihren Daten. Quellcode und
+                  Architektur gehören Ihnen. Ihr Team betreibt das System ohne
+                  mich weiter.
+                </p>
               </div>
-            </div>
-          </div>
+            </li>
+            <li class="piece later">
+              <p class="when">Später · 2026/27</p>
+              <div>
+                <h3>Schulung, Audit, Private Cloud</h3>
+                <p>
+                  AI-Act-Schulung nach Art. 4, Readiness-Check und ein privates
+                  KI-Setup in der EU. Auf Anfrage.
+                </p>
+              </div>
+            </li>
+          </ol>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ═══════════════ VERDICT-BAR — Pre-CTA Transition ═══════════════ -->
-    <aside class="verdict-bar" aria-label="Empfehlung">
-      <div class="wrap">
-        <strong
-          >Erst <em class="serif">Orientierung,</em> dann Lösung.
-          <em class="serif">Kompass</em> verschreibt Werkzeuge,
-          <em class="serif">Sprint</em> findet den Use Case,
-          <em class="serif">Build</em> liefert ihn produktiv aus.</strong
-        >
-      </div>
-    </aside>
-
-    <!-- ═══════════════ FINAL CTA — DARK ═══════════════ -->
-    <section id="kontakt" class="dark-section final">
-      <svg class="final-orbit" viewBox="0 0 800 800">
-        <circle cx="400" cy="400" r="120" />
-        <circle cx="400" cy="400" r="200" />
-        <circle cx="400" cy="400" r="290" />
-        <circle cx="400" cy="400" r="380" />
-      </svg>
-
-      <div class="wrap">
-        <div class="final-content">
-          <div
-            class="eyebrow"
-            style="margin-bottom: 0; justify-content: center; color: #d4a574"
-          >
-            Reden wir · VI
-          </div>
-          <h2 class="display-xxl">
-            Eine halbe Stunde.<br /><em class="serif">Kein Pitch.</em>
-          </h2>
-          <p class="lead" style="margin: 0 auto">
-            Ich höre mir an, was Sie umtreibt. Und sage Ihnen ehrlich, ob ich
-            der richtige Partner bin.
+      <section id="anwendungen">
+        <div class="wrap">
+          <p class="label">Anwendungen</p>
+          <h2 class="section-title">Woran ich typischerweise arbeite.</h2>
+          <p class="lede" style="margin-bottom: 2.5rem">
+            Das sind Beispiele aus dem Mittelstand, keine Kundenprojekte.
+            Echte Fälle stelle ich hier vor, sobald sie veröffentlicht werden
+            dürfen.
           </p>
+          <ul class="cases">
+            <li>
+              <h3>Angebote aus Stammdaten <span class="tag">Beispiel</span></h3>
+              <p>
+                Aus Kundendaten und Bausteinen entsteht der Angebotstext. Der
+                Vertrieb prüft, statt zu tippen.
+              </p>
+            </li>
+            <li>
+              <h3>Eingangsrechnungen vorerfassen <span class="tag">Beispiel</span></h3>
+              <p>
+                Das System liest, ordnet zu und markiert Unklares. Die
+                Buchhaltung entscheidet nur noch die Sonderfälle.
+              </p>
+            </li>
+            <li>
+              <h3>Antworten aus der eigenen Doku <span class="tag">Beispiel</span></h3>
+              <p>
+                Ein Assistent für Service und Support, der nur aus Ihren
+                Dokumenten antwortet und die Quelle nennt.
+              </p>
+            </li>
+            <li>
+              <h3>Protokolle ohne Mitschreiben <span class="tag">Beispiel</span></h3>
+              <p>
+                Gesprächsnotizen und Aufgaben entstehen automatisch, in der EU
+                verarbeitet und mit Auftragsverarbeitungsvertrag.
+              </p>
+            </li>
+            <li>
+              <h3>Wissen, das nicht mit Köpfen geht <span class="tag">Beispiel</span></h3>
+              <p>
+                Ein Wissensassistent auf internen Dokumenten, gehostet in der
+                EU und nachvollziehbar.
+              </p>
+            </li>
+            <li>
+              <h3>AI-Act-Readiness <span class="tag">Beispiel</span></h3>
+              <p>
+                Inventar Ihrer KI-Anwendungen, Klassifizierung und der
+                Nachweis zur Schulungspflicht nach Art. 4.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-          <div class="final-meta">
-            <span class="final-meta-item"
-              >Erstgespräch <strong>kostenlos</strong></span
-            >
-            <span class="final-meta-item"
-              >Vorbereitung <strong>15 Minuten</strong></span
-            >
-            <span class="final-meta-item"
-              >Online oder vor Ort <strong>30 Minuten</strong></span
-            >
-          </div>
-
-          <div class="final-contact">
-            <a href="mailto:modus@alexvey.com">modus@alexvey.com</a>
+      <section id="referenzen">
+        <div class="wrap">
+          <div class="proof">
+            <p class="label">Referenzen</p>
+            <h2>Pilotkunden gesucht.</h2>
+            <p>
+              Ich arbeite mit zwei bis drei Betrieben als Pilot zusammen. Sie
+              bekommen die Arbeit zu besonderen Konditionen. Dafür dokumentieren
+              wir gemeinsam den Fall, mit Ihrem Namen und Ihrer Stimme, wenn
+              Sie es erlauben.
+            </p>
+            <p>Bis dahin zeige ich keine Referenzen, die es nicht gibt.</p>
+            <p style="margin-top: 1.5rem">
+              <a class="btn btn-quiet" href="mailto:modus@alexvey.com?subject=Pilotkunde">Pilotkunde werden</a>
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ═══════════════ FOOTER ═══════════════ -->
-    <footer>
+      <section id="wissen">
+        <div class="wrap">
+          <p class="label">Wissen</p>
+          <h2 class="section-title">Tipps, die Sie ohne mich nutzen können.</h2>
+          <p class="lede" style="margin-bottom: 2.5rem">
+            Kurze Texte mit einer Checkliste. Eine Idee pro Seite. In Arbeit.
+          </p>
+          <ul class="tips">
+            <li>
+              <span class="kind">Checkliste · in Arbeit</span>
+              <span>Welche drei KI-Werkzeuge sich diese Woche lohnen</span>
+            </li>
+            <li>
+              <span class="kind">Erklärt · in Arbeit</span>
+              <span>RAG statt Fine-Tuning: wann welcher Weg</span>
+            </li>
+            <li>
+              <span class="kind">Regulatorik · in Arbeit</span>
+              <span>Art. 4 AI Act: was Ihr Team nachweisen muss</span>
+            </li>
+            <li>
+              <span class="kind">Checkliste · in Arbeit</span>
+              <span>Fünf Fragen vor jedem KI-Projekt</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="haltung">
+        <div class="wrap">
+          <p class="label">Haltung</p>
+          <h2 class="section-title">Drei Annahmen, gegen die ich arbeite.</h2>
+          <ol class="stance">
+            <li>
+              <h3>KI ist nicht primär eine Tool-Frage.</h3>
+              <p>
+                Sie ist eine Prozess- und Datenfrage. Tools sind die letzten
+                20 Prozent. Davor liegen Workflow, Datenqualität und
+                Akzeptanz.
+              </p>
+            </li>
+            <li>
+              <h3>Die wenigsten brauchen ein eigenes Modell.</h3>
+              <p>
+                Ein sauberer Use Case auf Standard-Modellen mit Ihren Daten
+                reicht meist. RAG schlägt Fine-Tuning fast immer: günstiger,
+                schneller, prüfbarer.
+              </p>
+            </li>
+            <li>
+              <h3>Eine Lizenz ist eine Erlaubnis, kein System.</h3>
+              <p>
+                KI-Reife entsteht aus dokumentierten Use Cases, geschulten
+                Menschen und einem Datenschutzkonzept, das einer Prüfung
+                standhält.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="verantwortung">
+        <div class="wrap with-note">
+          <div>
+            <p class="label">Verantwortung</p>
+            <h2 class="section-title">So arbeite ich mit KI.</h2>
+            <p>
+              Ich setze KI nur dort ein, wo ein Mensch das Ergebnis prüfen
+              kann. Daten bleiben in der EU. Jede Entscheidung des Systems ist
+              nachvollziehbar dokumentiert.
+            </p>
+            <p>
+              Sie bekommen den Quellcode, die Architektur und die
+              Governance-Unterlagen. Kein Lock-in, keine Blackbox, kein
+              Dauer-Retainer.
+            </p>
+          </div>
+          <aside class="note">
+            <strong>Der ehrliche Teil</strong>
+            Wenn ich nach einem Gespräch sehe, dass KI Ihnen gerade nichts
+            bringt, sage ich es. Das ist ein Ergebnis, kein Fehlschlag.
+          </aside>
+        </div>
+      </section>
+
+      <section id="ueber">
+        <div class="wrap">
+          <p class="label">Über mich</p>
+          <h2 class="section-title">Alex Vey, Kassel.</h2>
+          <p>
+            Ich arbeite wie ein guter Hausarzt: zuhören, genau diagnostizieren
+            und nur verschreiben, was wirklich hilft. Ich bin Builder, der
+            berät, mit über 20 Jahren Engineering und einem M.Sc. Computer
+            Science.
+          </p>
+          <p>
+            Hauptberuflich verantworte ich bei fino.digital die Schnittstelle
+            zwischen Software-Architektur und Regulatorik im Open Banking.
+            Daneben berate ich als Freiberufler zu KI, von ersten PoCs bis zu
+            produktiven Systemen im regulierten Umfeld.
+          </p>
+        </div>
+      </section>
+
+      <section id="kontakt" class="closing">
+        <div class="wrap">
+          <p class="label">Erstgespräch</p>
+          <h2>Eine halbe Stunde. Kein Pitch.</h2>
+          <p class="lede">
+            Ich höre mir an, was Sie umtreibt, und sage Ihnen ehrlich, ob ich
+            der richtige Partner bin. Kostenlos, online oder vor Ort.
+          </p>
+          <div class="actions">
+            <a class="btn" href="mailto:modus@alexvey.com?subject=Erstgespr%C3%A4ch">Erstgespräch vereinbaren</a>
+            <span class="fineprint" style="margin: 0">modus@alexvey.com</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-foot">
       <div class="wrap">
-        <div class="footer-inner">
-          <div>
-            © 2026 Modus Vey · Alex Vey · Kassel · Methode statt Magie
-          </div>
-          <div>
-            <a href="https://alexvey.com/impressum/">Impressum</a>
-            <a href="https://alexvey.com/datenschutz/">Datenschutz</a>
-          </div>
-        </div>
+        <span>© 2026 Modus Vey · Alex Vey · Kassel</span>
+        <nav aria-label="Rechtliches">
+          <a href="https://alexvey.com/impressum/">Impressum</a>
+          <a href="https://alexvey.com/datenschutz/">Datenschutz</a>
+        </nav>
       </div>
     </footer>
-
-    <!-- Theme-Toggle Handler -->
-    <script>
-      function toggleTheme() {
-        var html = document.documentElement;
-        var current = html.getAttribute('data-theme') || 'light';
-        var next = current === 'night' ? 'light' : 'night';
-        html.setAttribute('data-theme', next);
-        try {
-          localStorage.setItem('mv-theme', next);
-        } catch (e) {}
-        var btn = document.getElementById('theme-toggle');
-        if (btn)
-          btn.setAttribute(
-            'aria-label',
-            next === 'night'
-              ? 'Helles Theme aktivieren'
-              : 'Dunkles Theme aktivieren',
-          );
-      }
-      // Sync aria-label auf Initial-Load
-      (function () {
-        var current =
-          document.documentElement.getAttribute('data-theme') || 'light';
-        var btn = document.getElementById('theme-toggle');
-        if (btn)
-          btn.setAttribute(
-            'aria-label',
-            current === 'night'
-              ? 'Helles Theme aktivieren'
-              : 'Dunkles Theme aktivieren',
-          );
-      })();
-      // System-Preference-Changes folgen, falls User nichts explizit gesetzt hat
-      if (window.matchMedia) {
-        window
-          .matchMedia('(prefers-color-scheme: dark)')
-          .addEventListener('change', function (e) {
-            try {
-              if (localStorage.getItem('mv-theme')) return;
-            } catch (err) {}
-            document.documentElement.setAttribute(
-              'data-theme',
-              e.matches ? 'night' : 'light',
-            );
-          });
-      }
-    </script>
   </body>
 </html>

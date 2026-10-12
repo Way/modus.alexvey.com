@@ -14,15 +14,15 @@ Diese Files sind die kanonische Referenz. `index.html` der Site ist aktuell inli
 | `--bone-soft` | `#ece5d6` | Karte / Surface |
 | `--ink` | `#15161a` | Body Text, Linien |
 | `--ink-soft` | `#2d2e33` | Sekundär-Text |
-| `--ink-mute` | `#6e6b63` | Dimmed Body |
-| `--ink-faint` | `#a39e92` | Hint / Disabled |
+| `--ink-mute` | `#5f5c54` | Dimmed Body |
+| `--ink-faint` | `#6a665d` | Hint / Disabled |
 | `--night` | `#0e1014` | Dark Sections, Night-Mode BG |
 | `--teal` | `#1e4f4a` | Hauptakzent · Modus Vey Petrol |
 | `--teal-bright` | `#2a7a6f` | Hover / Aktiv |
 | `--teal-soft` | `#d4ddd9` | Hintergrund-Tönung |
-| `--amber` | `#b8632b` | Warmer Highlight (sparsam) |
+| `--amber` | `#a14f19` | Warmer Highlight (sparsam) |
 | `--amber-soft` | `#e8d5bb` | Markierung Background |
-| `--sage` | `#7c8b7e` | Eyebrow / Caption / Coord-Labels |
+| `--sage` | `#5a6b5d` | Eyebrow / Caption / Coord-Labels |
 
 **Regel:** Teal trägt die Marke. Amber nur für Markierung und Verdict-Hervorhebung. Sage ausschließlich für Mono-Labels.
 

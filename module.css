@@ -1,12 +1,4 @@
-/* ════════════════════════════════════════════════════════════
-   MODUS VEY — MODUL-SEITEN LAYER
-   Ergänzt styles.css um Komponenten für /sprint/ und /build/.
-   Aesthetic: Editorial-Technische Kartografie (siehe styles.css)
-   ════════════════════════════════════════════════════════════ */
 
-/* ─────────────────────────────────────────────
-   MODUL-HERO
-   ───────────────────────────────────────────── */
 .module-hero {
   padding-top: 9rem;
   padding-bottom: 4.5rem;
@@ -37,7 +29,7 @@
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  color: var(--teal);
+  color: var(--teal-ink);
   letter-spacing: -0.02em;
 }
 .module-hero .lead {
@@ -45,7 +37,6 @@
   max-width: 46ch;
 }
 
-/* Signatur-Figur (vergrößerte Modul-Illustration im Dot-Corner-Frame) */
 .module-figure {
   position: relative;
   width: 100%;
@@ -98,7 +89,6 @@
   fill: var(--ink-faint);
   font-family: var(--mono);
 }
-/* Eck-Punkte wie auf der Modus-Karte */
 .figure-dots,
 .figure-dots::before,
 .figure-dots::after,
@@ -138,9 +128,6 @@
   right: -5px;
 }
 
-/* ─────────────────────────────────────────────
-   PHASEN-LEISTE — der gemeinsame Kreislauf I–IV
-   ───────────────────────────────────────────── */
 .phase-rail-section {
   padding: 3rem 0;
   border-top: 1px solid var(--bone-line-mid);
@@ -174,7 +161,6 @@
     gap: 1.5rem 1px;
   }
 }
-/* durchlaufende Bahn hinter den Knoten */
 .phase-rail::before {
   content: '';
   position: absolute;
@@ -237,22 +223,20 @@
   text-transform: uppercase;
   color: var(--ink-faint);
 }
-/* aktive Phase(n) des aktuellen Moduls */
 .phase--active .phase-node {
   border-color: var(--teal);
   background: var(--teal);
   box-shadow: 0 0 0 4px var(--teal-soft);
 }
 .phase--active .phase-rom {
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 .phase--active .phase-name {
   color: var(--ink);
 }
 .phase--active .phase-tag {
-  color: var(--teal);
+  color: var(--teal-ink);
 }
-/* vor-/nachgelagerte Phase (vom anderen Modul abgedeckt) */
 .phase--done .phase-node {
   border-color: var(--teal);
   background: var(--bone);
@@ -261,9 +245,6 @@
   color: var(--ink-mute);
 }
 
-/* ─────────────────────────────────────────────
-   PROSE-INTRO (Sektions-Lauftext)
-   ───────────────────────────────────────────── */
 .prose {
   max-width: 60ch;
 }
@@ -289,9 +270,6 @@
   margin-bottom: 1.8rem;
 }
 
-/* ─────────────────────────────────────────────
-   FIT / KEIN FIT — ehrliche Qualifizierung
-   ───────────────────────────────────────────── */
 .fit-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -320,7 +298,7 @@
   gap: 0.6rem;
 }
 .fit-col--yes h3 {
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 .fit-col--no h3 {
   color: var(--ink-mute);
@@ -347,7 +325,7 @@
 }
 .fit-col--yes .fit-list li::before {
   content: '+';
-  color: var(--teal);
+  color: var(--teal-ink);
   font-weight: 600;
 }
 .fit-col--no .fit-list li::before {
@@ -355,9 +333,6 @@
   color: var(--ink-faint);
 }
 
-/* ─────────────────────────────────────────────
-   TIMELINE — vertikaler Ablauf
-   ───────────────────────────────────────────── */
 .timeline {
   position: relative;
   margin-top: 3.5rem;
@@ -368,7 +343,6 @@
     padding-left: 1.8rem;
   }
 }
-/* vertikale Bahn */
 .timeline::before {
   content: '';
   position: absolute;
@@ -410,7 +384,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--teal-ink);
   margin-bottom: 0.5rem;
 }
 .tl-step h3 {
@@ -438,9 +412,6 @@
   vertical-align: middle;
 }
 
-/* ─────────────────────────────────────────────
-   DELIVERABLES — was Sie in der Hand halten
-   ───────────────────────────────────────────── */
 .deliverables {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -503,9 +474,6 @@
   color: var(--ink-mute);
 }
 
-/* ─────────────────────────────────────────────
-   ARTEFAKT — illustratives Ergebnis-Beispiel
-   ───────────────────────────────────────────── */
 .artifact {
   position: relative;
   margin-top: 3rem;
@@ -556,7 +524,6 @@
   letter-spacing: 0.14em;
 }
 
-/* Use-Case-Tabelle (Sprint-Fahrplan) */
 .usecase-table {
   width: 100%;
   border-collapse: collapse;
@@ -587,7 +554,7 @@
   color: var(--ink);
 }
 .usecase-table .uc-rec {
-  color: var(--teal);
+  color: var(--teal-ink);
   font-family: var(--mono);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
@@ -598,7 +565,6 @@
   font-size: 0.72rem;
   letter-spacing: 0.04em;
 }
-/* kleine Aufwand/Nutzen-Pegel */
 .pegel {
   display: inline-flex;
   gap: 3px;
@@ -627,9 +593,18 @@
   .usecase-table .uc-hide-sm {
     display: none;
   }
+  .artifact {
+    padding: 1rem 0.75rem;
+  }
+  .usecase-table th {
+    letter-spacing: 0.04em;
+  }
+  .usecase-table .uc-rec,
+  .usecase-table .uc-park {
+    overflow-wrap: anywhere;
+  }
 }
 
-/* Handover-Checkliste (Build) */
 .handover {
   list-style: none;
   display: grid;
@@ -653,14 +628,11 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--teal);
+  color: var(--teal-ink);
   font-family: var(--mono);
   font-size: 0.85rem;
 }
 
-/* ─────────────────────────────────────────────
-   ABGRENZUNG — IST / IST NICHT / VORAUSSETZUNG
-   ───────────────────────────────────────────── */
 .scope-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -690,10 +662,10 @@
   margin-bottom: 1.4rem;
 }
 .scope-block--is h3 {
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 .scope-block--req h3 {
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 .scope-list {
   list-style: none;
@@ -715,9 +687,6 @@
   color: var(--ink-faint);
 }
 
-/* ─────────────────────────────────────────────
-   VERGLEICHSMATRIX — Sprint vs. Build
-   ───────────────────────────────────────────── */
 .matrix-wrap {
   margin-top: 3rem;
   border: 1px solid var(--bone-line-mid);
@@ -746,7 +715,7 @@
 .matrix thead th em {
   font-family: var(--serif);
   font-style: italic;
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 .matrix thead th .th-tag {
   display: block;
@@ -754,7 +723,7 @@
   font-size: 0.62rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   margin-top: 0.3rem;
   font-weight: 400;
 }
@@ -775,7 +744,6 @@
 .matrix tr:last-child td {
   border-bottom: none;
 }
-/* hervorgehobene Spalte = aktuelles Modul */
 .matrix .col-active {
   background: var(--teal-soft);
 }
@@ -783,9 +751,6 @@
   border-bottom-color: var(--teal);
 }
 
-/* ─────────────────────────────────────────────
-   FAQ
-   ───────────────────────────────────────────── */
 .faq {
   margin-top: 3rem;
   border-top: 1px solid var(--bone-line-mid);
@@ -810,7 +775,7 @@
   display: none;
 }
 .faq-item summary:hover {
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 .faq-item summary::after {
   content: '+';
@@ -826,7 +791,7 @@
 }
 .faq-item[open] summary::after {
   content: '–';
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 .faq-item .faq-a {
   padding: 0 2.5rem 1.6rem 0;
@@ -841,9 +806,6 @@
   font-weight: 500;
 }
 
-/* ─────────────────────────────────────────────
-   ÜBERGANGSBAND — Sprint ↔ Build Kontinuum
-   ───────────────────────────────────────────── */
 .transition {
   background: var(--teal);
   color: var(--bone);
@@ -952,7 +914,6 @@
 .btn-transition:hover .arrow {
   transform: translateX(3px);
 }
-/* der Teal-Pfad aus der Modus-Karte, der weiterläuft */
 .transition-path {
   position: absolute;
   inset: 0;
@@ -979,16 +940,13 @@
   color: #f4efe5;
 }
 [data-theme='night'] .transition {
-  background: var(--teal);
+  background: #1e4f4a;
 }
 [data-theme='night'] .transition h2 em,
 [data-theme='night'] .transition-eyebrow {
   color: #e8d5bb;
 }
 
-/* ─────────────────────────────────────────────
-   ROMAN-NUMERAL SEKTIONS-BACKDROP (wie auf index)
-   ───────────────────────────────────────────── */
 .num-bg {
   position: relative;
 }
@@ -1007,7 +965,7 @@
   right: clamp(1rem, 5vw, 5rem);
   transform: translateY(-50%);
   opacity: 0.05;
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 .num-bg > .wrap {
   position: relative;
@@ -1018,9 +976,6 @@
   opacity: 0.04;
 }
 
-/* ─────────────────────────────────────────────
-   SEKTIONS-INTRO (eyebrow + headline + lead nebeneinander)
-   ───────────────────────────────────────────── */
 .module-section {
   padding: 6rem 0;
 }
@@ -1055,7 +1010,6 @@
   }
 }
 
-/* Mini-Breadcrumb im Nav für Kontext */
 .nav-context {
   font-family: var(--mono);
   font-size: 0.78rem;
@@ -1063,10 +1017,10 @@
   color: var(--ink-faint);
 }
 .nav-context strong {
-  color: var(--teal);
+  color: var(--teal-ink);
   font-weight: 500;
 }
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .nav-context {
     display: none;
   }

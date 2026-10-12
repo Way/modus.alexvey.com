@@ -305,6 +305,33 @@ section.hero {
 }
 
 /* Facts strip */
+.photo {
+  margin: 0 0 2.75rem;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--paper-deep);
+}
+
+.photo figcaption {
+  margin-top: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--ink-mute);
+}
+
+@media (prefers-color-scheme: dark) {
+  .photo img {
+    filter: brightness(0.88);
+  }
+}
+
 .facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));

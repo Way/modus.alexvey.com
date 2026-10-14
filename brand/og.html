@@ -21,10 +21,12 @@
   .brand { display: flex; align-items: center; gap: 14px; font-family: "Geist", sans-serif; font-weight: 500; font-size: 26px; }
   .brand svg { width: 40px; height: 40px; }
   .brand i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #9c4528; margin: 0 8px; vertical-align: middle; position: relative; top: -2px; }
-  .mid { display: flex; gap: 56px; align-items: center; }
-  .mid img { width: 400px; height: 300px; object-fit: cover; border-radius: 2px; flex: none; }
-  h1 { font-weight: 400; font-size: 76px; line-height: 1.05; letter-spacing: -0.02em; }
-  h1 em { font-style: normal; color: #9c4528; }
+  h1 { font-weight: 400; font-size: 68px; line-height: 1.05; letter-spacing: -0.02em; white-space: nowrap; }
+  .lanes { position: relative; width: 1109px; height: 230px; margin-left: -49px; }
+  .lanes::before, .lanes::after { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 394px; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; transform: translateY(-95px); }
+  .lanes::before { background: #1c1a17; -webkit-mask-image: url("../img/spuren-boden.svg"); mask-image: url("../img/spuren-boden.svg"); }
+  .lanes::after { background: #9c4528; -webkit-mask-image: url("../img/spuren-tempo.svg"); mask-image: url("../img/spuren-tempo.svg"); }
+  .lanes { overflow: hidden; }
   .foot { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid #1c1a1750; padding-top: 22px; font-family: "Geist", sans-serif; font-size: 22px; color: #46423b; }
 </style>
 </head>
@@ -33,10 +35,8 @@
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="none" stroke="#1c1a17" stroke-width="0.7"/><circle cx="12" cy="12" r="11.5" fill="none" stroke="#1c1a17" stroke-width="0.42" opacity="0.4"/><path d="M8.548 11.6 L12.38 2.978 L16.212 11.6 L14.188 11.6 L11.62 5.822 L9.052 11.6 Z" fill="#1c1a17"/><path d="M7.788 12.4 L11.62 21.022 L15.452 12.4 L14.948 12.4 L12.38 18.178 L9.812 12.4 Z" fill="#1c1a17"/><path d="M10.144 8.326 L13.856 8.326 L13.856 8.826 L10.144 8.826 Z" fill="#1c1a17"/></svg>
     <span>Modus<i></i>Vey</span>
   </div>
-  <div class="mid">
-    <h1>KI, die in Ihrem Betrieb läuft. <em>Nicht in Folien.</em></h1>
-    <img src="../img/hero.webp" alt="" />
-  </div>
+  <h1>KI als Hebel für Ihren Betrieb.</h1>
+  <div class="lanes" role="img" aria-label="Zwei Spuren: eine Linie über Bremsschwellen, eine zweite verlässt sie und läuft frei"></div>
   <div class="foot"><span>KI-Beratung · Alex Vey · Kassel</span><span>modus.alexvey.com</span></div>
 </body>
 </html>

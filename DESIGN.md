@@ -17,7 +17,8 @@ Dial (sub pages): ENERGY 1 / RHYTHM 2 / MOTION 1
 - Margin notes: short side notes carry the honest "no" and the risk statements. They move under the text on narrow screens.
 - Offer rows: the three modules are plain rows with duration, not priced cards. Reason: there are no prices on the site, so nothing needs a card.
 - Proof: no references exist yet, so no page shows any. Examples are tagged "Beispiel". Reason: fake proof breaks the honesty claim.
-- Photos: AI-generated still lifes of workshop details in `img/`, no people, no brands, labelled "KI-generiertes Bild". The sub pages use them. `img/hero.webp` and `img/arbeitsweise.webp` are used only by `brand/og.html` since the home page changed. Real photos replace them when they exist.
+- Photos: AI-generated still lifes of workshop details in `img/`, no people, no brands, labelled "KI-generiertes Bild". The sub pages use them. `img/hero.webp` and `img/arbeitsweise.webp` are unused since the home page and `brand/og.png` changed. Real photos replace them when they exist.
+- Share image: `brand/og.png` shows the home headline and the two-lane illustration, rendered from `brand/og.html` with headless Chrome at 1200 x 630. Reason: the preview carries the same one statement as the home page.
 - Background: flat color, no grid or texture. Reason: the map identity is gone, so the grid would have no purpose.
 - Motion: one short rise on the hero text. It stops under `prefers-reduced-motion`.
 - Mobile: header wraps, tables scroll inside their own wrapper, no horizontal page scroll.

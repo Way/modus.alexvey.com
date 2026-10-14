@@ -131,10 +131,6 @@ figure.draw figcaption {
   margin-bottom: 0;
 }
 
-.band a {
-  color: var(--band-fg);
-}
-
 .band :focus-visible {
   outline-color: var(--band-accent);
 }

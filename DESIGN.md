@@ -21,3 +21,14 @@ Dial: ENERGY 1 / RHYTHM 2 / MOTION 1
 - Background: flat color, no grid or texture. Reason: the map identity is gone, so the grid would have no purpose.
 - Motion: one short rise on the hero text. It stops under `prefers-reduced-motion`.
 - Mobile: header wraps, tables scroll inside their own wrapper, no horizontal page scroll.
+
+## Manifest page `/entwirren/`
+
+Card 10. A single-statement landing page, "Ich entwirre. Danach gehört es Ihnen." It sits beside the home page and is `noindex` until the owner decides whether it replaces it. Styles: `werkbank/entwirren.css`, loaded after `werkbank.css`.
+
+Dial for this page: ENERGY 2 / RHYTHM 3 / MOTION 1. Reason: one statement carries the page, so the type is larger and the sections change shape (open text, staggered sentences, ruled rows, one inverted band).
+
+- Identity motif: one thread, tangled on the left and straight on the right, drawn as two SVG masks (`img/faden-knoten.svg`, `img/faden-gerade.svg`). The straight end carries the clay accent. Reason: it shows "untangle, then hand over" without a word. Labelled "Illustration".
+- Inverted band: the handover section only. Reason: "Danach brauchen Sie mich nicht mehr" is the claim the page ends on, so it gets the one hard contrast. Band tokens: `--band-bg`, `--band-fg`, `--band-soft`, `--band-accent`. Contrast checked in both themes.
+- Knot list: four example sentences of different length and indent, tagged "Beispiele, keine Kundenfälle". Reason: the length difference shows a tangle, and the tag keeps the honesty claim.
+- Copy: draft in the Sie form to match the home page. Facts come from the home page only. The owner confirms or changes the wording.

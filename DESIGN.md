@@ -22,13 +22,14 @@ Dial: ENERGY 1 / RHYTHM 2 / MOTION 1
 - Motion: one short rise on the hero text. It stops under `prefers-reduced-motion`.
 - Mobile: header wraps, tables scroll inside their own wrapper, no horizontal page scroll.
 
-## Manifest page `/entwirren/`
+## Lever page `/hebel/`
 
-Card 10. A single-statement landing page, "Ich entwirre. Danach gehört es Ihnen." It sits beside the home page and is `noindex` until the owner decides whether it replaces it. Styles: `werkbank/entwirren.css`, loaded after `werkbank.css`.
+Card 10. A single-statement landing page, "KI als Hebel für Ihren Betrieb." The message: AI as lever and accelerator, clearing out routine and time-wasters, and a challenger for new ideas. It sits beside the home page and is `noindex` until the owner decides whether it replaces it. Styles: `werkbank/hebel.css`, loaded after `werkbank.css`. An earlier draft under `/entwirren/` was dropped because "untangle" was too narrow.
 
-Dial for this page: ENERGY 2 / RHYTHM 3 / MOTION 1. Reason: one statement carries the page, so the type is larger and the sections change shape (open text, staggered sentences, ruled rows, one inverted band).
+Dial for this page: ENERGY 2 / RHYTHM 3 / MOTION 1. Reason: one statement carries the page, so the type is larger and the sections change shape (open text, staggered sentences, questions set large, ruled rows, one inverted band).
 
-- Identity motif: one thread, tangled on the left and straight on the right, drawn as two SVG masks (`img/faden-knoten.svg`, `img/faden-gerade.svg`). The straight end carries the clay accent. Reason: it shows "untangle, then hand over" without a word. Labelled "Illustration".
+- Identity motif: two lanes. The ink line stays on the lower lane among small bumps (routine). The clay line leaves it and runs free on the upper lane. Drawn as two SVG masks (`img/spuren-boden.svg`, `img/spuren-tempo.svg`). Reason: it shows "clear out the routine, gain speed" without a word, and the accent marks what AI does. Labelled "Illustration".
 - Inverted band: the handover section only. Reason: "Danach brauchen Sie mich nicht mehr" is the claim the page ends on, so it gets the one hard contrast. Band tokens: `--band-bg`, `--band-fg`, `--band-soft`, `--band-accent`. Contrast checked in both themes.
-- Knot list: four example sentences of different length and indent, tagged "Beispiele, keine Kundenfälle". Reason: the length difference shows a tangle, and the tag keeps the honesty claim.
-- Copy: draft in the Sie form to match the home page. Facts come from the home page only. The owner confirms or changes the wording.
+- Time-waster list: four example sentences of different length and indent, tagged "Beispiele, keine Kundenfälle". Reason: the length difference keeps the list from reading as a template, and the tag keeps the honesty claim.
+- Questions: two challenger questions set large in the "Ideen" section. Reason: they carry the challenger role in the owner's voice.
+- Copy: draft in the Sie form to match the home page. Facts come from the home page. Opinion lines are first person. The owner confirms or changes the wording.

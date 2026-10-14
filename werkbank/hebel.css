@@ -1,4 +1,4 @@
-/* Manifest page: loads after werkbank.css and only adds what the base lacks. */
+/* Lever page: loads after werkbank.css and only adds what the base lacks. */
 
 :root {
   --band-bg: var(--ink);
@@ -24,17 +24,17 @@
   max-width: 40ch;
 }
 
-/* The thread: one line, tangled on the left, straight on the right.
-   Two mask layers so the last stretch can carry the accent. */
-.faden {
+/* Two lanes: ink line stays among the bumps, clay line leaves them and runs free.
+   Two mask layers so the fast lane can carry the accent. */
+.spuren {
   position: relative;
   width: 100%;
   aspect-ratio: 900 / 320;
   margin: clamp(2rem, 6vw, 3.5rem) 0 0;
 }
 
-.faden::before,
-.faden::after {
+.spuren::before,
+.spuren::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -44,16 +44,16 @@
   mask-size: 100% 100%;
 }
 
-.faden::before {
+.spuren::before {
   background: var(--ink);
-  -webkit-mask-image: url("/img/faden-knoten.svg");
-  mask-image: url("/img/faden-knoten.svg");
+  -webkit-mask-image: url("/img/spuren-boden.svg");
+  mask-image: url("/img/spuren-boden.svg");
 }
 
-.faden::after {
+.spuren::after {
   background: var(--clay);
-  -webkit-mask-image: url("/img/faden-gerade.svg");
-  mask-image: url("/img/faden-gerade.svg");
+  -webkit-mask-image: url("/img/spuren-tempo.svg");
+  mask-image: url("/img/spuren-tempo.svg");
 }
 
 figure.draw {
@@ -65,17 +65,18 @@ figure.draw figcaption {
   font-family: var(--sans);
   font-size: 0.75rem;
   color: var(--ink-mute);
+  max-width: 60ch;
 }
 
-/* Knot list: sentences of different length, set large */
-.knots {
+/* Time-waster list: sentences of different length, set large */
+.fresser {
   list-style: none;
   margin: 0 0 2rem;
   padding: 0;
   border-top: 1px solid var(--rule-strong);
 }
 
-.knots li {
+.fresser li {
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--rule);
   font-size: clamp(1.25rem, 3vw, 1.75rem);
@@ -83,25 +84,38 @@ figure.draw figcaption {
   max-width: 34ch;
 }
 
-.knots li:nth-child(2) {
+.fresser li:nth-child(2) {
   max-width: 24ch;
 }
 
-.knots li:nth-child(3) {
+.fresser li:nth-child(3) {
   max-width: 40ch;
   margin-left: clamp(0rem, 8vw, 6rem);
 }
 
-.knots li:nth-child(4) {
+.fresser li:nth-child(4) {
   max-width: 28ch;
   margin-left: clamp(0rem, 3vw, 2rem);
 }
 
-.knots-note {
+.fresser-note {
   font-family: var(--sans);
   font-size: 0.8125rem;
   color: var(--ink-mute);
   margin: 0 0 2rem;
+}
+
+/* Challenger questions: set large, no list chrome */
+.fragen {
+  margin: 0 0 1.5rem;
+  max-width: 30ch;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  line-height: 1.25;
+}
+
+.fragen span {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 /* Handover band: the one inverted section */
@@ -164,7 +178,6 @@ figure.draw figcaption {
   font-weight: 500;
 }
 
-/* Where the work happens: reuse .pieces rows, drop the arrow for a plain stack */
 .manifest .pieces .piece h3 a::after {
   content: "";
 }

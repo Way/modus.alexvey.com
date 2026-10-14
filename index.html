@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modus Vey · KI, die in Ihrem Betrieb läuft</title>
+    <title>Modus Vey · KI als Hebel für Ihren Betrieb</title>
     <meta
       name="description"
-      content="KI-Beratung für den Mittelstand. Alex Vey findet den Use Case, baut ihn auf Ihren Daten und übergibt ihn so, dass Sie ihn selbst betreiben."
+      content="KI-Beratung für den Mittelstand. Alex Vey nimmt Ihrem Team Routine ab, bringt Tempo und fragt nach neuen Ideen. Gebaut auf Ihren Daten, übergeben an Sie."
     />
     <meta name="author" content="Alex Vey" />
     <meta name="robots" content="index, follow" />
@@ -18,10 +18,10 @@
     <meta name="color-scheme" content="light dark" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://modus.alexvey.com/" />
-    <meta property="og:title" content="Modus Vey · KI, die in Ihrem Betrieb läuft" />
+    <meta property="og:title" content="Modus Vey · KI als Hebel für Ihren Betrieb" />
     <meta
       property="og:description"
-      content="KI-Beratung für den Mittelstand. Use Case finden, auf Ihren Daten bauen, übergeben."
+      content="KI-Beratung für den Mittelstand. Routine raus, Tempo rein, neue Ideen auf Ihren Daten."
     />
     <meta property="og:image" content="https://modus.alexvey.com/brand/og.png" />
     <meta property="og:locale" content="de_DE" />
@@ -44,7 +44,7 @@
             "@type": "ProfessionalService",
             "@id": "https://modus.alexvey.com/#service",
             "name": "Modus Vey KI-Beratung",
-            "description": "KI-Beratung für den Mittelstand. Use Case finden, auf Ihren Daten bauen, übergeben.",
+            "description": "KI-Beratung für den Mittelstand. Routine abbauen, Tempo gewinnen, neue Ideen auf Ihren Daten bauen und übergeben.",
             "url": "https://modus.alexvey.com/",
             "provider": { "@id": "https://modus.alexvey.com/#person" },
             "areaServed": { "@type": "Country", "name": "Deutschland" },
@@ -61,8 +61,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/werkbank/werkbank.css" />
+    <link rel="stylesheet" href="/werkbank/hebel.css" />
   </head>
-  <body>
+  <body class="manifest">
     <a class="skip" href="#main">Zum Inhalt</a>
 
     <header class="site-head">
@@ -77,10 +78,10 @@
           Modus Vey
         </a>
         <nav class="site-nav" aria-label="Hauptnavigation">
-          <a href="#werkstuecke">Angebot</a>
-          <a href="#anwendungen">Anwendungen</a>
-          <a href="#wissen">Wissen</a>
-          <a href="#haltung">Haltung</a>
+          <a href="#zeitfresser">Zeitfresser</a>
+          <a href="#tempo">Tempo</a>
+          <a href="#ideen">Ideen</a>
+          <a href="#werkstuecke">Weg</a>
           <a href="#kontakt">Erstgespräch</a>
         </nav>
       </div>
@@ -90,103 +91,129 @@
       <section class="hero">
         <div class="wrap">
           <p class="label rise">KI-Beratung für den Mittelstand</p>
-          <h1 class="rise">KI, die in Ihrem Betrieb läuft. Nicht in Folien.</h1>
+          <h1 class="rise">KI als Hebel für Ihren Betrieb.</h1>
           <p class="lede rise">
-            Ich finde den Use Case, baue ihn auf Ihren Daten und übergebe ihn
-            so, dass Sie ihn selbst betreiben. Und wenn KI bei Ihnen nichts
-            bringt, sage ich es Ihnen.
+            Ich räume die Routine aus dem Alltag Ihres Teams und gebe ihm
+            Tempo für das, was zählt. Und ich frage nach, was bei Ihnen
+            sonst noch möglich wäre.
           </p>
           <div class="actions rise">
             <a class="btn" href="#kontakt">Erstgespräch vereinbaren</a>
-            <a class="btn btn-quiet" href="#werkstuecke">Was ich anbiete</a>
+            <a class="btn btn-quiet" href="#werkstuecke">Wie ich vorgehe</a>
           </div>
-          <figure class="photo rise">
-            <img src="/img/hero.webp" width="1600" height="1073" alt="Leinenbuch, Bleistift, Messschieber und Stahllineal auf einer alten Werkbank" />
-            <figcaption>KI-generiertes Bild</figcaption>
+          <figure class="draw rise">
+            <div class="spuren" role="img" aria-label="Zwei Spuren von links nach rechts. Die untere Linie läuft über viele kleine Bremsschwellen. Eine zweite Linie verlässt sie nach einigen Schwellen, steigt auf die obere Spur und läuft frei und gerade weiter."></div>
+            <figcaption>Illustration, für diese Seite gezeichnet. Unten bremst jede Routine, oben läuft es frei.</figcaption>
           </figure>
-          <ul class="facts" aria-label="Eckdaten">
-            <li><strong>30 Tage</strong>bis zum laufenden Use Case</li>
-            <li><strong>Ihr Code</strong>gehört vollständig Ihnen</li>
-            <li><strong>Nur EU</strong>Hosting, DSGVO, AI Act</li>
-            <li><strong>Angebot vorab</strong>verbindlich, vor dem Start</li>
-          </ul>
         </div>
       </section>
 
-      <section id="fuer-wen">
+      <section id="zeitfresser">
         <div class="wrap with-note">
           <div>
-            <p class="label">Für wen</p>
-            <h2 class="section-title">Für Betriebe, in denen Schreibtischarbeit die Woche füllt.</h2>
+            <p class="label">Zeitfresser</p>
+            <h2 class="section-title">Was Ihr Team Woche für Woche aufhält.</h2>
+            <ul class="fresser">
+              <li>Das Angebot wird jedes Mal neu getippt, obwohl die Bausteine seit Jahren dieselben sind.</li>
+              <li>Die Eingangsrechnung liegt im Postfach, bis jemand sie abtippt.</li>
+              <li>Das Wissen steckt in drei Köpfen und einem Ordner namens „Alt“.</li>
+              <li>Eine Liste, die in zwei anderen Listen noch einmal steht und in keiner stimmt.</li>
+            </ul>
+            <p class="fresser-note">Beispiele aus dem Mittelstand, keine Kundenfälle.</p>
             <p>
-              Mein Alltag sind Teams mit 2 bis 50 Menschen, die E-Mails,
-              Angebote, Ablage und Doppeleingaben bewältigen. Und Firmen,
-              deren Daten nicht einfach in eine Cloud wandern dürfen:
-              Finanzdienstleister, Zulieferer, verwaltungsnahe Betriebe.
-            </p>
-            <p>
-              Sie brauchen keine KI-Strategie. Sie brauchen jemanden, der
-              zuhört, nachrechnet und danach auch bauen kann.
+              Fleißarbeit ist keine schlechte Arbeit. Ich finde, sie gehört
+              trotzdem nicht in die Hände Ihrer besten Leute, wenn eine
+              Maschine sie übernehmen kann. Ich suche diese Stellen,
+              automatisiere sie auf Ihren Daten und rechne vorher nach, ob
+              es sich lohnt.
             </p>
           </div>
           <aside class="note">
-            <strong>Warum Regulatorik?</strong>
-            Ich arbeite täglich mit PSD2, XS2A, EU AI Act und DSGVO im Open
-            Banking. Das ist kein Zusatzpaket, sondern mein Arbeitskontext.
+            <strong>Mensch am Steuer</strong>
+            Ich setze KI nur dort ein, wo ein Mensch das Ergebnis prüfen
+            kann.
           </aside>
+        </div>
+      </section>
+
+      <section id="tempo">
+        <div class="wrap with-note">
+          <div>
+            <p class="label">Tempo</p>
+            <h2 class="section-title">Freie Zeit ist erst der Anfang.</h2>
+            <p>
+              Ein Hebel macht die Arbeit nicht kleiner, er macht sie
+              kräftiger. So sehe ich KI: als Gaspedal für Ihr Team, das
+              schneller zu den Dingen kommt, die den Betrieb voranbringen.
+            </p>
+            <p>
+              Im Kompass suche ich fertige KI-Werkzeuge, die Ihrem Team
+              mindestens fünf Stunden pro Woche zurückgeben. Was Sie mit
+              dieser Zeit anfangen, entscheiden Sie.
+            </p>
+          </div>
+          <aside class="note">
+            <strong>Mein Anspruch</strong>
+            Schneller werden, nicht nur entlastet. Ob das bei Ihnen gelingt,
+            prüfe ich im Erstgespräch und sage es ehrlich.
+          </aside>
+        </div>
+      </section>
+
+      <section id="ideen">
+        <div class="wrap">
+          <p class="label">Neue Ideen</p>
+          <h2 class="section-title">Ich stelle Ihre Annahmen auf die Probe.</h2>
+          <p class="fragen">
+            <span>Muss dieser Ablauf wirklich so laufen?</span>
+            <span>Was geht, wenn die Routine wegfällt?</span>
+          </p>
+          <p>
+            Dafür bin ich Challenger und Enabler zugleich. Im Sprint bekommen
+            Sie drei bis fünf Ansätze mit Aufwand, Nutzen und Risiko. Dazu
+            meine ehrliche Einschätzung, welcher sich lohnt und welcher
+            nicht.
+          </p>
         </div>
       </section>
 
       <section id="werkstuecke">
         <div class="wrap">
-          <p class="label">Angebot</p>
-          <h2 class="section-title">Drei Werkstücke. Sie wählen den Anfang.</h2>
+          <p class="label">Der Weg</p>
+          <h2 class="section-title">Vom ersten Gespräch zum laufenden System.</h2>
           <p class="lede" style="margin-bottom: 2.5rem">
-            Jedes Werkstück steht für sich. Vor jedem Start bekommen Sie ein
+            Jeder Schritt steht für sich. Vor jedem Start bekommen Sie ein
             verbindliches Angebot. Was Sie vorher bezahlt haben, rechne ich
-            voll auf das nächste an.
+            voll auf den nächsten an.
           </p>
           <ol class="pieces">
             <li class="piece">
-              <p class="when">Einstieg · 5 Tage</p>
+              <p class="when">5 Tage</p>
               <div>
                 <h3><a href="/kompass/">Kompass</a></h3>
                 <p>
                   Ein Gespräch, eine Karte: welche fertigen KI-Werkzeuge Ihrem
                   Team mindestens fünf Stunden pro Woche zurückgeben. Finde
-                  ich sie nicht, zahlen Sie nichts.
+                  ich nichts, zahlen Sie nichts.
                 </p>
               </div>
             </li>
             <li class="piece">
-              <p class="when">Analyse · 10 Tage</p>
+              <p class="when">10 Tage</p>
               <div>
                 <h3><a href="/sprint/">Sprint</a></h3>
                 <p>
-                  Drei bis fünf Use Cases mit Aufwand, Nutzen und Risiko. Am
-                  Ende ein Fahrplan und ein verbindliches Angebot für den
-                  Build.
+                  Drei bis fünf Ansätze mit Aufwand, Nutzen und Risiko, am
+                  Ende ein Fahrplan.
                 </p>
               </div>
             </li>
             <li class="piece">
-              <p class="when">Umsetzung · 30 Tage</p>
+              <p class="when">30 Tage</p>
               <div>
                 <h3><a href="/build/">Build</a></h3>
                 <p>
-                  Ein Use Case, lauffähig auf Ihren Daten. Quellcode und
-                  Architektur gehören Ihnen. Ihr Team betreibt das System ohne
-                  mich weiter.
-                </p>
-              </div>
-            </li>
-            <li class="piece later">
-              <p class="when">Später · 2026/27</p>
-              <div>
-                <h3>Schulung, Audit, Private Cloud</h3>
-                <p>
-                  AI-Act-Schulung nach Art. 4, Readiness-Check und ein privates
-                  KI-Setup in der EU. Auf Anfrage.
+                  Ein Ansatz, lauffähig auf Ihren Daten, gehostet in der EU.
                 </p>
               </div>
             </li>
@@ -194,187 +221,33 @@
         </div>
       </section>
 
-      <section id="anwendungen">
+      <section id="uebergabe" class="band">
         <div class="wrap">
-          <p class="label">Anwendungen</p>
-          <h2 class="section-title">Woran ich typischerweise arbeite.</h2>
-          <p class="lede" style="margin-bottom: 2.5rem">
-            Das sind Beispiele aus dem Mittelstand, keine Kundenprojekte.
-            Echte Fälle stelle ich hier vor, sobald sie veröffentlicht werden
-            dürfen.
+          <p class="label">Die Übergabe</p>
+          <h2>Danach brauchen Sie mich nicht mehr.</h2>
+          <div class="rule-end" aria-hidden="true"></div>
+          <p>
+            Quellcode, Architektur und Unterlagen gehören Ihnen. Ihr Team
+            betreibt das System selbst. Es gibt keinen Retainer und kein
+            Lock-in.
           </p>
-          <ul class="cases">
-            <li>
-              <h3>Angebote aus Stammdaten <span class="tag">Beispiel</span></h3>
-              <p>
-                Aus Kundendaten und Bausteinen entsteht der Angebotstext. Der
-                Vertrieb prüft, statt zu tippen.
-              </p>
-            </li>
-            <li>
-              <h3>Eingangsrechnungen vorerfassen <span class="tag">Beispiel</span></h3>
-              <p>
-                Das System liest, ordnet zu und markiert Unklares. Die
-                Buchhaltung entscheidet nur noch die Sonderfälle.
-              </p>
-            </li>
-            <li>
-              <h3>Antworten aus der eigenen Doku <span class="tag">Beispiel</span></h3>
-              <p>
-                Ein Assistent für Service und Support, der nur aus Ihren
-                Dokumenten antwortet und die Quelle nennt.
-              </p>
-            </li>
-            <li>
-              <h3>Protokolle ohne Mitschreiben <span class="tag">Beispiel</span></h3>
-              <p>
-                Gesprächsnotizen und Aufgaben entstehen automatisch, in der EU
-                verarbeitet und mit Auftragsverarbeitungsvertrag.
-              </p>
-            </li>
-            <li>
-              <h3>Wissen, das nicht mit Köpfen geht <span class="tag">Beispiel</span></h3>
-              <p>
-                Ein Wissensassistent auf internen Dokumenten, gehostet in der
-                EU und nachvollziehbar.
-              </p>
-            </li>
-            <li>
-              <h3>AI-Act-Readiness <span class="tag">Beispiel</span></h3>
-              <p>
-                Inventar Ihrer KI-Anwendungen, Klassifizierung und der
-                Nachweis zur Schulungspflicht nach Art. 4.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="referenzen">
-        <div class="wrap">
-          <div class="proof">
-            <p class="label">Referenzen</p>
-            <h2>Pilotkunden gesucht.</h2>
-            <p>
-              Ich arbeite mit zwei bis drei Betrieben als Pilot zusammen. Sie
-              bekommen die Arbeit zu besonderen Konditionen. Dafür dokumentieren
-              wir gemeinsam den Fall, mit Ihrem Namen und Ihrer Stimme, wenn
-              Sie es erlauben.
-            </p>
-            <p>Bis dahin zeige ich keine Referenzen, die es nicht gibt.</p>
-            <p style="margin-top: 1.5rem">
-              <a class="btn btn-quiet" href="mailto:modus@alexvey.com?subject=Pilotkunde">Pilotkunde werden</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="wissen">
-        <div class="wrap">
-          <p class="label">Wissen</p>
-          <h2 class="section-title">Tipps, die Sie ohne mich nutzen können.</h2>
-          <p class="lede" style="margin-bottom: 2.5rem">
-            Kurze Texte mit einer Checkliste. Eine Idee pro Seite. In Arbeit.
-          </p>
-          <ul class="tips">
-            <li>
-              <span class="kind">Checkliste · in Arbeit</span>
-              <span>Welche drei KI-Werkzeuge sich diese Woche lohnen</span>
-            </li>
-            <li>
-              <span class="kind">Erklärt · in Arbeit</span>
-              <span>RAG statt Fine-Tuning: wann welcher Weg</span>
-            </li>
-            <li>
-              <span class="kind">Regulatorik · in Arbeit</span>
-              <span>Art. 4 AI Act: was Ihr Team nachweisen muss</span>
-            </li>
-            <li>
-              <span class="kind">Checkliste · in Arbeit</span>
-              <span>Fünf Fragen vor jedem KI-Projekt</span>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="haltung">
-        <div class="wrap">
-          <p class="label">Haltung</p>
-          <h2 class="section-title">Drei Annahmen, gegen die ich arbeite.</h2>
-          <ol class="stance">
-            <li>
-              <h3>KI ist nicht primär eine Tool-Frage.</h3>
-              <p>
-                Sie ist eine Prozess- und Datenfrage. Tools sind die letzten
-                20 Prozent. Davor liegen Workflow, Datenqualität und
-                Akzeptanz.
-              </p>
-            </li>
-            <li>
-              <h3>Die wenigsten brauchen ein eigenes Modell.</h3>
-              <p>
-                Ein sauberer Use Case auf Standard-Modellen mit Ihren Daten
-                reicht meist. RAG schlägt Fine-Tuning fast immer: günstiger,
-                schneller, prüfbarer.
-              </p>
-            </li>
-            <li>
-              <h3>Eine Lizenz ist eine Erlaubnis, kein System.</h3>
-              <p>
-                KI-Reife entsteht aus dokumentierten Use Cases, geschulten
-                Menschen und einem Datenschutzkonzept, das einer Prüfung
-                standhält.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section id="verantwortung">
-        <div class="wrap with-note">
-          <div>
-            <p class="label">Verantwortung</p>
-            <h2 class="section-title">So arbeite ich mit KI.</h2>
-            <p>
-              Ich setze KI nur dort ein, wo ein Mensch das Ergebnis prüfen
-              kann. Daten bleiben in der EU. Jede Entscheidung des Systems ist
-              nachvollziehbar dokumentiert.
-            </p>
-            <p>
-              Sie bekommen den Quellcode, die Architektur und die
-              Governance-Unterlagen. Kein Lock-in, keine Blackbox, kein
-              Dauer-Retainer.
-            </p>
-          </div>
-          <aside class="note">
+          <p class="band-note">
             <strong>Der ehrliche Teil</strong>
-            Wenn ich nach einem Gespräch sehe, dass KI Ihnen gerade nichts
-            bringt, sage ich es. Das ist ein Ergebnis, kein Fehlschlag.
-          </aside>
-        </div>
-        <div class="wrap">
-          <figure class="photo">
-            <img src="/img/arbeitsweise.webp" width="1400" height="939" alt="Offenes Skizzenbuch mit Ablaufskizzen, Bleistift und Radiergummi auf einem hellen Holztisch" loading="lazy" />
-            <figcaption>KI-generiertes Bild</figcaption>
-          </figure>
+            Sehe ich im Gespräch, dass Ihnen KI gerade nichts bringt, sage
+            ich das. Das ist dann das Ergebnis.
+          </p>
         </div>
       </section>
 
       <section id="ueber">
         <div class="wrap">
-          <p class="label">Über mich</p>
+          <p class="label">Wer dahinter steht</p>
           <h2 class="section-title">Alex Vey, Kassel.</h2>
           <p>
-            Ich arbeite wie ein guter Hausarzt: zuhören, genau diagnostizieren
-            und nur verschreiben, was wirklich hilft. Ich bin Builder, der
-            berät, mit über 20 Jahren Engineering und einem M.Sc. Computer
-            Science.
-          </p>
-          <p>
-            Hauptberuflich verantworte ich bei fino.digital die Schnittstelle
-            zwischen Software-Architektur und Regulatorik im Open Banking.
-            Daneben berate ich als Freiberufler zu KI, von ersten PoCs bis zu
-            produktiven Systemen im regulierten Umfeld.
+            Über 20 Jahre Engineering, M.Sc. Computer Science. Als Co-Founder
+            eines etablierten Fintech-Unternehmens im Mittelstand bin ich mit
+            Software, Regulatorik und Unternehmertum bestens vertraut, ebenso
+            mit PSD2, XS2A, EU AI Act und DSGVO.
           </p>
         </div>
       </section>
@@ -384,8 +257,9 @@
           <p class="label">Erstgespräch</p>
           <h2>Eine halbe Stunde. Kein Pitch.</h2>
           <p class="lede">
-            Ich höre mir an, was Sie umtreibt, und sage Ihnen ehrlich, ob ich
-            der richtige Partner bin. Kostenlos, online oder vor Ort.
+            Ich höre mir an, was Ihr Team aufhält und was Sie gern
+            schneller hätten. Dann sage ich Ihnen ehrlich, ob ich der
+            Richtige bin. Kostenlos, online oder vor Ort.
           </p>
           <div class="actions">
             <a class="btn" href="mailto:modus@alexvey.com?subject=Erstgespr%C3%A4ch">Erstgespräch vereinbaren</a>

@@ -24,8 +24,7 @@ Dial: ENERGY 1 / RHYTHM 2 / MOTION 1
 
 ## Lever page `/hebel/`
 
-Card 10. A single-statement landing page, "KI als Hebel für Ihren Betrieb." The message: AI as lever and accelerator, clearing out routine and time-wasters, and a challenger for new ideas. It sits beside the home page and is `noindex` until the owner decides whether it replaces it. Styles: `werkbank/hebel.css`, loaded after `werkbank.css`. An earlier draft under `/entwirren/` was dropped because "untangle" was too narrow.
-
+Card 10. A single-statement landing page, "KI als Hebel für Ihren Betrieb." The message: AI as lever and accelerator, clearing out routine and time-wasters, and a challenger for new ideas. It sits beside the home page and is `noindex` until the owner decides whether it replaces it. Styles: `werkbank/hebel.css`, loaded after `werkbank.css`.
 Dial for this page: ENERGY 2 / RHYTHM 3 / MOTION 1. Reason: one statement carries the page, so the type is larger and the sections change shape (open text, staggered sentences, questions set large, ruled rows, one inverted band).
 
 - Identity motif: two lanes. The ink line stays on the lower lane among small bumps (routine). The clay line leaves it and runs free on the upper lane. Drawn as two SVG masks (`img/spuren-boden.svg`, `img/spuren-tempo.svg`). Reason: it shows "clear out the routine, gain speed" without a word, and the accent marks what AI does. Labelled "Illustration".
